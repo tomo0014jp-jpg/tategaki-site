@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TateGaki — Google Docsで縦書き</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+  
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --color-bg: #faf8f5;
+    --color-text: #2c2420;
+    --color-heading: #1a1210;
+    --color-accent: #c87a30;
+    --color-border: #e0d5c8;
+    --color-muted: #8a7e72;
+    --color-card: #fff;
+    --font-sans: 'Noto Sans JP', sans-serif;
+    --font-serif: 'Noto Serif JP', serif;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.9;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  header {
+    border-bottom: 1px solid var(--color-border);
+    padding: 24px 0;
+  }
+  
+  header nav {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-decoration: none;
+  }
+  
+  .logo span { color: var(--color-accent); }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+  
+  nav a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  
+  nav a:hover { color: var(--color-text); }
+  
+  .hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 24px 60px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  
+  .hero h1 span { color: var(--color-accent); }
+  
+  .hero p {
+    font-size: 16px;
+    color: var(--color-muted);
+    max-width: 520px;
+    margin: 0 auto 32px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: opacity 0.2s;
+  }
+  
+  .cta-button:hover { opacity: 0.85; }
+  
+  .features {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+  
+  .features h2 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  @media (max-width: 560px) {
+    .feature-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+  }
+  
+  .feature-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 24px;
+  }
+  
+  .feature-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 6px;
+  }
+  
+  .feature-card p {
+    font-size: 14px;
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  .data-policy {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .data-policy-box {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 24px 32px;
+  }
+
+  .data-policy-box h2 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 12px;
+  }
+
+  .data-policy-box p {
+    font-size: 14px;
+    color: var(--color-text);
+    margin-bottom: 8px;
+  }
+
+  .data-policy-box a {
+    color: var(--color-accent);
+  }
+  
+  footer {
+    border-top: 1px solid var(--color-border);
+    padding: 24px;
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 12px;
+  }
+  
+  footer a {
+    color: var(--color-muted);
+    text-decoration: none;
+    margin: 0 12px;
+  }
+  
+  footer a:hover { color: var(--color-text); }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/" class="logo">Tate<span>Gaki</span></a>
+    <ul>
+      <li><a href="/privacy.html">プライバシーポリシー</a></li>
+      <li><a href="/terms.html">利用規約</a></li>
+      <li><a href="/support.html">サポート</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Google Docsで<span>縦書き</span></h1>
+  <p>TateGakiは、Google Docs上で日本語の縦書き入力を実現するアドオンです。400字詰め・200字詰め原稿用紙で、小説やエッセイの執筆ができます。</p>
+  <a href="https://workspace.google.com/marketplace" class="cta-button">Google Workspace Marketplaceで入手</a>
+</section>
+
+<section class="features">
+  <h2>主な機能</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>原稿用紙モード</h3>
+      <p>400字詰め（20字×20行）と200字詰め（10字×20行）の原稿用紙レイアウト。オレンジ罫線の本格デザイン。</p>
+    </div>
+    <div class="feature-card">
+      <h3>縦書きエディタ</h3>
+      <p>ダイアログ内で直接縦書き入力。IME変換に完全対応し、快適な日本語入力を実現。</p>
+    </div>
+    <div class="feature-card">
+      <h3>ルビ入力</h3>
+      <p>原稿用紙モードでルビ（ふりがな）を入力可能。各列の右側にルビ欄を配置。</p>
+    </div>
+    <div class="feature-card">
+      <h3>禁則処理</h3>
+      <p>行頭禁則・行末禁則に対応。句読点や閉じ括弧が行頭に来ない自然な組版。</p>
+    </div>
+    <div class="feature-card">
+      <h3>Docsテーブル書き出し</h3>
+      <p>エディタの内容をGoogle Docsの本文に方眼テーブルとして書き出し。</p>
+    </div>
+    <div class="feature-card">
+      <h3>Google Drive保存</h3>
+      <p>作成した文書をマイドライブに保存・読み込み。上書き保存にも対応。</p>
+    </div>
+  </div>
+</section>
+
+<section class="data-policy">
+  <div class="data-policy-box">
+    <h2>ユーザーデータの取り扱いについて</h2>
+    <p>TateGakiは、<a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API サービスのユーザーデータポリシー</a>（Limited Use の要件を含む）に準拠しています。</p>
+    <p>本アドオンが取得するデータは、Google Docsへのテーブル書き出しとGoogle Driveへのファイル保存に必要な最小限の権限のみです。外部サーバーへのデータ送信は一切行いません。</p>
+    <p>詳細は<a href="/privacy.html">プライバシーポリシー</a>をご確認ください。</p>
+  </div>
+</section>
+
+<footer>
+  <p>
+    <a href="/privacy.html">プライバシーポリシー</a>
+    <a href="/terms.html">利用規約</a>
+    <a href="/support.html">サポート</a>
+  </p>
+  <p style="margin-top: 8px;">&copy; 2026 TateGaki. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

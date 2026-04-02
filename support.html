@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サポート — TateGaki</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+  
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --color-bg: #faf8f5;
+    --color-text: #2c2420;
+    --color-heading: #1a1210;
+    --color-accent: #c87a30;
+    --color-border: #e0d5c8;
+    --color-muted: #8a7e72;
+    --color-card: #fff;
+    --font-sans: 'Noto Sans JP', sans-serif;
+    --font-serif: 'Noto Serif JP', serif;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.9;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  header {
+    border-bottom: 1px solid var(--color-border);
+    padding: 24px 0;
+    margin-bottom: 48px;
+  }
+  
+  header nav {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-decoration: none;
+  }
+  
+  .logo span { color: var(--color-accent); }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+  
+  nav a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  
+  nav a:hover { color: var(--color-text); }
+  
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+  
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    color: var(--color-muted);
+    font-size: 15px;
+    margin-bottom: 48px;
+  }
+  
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+  
+  p { margin-bottom: 16px; }
+  
+  .faq-item {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+  }
+  
+  .faq-item summary {
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--color-heading);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  .faq-item summary::marker {
+    color: var(--color-accent);
+  }
+  
+  .faq-item p {
+    margin-top: 12px;
+    margin-bottom: 0;
+    color: var(--color-text);
+  }
+  
+  .contact-box {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 32px;
+    margin-top: 24px;
+  }
+  
+  .contact-box h3 {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--color-heading);
+  }
+  
+  .contact-email {
+    display: inline-block;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 15px;
+    color: var(--color-accent);
+    text-decoration: none;
+    margin-top: 4px;
+  }
+  
+  .contact-email:hover {
+    border-color: var(--color-accent);
+  }
+  
+  .note {
+    color: var(--color-muted);
+    font-size: 13px;
+    margin-top: 12px;
+  }
+  
+  footer {
+    border-top: 1px solid var(--color-border);
+    padding: 24px 0;
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/" class="logo">Tate<span>Gaki</span></a>
+    <ul>
+      <li><a href="/privacy.html">プライバシーポリシー</a></li>
+      <li><a href="/terms.html">利用規約</a></li>
+      <li><a href="/support.html">サポート</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>サポート</h1>
+  <p class="subtitle">TateGakiのご利用でお困りの際は、以下のよくあるご質問をご確認ください。</p>
+
+  <h2>使い方</h2>
+
+  <details class="faq-item">
+    <summary>TateGakiの使い方を教えてください</summary>
+    <p>Google Docsを開き、メニューから「拡張機能」→「TateGaki」→「縦書きエディタを開く」を選択すると、縦書きエディタのダイアログが開きます。ダイアログ内で直接縦書きの入力ができます。</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>原稿用紙モードの切り替え方法は？</summary>
+    <p>エディタ上部のツールバーで、「400字」「200字」「白地・縦」「白地・横」の各モードを切り替えられます。400字詰めは横向き（20字×20行）、200字詰めは縦向き（10字×20行）のレイアウトです。</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>ルビ（ふりがな）はどうやって入力しますか？</summary>
+    <p>原稿用紙モード（400字/200字）で、各列の右側にあるルビ欄をクリックすると、ルビ入力用のモーダルが表示されます。ルビを入力して確定すると、縮小表示されます。白地モードではルビ機能は利用できません。</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>作成した文書を保存するには？</summary>
+    <p>ツールバーの保存ボタンから、Google Driveのマイドライブ内「TateGaki」フォルダに保存できます。「名前を付けて保存」で新規ファイルとして保存、既存ファイルを開いている場合は上書き保存も可能です。</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Docsテーブルへの書き出しとは？</summary>
+    <p>エディタの内容を、Google Docsの本文に方眼テーブル（1セル1文字）として書き出す機能です。禁則処理済みのレイアウトがそのまま反映されます。書き出し前に、既存のDocs本文がクリアされる旨の確認が表示されます。</p>
+  </details>
+
+  <h2>トラブルシューティング</h2>
+
+  <details class="faq-item">
+    <summary>ダイアログが表示されません</summary>
+    <p>ブラウザのポップアップブロッカーが有効になっている場合、ダイアログが表示されないことがあります。Google Docsのドメインでポップアップを許可してください。また、ブラウザを再読み込みしてからもう一度お試しください。</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>文字の表示がおかしい・フォントが読み込まれない</summary>
+    <p>初回起動時はフォント（Noto Serif JP）の読み込みに数秒かかる場合があります。インターネット接続を確認の上、しばらくお待ちください。改善しない場合は、ダイアログを閉じてから再度開いてください。</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>保存したファイルが見つかりません</summary>
+    <p>保存ファイルはGoogle Driveのマイドライブ直下の「TateGaki」フォルダに保存されます。Google Driveを開き、「TateGaki」フォルダをご確認ください。ファイルの拡張子は .tategaki.json です。</p>
+  </details>
+
+  <h2>その他</h2>
+
+  <details class="faq-item">
+    <summary>対応ブラウザは？</summary>
+    <p>Google Chromeを推奨しています。その他のブラウザでも動作する場合がありますが、すべての機能の動作は保証しておりません。</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>スマートフォン・タブレットでは使えますか？</summary>
+    <p>本アドオンはPC版のGoogle Docs（ウェブ版）向けに設計されています。モバイル版Google Docsではアドオンの利用に制限があります。</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>アドオンを削除（アンインストール）するには？</summary>
+    <p>Google Docsのメニューから「拡張機能」→「アドオン」→「アドオンを管理」を選択し、TateGakiの「⋮」メニューから「アンインストール」を選択してください。Google Drive内の保存ファイルは削除されません。</p>
+  </details>
+
+  <h2>お問い合わせ</h2>
+
+  <div class="contact-box">
+    <h3>メールでのお問い合わせ</h3>
+    <p>上記のFAQで解決しない場合は、以下のメールアドレスまでお問い合わせください。</p>
+    <a href="mailto:support@tategaki.site" class="contact-email">support@tategaki.site</a>
+    <p class="note">※ 回答には数日いただく場合があります。</p>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 TateGaki. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
