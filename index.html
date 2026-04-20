@@ -6,9 +6,11 @@
 <title>TateGaki — Google Docsで縦書き</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
-  
+
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  
+
+  html { scroll-behavior: smooth; }
+
   :root {
     --color-bg: #faf8f5;
     --color-text: #2c2420;
@@ -20,7 +22,7 @@
     --font-sans: 'Noto Sans JP', sans-serif;
     --font-serif: 'Noto Serif JP', serif;
   }
-  
+
   body {
     font-family: var(--font-sans);
     background: var(--color-bg);
@@ -29,53 +31,137 @@
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
   }
-  
+
   header {
     border-bottom: 1px solid var(--color-border);
-    padding: 24px 0;
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    z-index: 100;
   }
-  
+
   header nav {
-    max-width: 720px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
   }
-  
+
   .logo {
     font-family: var(--font-serif);
     font-size: 20px;
     font-weight: 700;
     color: var(--color-heading);
     text-decoration: none;
+    flex-shrink: 0;
   }
-  
+
   .logo span { color: var(--color-accent); }
-  
-  nav ul {
+
+  .nav-links {
     list-style: none;
     display: flex;
-    gap: 24px;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
   }
-  
+
   nav a {
     color: var(--color-muted);
     text-decoration: none;
     font-size: 13px;
     transition: color 0.2s;
   }
-  
+
   nav a:hover { color: var(--color-text); }
-  
+
+  .nav-cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #fff !important;
+    text-decoration: none;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: opacity 0.2s, transform 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    flex-shrink: 0;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    padding: 16px 24px 20px;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: color 0.2s;
+  }
+
+  .mobile-menu a:hover { color: var(--color-text); }
+
+  .mobile-menu .nav-cta {
+    margin-top: 16px;
+    text-align: center;
+    border-bottom: none;
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  /* Hero */
   .hero {
     max-width: 720px;
     margin: 0 auto;
     padding: 80px 24px 60px;
     text-align: center;
   }
-  
+
   .hero h1 {
     font-family: var(--font-serif);
     font-size: 36px;
@@ -84,16 +170,16 @@
     margin-bottom: 16px;
     line-height: 1.4;
   }
-  
+
   .hero h1 span { color: var(--color-accent); }
-  
+
   .hero p {
     font-size: 16px;
     color: var(--color-muted);
     max-width: 520px;
     margin: 0 auto 32px;
   }
-  
+
   .cta-button {
     display: inline-block;
     background: var(--color-accent);
@@ -105,107 +191,46 @@
     font-weight: 700;
     transition: opacity 0.2s;
   }
-  
+
   .cta-button:hover { opacity: 0.85; }
-  
-  .features {
+
+  .hero-fomo {
+    margin-top: 12px;
+    font-size: 0.87em;
+    color: #888;
+    text-align: center;
+  }
+
+  /* Demo GIF */
+  .demo-section {
     max-width: 720px;
     margin: 0 auto;
-    padding: 0 24px 80px;
-  }
-  
-  .features h2 {
-    font-family: var(--font-serif);
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--color-heading);
+    padding: 0 24px 56px;
     text-align: center;
-    margin-bottom: 32px;
-  }
-  
-  .feature-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  
-  @media (max-width: 560px) {
-    .feature-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 28px; }
-  }
-  
-  .feature-card {
-    background: var(--color-card);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 24px;
-  }
-  
-  .feature-card h3 {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--color-heading);
-    margin-bottom: 6px;
-  }
-  
-  .feature-card p {
-    font-size: 14px;
-    color: var(--color-muted);
-    line-height: 1.7;
   }
 
-  .data-policy {
-    max-width: 720px;
+  .demo-section img {
+    display: block;
+    max-width: 640px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 24px 80px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
   }
 
-  .data-policy-box {
-    background: var(--color-card);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 24px 32px;
-  }
-
-  .data-policy-box h2 {
-    font-family: var(--font-serif);
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--color-heading);
-    margin-bottom: 12px;
-  }
-
-  .data-policy-box p {
-    font-size: 14px;
-    color: var(--color-text);
-    margin-bottom: 8px;
-  }
-
-  .data-policy-box a {
-    color: var(--color-accent);
-  }
-  
-  footer {
-    border-top: 1px solid var(--color-border);
-    padding: 24px;
+  .demo-caption {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #888;
     text-align: center;
-    color: var(--color-muted);
-    font-size: 12px;
   }
-  
-  footer a {
-    color: var(--color-muted);
-    text-decoration: none;
-    margin: 0 12px;
-  }
-  
-  footer a:hover { color: var(--color-text); }
 
-  /* ── Slideshow ── */
+  /* Slideshow */
   .slideshow-section {
     max-width: 760px;
     margin: 0 auto;
     padding: 0 24px 64px;
+    scroll-margin-top: 80px;
   }
 
   .slideshow-section h2 {
@@ -275,7 +300,6 @@
     line-height: 1;
     transition: background 0.2s, opacity 0.2s;
     z-index: 10;
-    /* keep arrow above caption area */
     margin-top: -20px;
   }
 
@@ -306,9 +330,150 @@
     transform: scale(1.2);
   }
 
+  /* Use Cases */
+  .use-cases {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    scroll-margin-top: 80px;
+  }
+
+  .use-cases h2 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  /* Features */
+  .features {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    scroll-margin-top: 80px;
+  }
+
+  .features h2 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .feature-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  .feature-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 6px;
+  }
+
+  .feature-card p {
+    font-size: 14px;
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  /* Install CTA */
+  .install-cta {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    text-align: center;
+    scroll-margin-top: 80px;
+  }
+
+  .install-cta h2 {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 12px;
+  }
+
+  .install-cta p {
+    font-size: 15px;
+    color: var(--color-muted);
+    margin-bottom: 24px;
+  }
+
+  .install-fomo {
+    margin-top: 12px;
+    font-size: 0.87em;
+    color: #888;
+  }
+
+  /* Data Policy */
+  .data-policy {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .data-policy-box {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 24px 32px;
+  }
+
+  .data-policy-box h2 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 12px;
+  }
+
+  .data-policy-box p {
+    font-size: 14px;
+    color: var(--color-text);
+    margin-bottom: 8px;
+  }
+
+  .data-policy-box a {
+    color: var(--color-accent);
+  }
+
+  footer {
+    border-top: 1px solid var(--color-border);
+    padding: 24px;
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 12px;
+  }
+
+  footer a {
+    color: var(--color-muted);
+    text-decoration: none;
+    margin: 0 12px;
+  }
+
+  footer a:hover { color: var(--color-text); }
+
+  /* Responsive */
   @media (max-width: 560px) {
+    .feature-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
     .slideshow-arrow { width: 30px; height: 30px; font-size: 15px; }
     .slide img { max-height: 280px; }
+    .install-cta h2 { font-size: 22px; }
   }
 </style>
 </head>
@@ -317,18 +482,36 @@
 <header>
   <nav>
     <a href="/" class="logo">Tate<span>Gaki</span></a>
-    <ul>
-      <li><a href="/privacy.html">プライバシーポリシー</a></li>
-      <li><a href="/terms.html">利用規約</a></li>
+    <ul class="nav-links">
+      <li><a href="#features">主な機能</a></li>
+      <li><a href="#use-cases">ユースケース</a></li>
       <li><a href="/support.html">サポート</a></li>
+      <li><a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 無料で入手</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a href="#features" class="mobile-nav-link">主な機能</a>
+    <a href="#use-cases" class="mobile-nav-link">ユースケース</a>
+    <a href="/support.html">サポート</a>
+    <a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 無料で入手</a>
+  </div>
 </header>
 
 <section class="hero">
   <h1>Google Docs™で<span>縦書き</span></h1>
   <p>TateGakiは、Google Docs上で日本語の縦書き入力を実現するアドオンです。400字詰め・200字詰め原稿用紙で、小説やエッセイの執筆ができます。</p>
-  <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button">Google Workspace Marketplaceで入手</a>
+  <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button" target="_blank" rel="noopener">Google Workspace Marketplaceで入手</a>
+  <p class="hero-fomo">現在無料公開中</p>
+</section>
+
+<section class="demo-section">
+  <img src="images/demo.gif" alt="TateGaki 動作デモ — Google Docsで縦書き入力" loading="lazy">
+  <p class="demo-caption">TateGaki 動作デモ — Google Docsで縦書き入力</p>
 </section>
 
 <section class="slideshow-section">
@@ -361,7 +544,29 @@
   <div class="slideshow-dots" id="dots"></div>
 </section>
 
-<section class="features">
+<section class="use-cases" id="use-cases">
+  <h2>こんな方に使ってほしい</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>📝 小説・同人誌の原稿執筆に</h3>
+      <p>Google Docsで400字詰め・200字詰め原稿用紙を使った縦書き執筆が可能に。ルビ・禁則処理も対応。</p>
+    </div>
+    <div class="feature-card">
+      <h3>🏫 国語の授業プリント・作文用紙の作成に</h3>
+      <p>先生が作文用紙や漢字テスト用紙を素早く作成・印刷できます。</p>
+    </div>
+    <div class="feature-card">
+      <h3>📄 縦書きの挨拶状・賞状・和文書類に</h3>
+      <p>Word不要。ブラウザだけで美しい縦書き文書が完成します。</p>
+    </div>
+    <div class="feature-card">
+      <h3>🌏 海外で日本語の縦書き文書を作りたい方に</h3>
+      <p>インストール不要、どこでもブラウザから使えます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
   <h2>主な機能</h2>
   <div class="feature-grid">
     <div class="feature-card">
@@ -382,7 +587,7 @@
     </div>
     <div class="feature-card">
       <h3>Docsテーブル書き出し</h3>
-      <p>エディタの内容をGoogle Docsの本文に方眼テーブルとして書き出し。</p>
+      <p>エディタの内容をGoogle Docs™の本文に方眼テーブルとして書き出し。</p>
     </div>
     <div class="feature-card">
       <h3>Google Drive™保存</h3>
@@ -391,11 +596,18 @@
   </div>
 </section>
 
+<section class="install-cta" id="install">
+  <h2>今すぐ無料でインストール</h2>
+  <p>Google Workspace Marketplaceからワンクリックでインストール可能です</p>
+  <a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="cta-button" target="_blank" rel="noopener">▶ 無料でインストール</a>
+  <p class="install-fomo">現在無料公開中</p>
+</section>
+
 <section class="data-policy">
   <div class="data-policy-box">
     <h2>ユーザーデータの取り扱いについて</h2>
     <p>TateGakiは、<a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API サービスのユーザーデータポリシー</a>（Limited Use の要件を含む）に準拠しています。</p>
-    <p>本アドオンが取得するデータは、Google Docsへのテーブル書き出しとGoogle Driveへのファイル保存に必要な最小限の権限のみです。外部サーバーへのデータ送信は一切行いません。</p>
+    <p>本アドオンが取得するデータは、Google Docs™へのテーブル書き出しとGoogle Drive™へのファイル保存に必要な最小限の権限のみです。外部サーバーへのデータ送信は一切行いません。</p>
     <p>詳細は<a href="/privacy.html">プライバシーポリシー</a>をご確認ください。</p>
   </div>
 </section>
@@ -412,13 +624,13 @@
 
 <script>
 (function() {
+  // Slideshow
   const slides = document.getElementById('slides');
   const dotsContainer = document.getElementById('dots');
   const total = document.querySelectorAll('.slide').length;
   let current = 0;
   let timer;
 
-  // Build dots
   for (let i = 0; i < total; i++) {
     const dot = document.createElement('button');
     dot.className = 'slideshow-dot' + (i === 0 ? ' active' : '');
@@ -445,6 +657,27 @@
   document.getElementById('next').addEventListener('click', () => goTo(current + 1));
 
   resetTimer();
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileMenu.setAttribute('aria-hidden', !isOpen);
+  });
+
+  // Close mobile menu on nav link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobileMenu.setAttribute('aria-hidden', true);
+    });
+  });
 })();
 </script>
 </body>
