@@ -3,7 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TateGaki — Google Docsで縦書き</title>
+<title>Googleドキュメントで縦書き｜無料アドオン TateGaki（原稿用紙・ルビ・禁則処理対応）</title>
+<meta name="description" content="Googleドキュメント（Google Docs）で縦書きができる無料アドオン TateGaki。400字詰め・200字詰め原稿用紙、ルビ（ふりがな）、禁則処理に対応。小説・同人誌・作文プリント・和文書類の執筆に。">
+<!-- Open Graph -->
+<meta property="og:title" content="Googleドキュメントで縦書き｜無料アドオン TateGaki">
+<meta property="og:description" content="Googleドキュメント（Google Docs）で縦書きができる無料アドオン。400字詰め原稿用紙・ルビ・禁則処理対応。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tategaki.site/">
+<meta property="og:site_name" content="TateGaki">
+<meta property="og:locale" content="ja_JP">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Googleドキュメントで縦書き｜無料アドオン TateGaki">
+<meta name="twitter:description" content="Googleドキュメント（Google Docs）で縦書きができる無料アドオン。400字詰め原稿用紙・ルビ・禁則処理対応。">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
 
@@ -419,6 +431,67 @@
     color: #888;
   }
 
+  /* FAQ */
+  .faq {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    scroll-margin-top: 80px;
+  }
+
+  .faq h2 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-q {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px 24px;
+  }
+
+  .faq-q h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+  .faq-q p {
+    font-size: 14px;
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+
+  .faq-more {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--color-muted);
+  }
+
+  .faq-more a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .faq-more a:hover {
+    text-decoration: underline;
+  }
+
   /* Data Policy */
   .data-policy {
     max-width: 720px;
@@ -485,6 +558,7 @@
     <ul class="nav-links">
       <li><a href="#features">主な機能</a></li>
       <li><a href="#use-cases">ユースケース</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="/support.html">サポート</a></li>
       <li><a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 無料で入手</a></li>
     </ul>
@@ -497,14 +571,15 @@
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <a href="#features" class="mobile-nav-link">主な機能</a>
     <a href="#use-cases" class="mobile-nav-link">ユースケース</a>
+    <a href="#faq" class="mobile-nav-link">FAQ</a>
     <a href="/support.html">サポート</a>
     <a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 無料で入手</a>
   </div>
 </header>
 
 <section class="hero">
-  <h1>Google Docs™で<span>縦書き</span></h1>
-  <p>TateGakiは、Google Docs上で日本語の縦書き入力を実現するアドオンです。400字詰め・200字詰め原稿用紙で、小説やエッセイの執筆ができます。</p>
+  <h1>Googleドキュメント（Google Docs™）で<span>縦書き</span></h1>
+  <p>TateGakiは、Googleドキュメント（Google Docs）で縦書きを実現する無料アドオンです。400字詰め・200字詰め原稿用紙、ルビ、禁則処理に対応。小説・同人誌・作文プリント・和文書類の執筆にお使いいただけます。</p>
   <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button" target="_blank" rel="noopener">Google Workspace Marketplaceで入手</a>
   <p class="hero-fomo">現在無料公開中</p>
 </section>
@@ -601,6 +676,33 @@
   <p>Google Workspace Marketplaceからワンクリックでインストール可能です</p>
   <a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="cta-button" target="_blank" rel="noopener">▶ 無料でインストール</a>
   <p class="install-fomo">現在無料公開中</p>
+</section>
+
+<section class="faq" id="faq">
+  <h2>よくある質問</h2>
+  <div class="faq-list">
+    <div class="faq-q">
+      <h3>Q. Googleドキュメントで縦書きはできますか？</h3>
+      <p>A. Googleドキュメントの標準機能では縦書きはできません。TateGakiをインストールすると、Googleドキュメント上で縦書き入力・原稿用紙レイアウトが使えるようになります。</p>
+    </div>
+    <div class="faq-q">
+      <h3>Q. 原稿用紙（400字詰め）には対応していますか？</h3>
+      <p>A. 400字詰め（20字×20行）と200字詰め（10字×20行）の両方に対応しています。</p>
+    </div>
+    <div class="faq-q">
+      <h3>Q. ルビ（ふりがな）は入れられますか？</h3>
+      <p>A. 対応しています。原稿用紙モードで各列の右側にルビ欄が表示されます。</p>
+    </div>
+    <div class="faq-q">
+      <h3>Q. 禁則処理はされますか？</h3>
+      <p>A. 日本語の禁則処理（行頭禁則・行末禁則）に対応しています。</p>
+    </div>
+    <div class="faq-q">
+      <h3>Q. TateGakiは無料で使えますか？</h3>
+      <p>A. はい、TateGakiは現在無料で公開しています。Google Workspace Marketplaceからワンクリックでインストールできます。</p>
+    </div>
+  </div>
+  <p class="faq-more">その他のご質問は <a href="support.html">サポートページ</a> をご覧ください。</p>
 </section>
 
 <section class="data-policy">
