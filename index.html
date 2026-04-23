@@ -402,6 +402,96 @@
     line-height: 1.7;
   }
 
+  /* Dev Story */
+  .dev-story {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    scroll-margin-top: 80px;
+  }
+
+  .dev-story h2 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .story-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .story-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(44,36,32,0.10);
+  }
+
+  .story-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  .story-badge.note {
+    background: #E6F4EA;
+    color: #2a7a43;
+  }
+
+  .story-badge.qiita {
+    background: #EBF7D4;
+    color: #4a9b00;
+  }
+
+  .story-card h3 {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-heading);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .story-card p {
+    font-size: 14px;
+    color: var(--color-muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+    flex-grow: 1;
+  }
+
+  .story-card-btn {
+    align-self: flex-start;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .story-card:hover .story-card-btn { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .story-grid { grid-template-columns: 1fr; }
+  }
+
   /* Install CTA */
   .install-cta {
     max-width: 720px;
@@ -668,6 +758,24 @@
       <h3>Google Drive™保存</h3>
       <p>作成した文書をマイドライブに保存・読み込み。上書き保存にも対応。</p>
     </div>
+  </div>
+</section>
+
+<section class="dev-story" id="dev-story">
+  <h2>開発ストーリーを読む</h2>
+  <div class="story-grid">
+    <a class="story-card" href="https://note.com/tategaki_dev/n/n72262d247671" target="_blank" rel="noopener noreferrer" aria-label="note記事「Google Docsに縦書きがない」を新しいタブで開く">
+      <span class="story-badge note">📖 note</span>
+      <h3>「Google Docsに縦書きがない」— 子供の宿題で気づいて、Claudeで作った話</h3>
+      <p>コード未経験から2ヶ月でアドオン公開までの体験記。子供の宿題がきっかけのストーリー。</p>
+      <span class="story-card-btn">▶ 読む</span>
+    </a>
+    <a class="story-card" href="https://qiita.com/TateGaki/items/770a64b8fb490816a50f" target="_blank" rel="noopener noreferrer" aria-label="Qiita記事「コード未経験者がClaudeでGoogle DocsアドオンをMarketplace公開するまで」を新しいタブで開く">
+      <span class="story-badge qiita">🔧 Qiita</span>
+      <h3>コード未経験者がClaudeでGoogle DocsアドオンをMarketplace公開するまで</h3>
+      <p>技術的な実装・GAS・Marketplace審査通過までの開発ログ。エンジニア向け詳細解説。</p>
+      <span class="story-card-btn">▶ 読む</span>
+    </a>
   </div>
 </section>
 
