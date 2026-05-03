@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Googleドキュメントで縦書き｜無料アドオン TateGaki（原稿用紙・ルビ・禁則処理対応）</title>
-<meta name="description" content="Googleドキュメント（Google Docs）で縦書きができる無料アドオン TateGaki。400字詰め・200字詰め原稿用紙、ルビ（ふりがな）、禁則処理に対応。小説・同人誌・作文プリント・和文書類の執筆に。">
+<title>TateGaki - Vertical Writing Add-on for Google Docs</title>
+<meta name="description" content="Free Google Docs add-on for Japanese vertical writing. Manuscript paper layout, ruby annotations, and proper line-breaking rules. Built by an indie developer with Claude.">
 <meta name="application-name" content="TateGaki">
-<link rel="canonical" href="https://tategaki.site/">
+<link rel="canonical" href="https://tategaki.site/en/">
 <link rel="alternate" hreflang="ja" href="https://tategaki.site/">
 <link rel="alternate" hreflang="en" href="https://tategaki.site/en/">
 <link rel="alternate" hreflang="x-default" href="https://tategaki.site/">
 <!-- Open Graph -->
-<meta property="og:title" content="Googleドキュメントで縦書き｜無料アドオン TateGaki">
-<meta property="og:description" content="Googleドキュメント（Google Docs）で縦書きができる無料アドオン。400字詰め原稿用紙・ルビ・禁則処理対応。">
+<meta property="og:title" content="TateGaki - Vertical Writing Add-on for Google Docs">
+<meta property="og:description" content="Free Google Docs add-on for Japanese vertical writing. Manuscript paper, ruby (furigana), and proper line-breaking rules.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://tategaki.site/">
+<meta property="og:url" content="https://tategaki.site/en/">
 <meta property="og:site_name" content="TateGaki">
-<meta property="og:locale" content="ja_JP">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Googleドキュメントで縦書き｜無料アドオン TateGaki">
-<meta name="twitter:description" content="Googleドキュメント（Google Docs）で縦書きができる無料アドオン。400字詰め原稿用紙・ルビ・禁則処理対応。">
+<meta name="twitter:title" content="TateGaki - Vertical Writing Add-on for Google Docs">
+<meta name="twitter:description" content="Free Google Docs add-on for Japanese vertical writing. Manuscript paper, ruby (furigana), and proper line-breaking rules.">
 <!-- Structured Data: SoftwareApplication + Publisher -->
 <script type="application/ld+json">
 {
@@ -33,10 +34,10 @@
       "applicationCategory": "ProductivityApplication",
       "operatingSystem": "Web",
       "isAccessibleForFree": true,
-      "url": "https://tategaki.site/",
+      "url": "https://tategaki.site/en/",
       "downloadUrl": "https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478",
       "inLanguage": ["ja", "en"],
-      "description": "TateGaki is a free Google Docs add-on for Japanese vertical writing (tategaki). It supports genkō yōshi manuscript paper layouts, ruby text (furigana), and kinsoku shori (Japanese line-breaking rules), making it easier to write novels, school printouts, and formal documents directly in Google Docs.",
+      "description": "TateGaki is a free Google Docs add-on for Japanese vertical writing (tategaki). It supports genkō yōshi manuscript paper layouts (400 and 200 character grids), ruby text (furigana), and kinsoku shori (Japanese line-breaking rules), so you can write novels, school worksheets, and formal Japanese documents directly in Google Docs.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -490,8 +491,10 @@
 
   .story-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 16px;
+    max-width: 540px;
+    margin: 0 auto;
   }
 
   .story-card {
@@ -519,11 +522,6 @@
     padding: 4px 10px;
     border-radius: 999px;
     margin-bottom: 14px;
-  }
-
-  .story-badge.note {
-    background: #E6F4EA;
-    color: #2a7a43;
   }
 
   .story-badge.qiita {
@@ -556,10 +554,6 @@
   }
 
   .story-card:hover .story-card-btn { text-decoration: underline; }
-
-  @media (max-width: 768px) {
-    .story-grid { grid-template-columns: 1fr; }
-  }
 
   /* Install CTA */
   .install-cta {
@@ -722,198 +716,192 @@
 
 <header>
   <nav>
-    <a href="/" class="logo">Tate<span>Gaki</span></a>
+    <a href="/en/" class="logo">Tate<span>Gaki</span></a>
     <ul class="nav-links">
-      <li><a href="#features">主な機能</a></li>
-      <li><a href="#use-cases">ユースケース</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#use-cases">Use cases</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="/support.html">サポート</a></li>
+      <li><a href="/en/support.html">Support</a></li>
       <li class="lang-switch">
-        <span class="current" aria-current="true">🇯🇵 日本語</span>
+        <a href="/" hreflang="ja" lang="ja">🇯🇵 日本語</a>
         <span class="sep">/</span>
-        <a href="/en/" hreflang="en" lang="en">🇬🇧 English</a>
+        <span class="current" aria-current="true">🇬🇧 English</span>
       </li>
-      <li><a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 無料で入手</a></li>
+      <li><a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 Get it free</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </nav>
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <a href="#features" class="mobile-nav-link">主な機能</a>
-    <a href="#use-cases" class="mobile-nav-link">ユースケース</a>
+    <a href="#features" class="mobile-nav-link">Features</a>
+    <a href="#use-cases" class="mobile-nav-link">Use cases</a>
     <a href="#faq" class="mobile-nav-link">FAQ</a>
-    <a href="/support.html">サポート</a>
-    <a href="/en/" hreflang="en" lang="en">🇬🇧 English</a>
-    <a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 無料で入手</a>
+    <a href="/en/support.html">Support</a>
+    <a href="/" hreflang="ja" lang="ja">🇯🇵 日本語</a>
+    <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 Get it free</a>
   </div>
 </header>
 
 <section class="hero">
-  <h1>Googleドキュメント（Google Docs™）で<span>縦書き</span></h1>
-  <p>TateGakiは、Googleドキュメント（Google Docs）で縦書きを実現する無料アドオンです。400字詰め・200字詰め原稿用紙、ルビ、禁則処理に対応。小説・同人誌・作文プリント・和文書類の執筆にお使いいただけます。</p>
-  <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button" target="_blank" rel="noopener">Google Workspace Marketplaceで入手</a>
-  <p class="hero-fomo">現在無料公開中</p>
+  <h1><span>Vertical writing</span> for Google Docs™</h1>
+  <p>TateGaki is a free Google Docs add-on that brings Japanese vertical writing (tategaki) to Google Docs. Manuscript paper (400/200-character grids), ruby (furigana), and proper line-breaking rules — all inside a clean editor dialog.</p>
+  <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button" target="_blank" rel="noopener">Get it on Google Workspace Marketplace</a>
+  <p class="hero-fomo">Free during current release</p>
 </section>
 
 <section class="demo-section">
-  <img src="images/demo.gif" alt="TateGaki 動作デモ — Google Docsで縦書き入力" loading="lazy">
-  <p class="demo-caption">TateGaki 動作デモ — Google Docsで縦書き入力</p>
+  <img src="/images/demo.gif" alt="TateGaki demo — vertical writing in Google Docs" loading="lazy">
+  <p class="demo-caption">TateGaki demo — vertical writing in Google Docs</p>
 </section>
 
 <section class="slideshow-section">
   <div class="slideshow" id="slideshow">
     <div class="slides" id="slides">
       <div class="slide">
-        <img src="images/01_400字詰め原稿用紙.png" alt="400字詰め原稿用紙メイン画面">
-        <p class="slide-caption">400字詰め原稿用紙メイン画面</p>
+        <img src="/images/01_400字詰め原稿用紙.png" alt="400-character genkō yōshi (manuscript paper) main view">
+        <p class="slide-caption">400-character genkō yōshi — main view</p>
       </div>
       <div class="slide">
-        <img src="images/02_200字詰め原稿用紙.png" alt="200字詰め原稿用紙">
-        <p class="slide-caption">200字詰め原稿用紙</p>
+        <img src="/images/02_200字詰め原稿用紙.png" alt="200-character genkō yōshi (manuscript paper)">
+        <p class="slide-caption">200-character genkō yōshi</p>
       </div>
       <div class="slide">
-        <img src="images/03_ルビ入力.png" alt="ルビ入力モーダル">
-        <p class="slide-caption">ルビ入力モーダル</p>
+        <img src="/images/03_ルビ入力.png" alt="Ruby (furigana) input modal">
+        <p class="slide-caption">Ruby (furigana) input modal</p>
       </div>
       <div class="slide">
-        <img src="images/04_Docsテーブル書き出し.png" alt="Docsテーブル書き出し結果">
-        <p class="slide-caption">Docsテーブル書き出し結果</p>
+        <img src="/images/04_Docsテーブル書き出し.png" alt="Export to Google Docs as a grid table">
+        <p class="slide-caption">Export to Google Docs as a grid table</p>
       </div>
       <div class="slide">
-        <img src="images/05_GoogleDriveファイル一覧.png" alt="Google Driveファイル一覧モーダル">
-        <p class="slide-caption">Google Driveファイル一覧モーダル</p>
+        <img src="/images/05_GoogleDriveファイル一覧.png" alt="Google Drive file picker modal">
+        <p class="slide-caption">Google Drive file picker</p>
       </div>
     </div>
-    <button class="slideshow-arrow prev" id="prev" aria-label="前へ">&#8249;</button>
-    <button class="slideshow-arrow next" id="next" aria-label="次へ">&#8250;</button>
+    <button class="slideshow-arrow prev" id="prev" aria-label="Previous">&#8249;</button>
+    <button class="slideshow-arrow next" id="next" aria-label="Next">&#8250;</button>
   </div>
   <div class="slideshow-dots" id="dots"></div>
 </section>
 
 <section class="use-cases" id="use-cases">
-  <h2>こんな方に使ってほしい</h2>
+  <h2>Who it's for</h2>
   <div class="feature-grid">
     <div class="feature-card">
-      <h3>📝 小説・同人誌の原稿執筆に</h3>
-      <p>Google Docsで400字詰め・200字詰め原稿用紙を使った縦書き執筆が可能に。ルビ・禁則処理も対応。</p>
+      <h3>📝 For novelists and dōjin writers</h3>
+      <p>Write in 400/200-character genkō yōshi with proper vertical layout. Ruby and kinsoku shori included.</p>
     </div>
     <div class="feature-card">
-      <h3>🏫 国語の授業プリント・作文用紙の作成に</h3>
-      <p>先生が作文用紙や漢字テスト用紙を素早く作成・印刷できます。</p>
+      <h3>🏫 For Japanese language teachers (worksheets, manuscript paper)</h3>
+      <p>Quickly produce essay sheets and kanji practice paper, ready to print.</p>
     </div>
     <div class="feature-card">
-      <h3>📄 縦書きの挨拶状・賞状・和文書類に</h3>
-      <p>Word不要。ブラウザだけで美しい縦書き文書が完成します。</p>
+      <h3>📄 For formal Japanese documents (greetings, certificates)</h3>
+      <p>No Word required — make beautiful vertical Japanese documents in your browser.</p>
     </div>
     <div class="feature-card">
-      <h3>🌏 海外で日本語の縦書き文書を作りたい方に</h3>
-      <p>インストール不要、どこでもブラウザから使えます。</p>
+      <h3>🌏 For Japanese speakers abroad who need vertical-writing documents</h3>
+      <p>Nothing to install locally. Use it from any browser, anywhere in the world.</p>
     </div>
   </div>
 </section>
 
 <section class="features" id="features">
-  <h2>主な機能</h2>
+  <h2>Features</h2>
   <div class="feature-grid">
     <div class="feature-card">
-      <h3>原稿用紙モード</h3>
-      <p>400字詰め（20字×20行）と200字詰め（10字×20行）の原稿用紙レイアウト。オレンジ罫線の本格デザイン。</p>
+      <h3>Manuscript paper modes</h3>
+      <p>400-character (20×20) and 200-character (10×20) genkō yōshi layouts, with proper orange grid styling.</p>
     </div>
     <div class="feature-card">
-      <h3>縦書きエディタ</h3>
-      <p>ダイアログ内で直接縦書き入力。IME変換に完全対応し、快適な日本語入力を実現。</p>
+      <h3>Vertical editor</h3>
+      <p>Type vertically right inside the dialog. Full IME support for comfortable Japanese input.</p>
     </div>
     <div class="feature-card">
-      <h3>ルビ入力</h3>
-      <p>原稿用紙モードでルビ（ふりがな）を入力可能。各列の右側にルビ欄を配置。</p>
+      <h3>Ruby (furigana)</h3>
+      <p>Add ruby annotations alongside each column in manuscript paper mode.</p>
     </div>
     <div class="feature-card">
-      <h3>禁則処理</h3>
-      <p>行頭禁則・行末禁則に対応。句読点や閉じ括弧が行頭に来ない自然な組版。</p>
+      <h3>Line-breaking rules</h3>
+      <p>Proper kinsoku shori — punctuation and closing brackets never start a line.</p>
     </div>
     <div class="feature-card">
-      <h3>Docsテーブル書き出し</h3>
-      <p>エディタの内容をGoogle Docs™の本文に方眼テーブルとして書き出し。</p>
+      <h3>Export to Google Docs table</h3>
+      <p>Write the editor's content out to your Google Doc as a grid table (one cell per character).</p>
     </div>
     <div class="feature-card">
-      <h3>Google Drive™保存</h3>
-      <p>作成した文書をマイドライブに保存・読み込み。上書き保存にも対応。</p>
+      <h3>Google Drive save</h3>
+      <p>Save and load documents from your Drive, with overwrite support for in-progress work.</p>
     </div>
   </div>
 </section>
 
 <section class="dev-story" id="dev-story">
-  <h2>開発ストーリーを読む</h2>
+  <h2>Read the dev story</h2>
   <div class="story-grid">
-    <a class="story-card" href="https://note.com/tategaki_dev/n/n72262d247671" target="_blank" rel="noopener noreferrer" aria-label="note記事「Google Docsに縦書きがない」を新しいタブで開く">
-      <span class="story-badge note">📖 note</span>
-      <h3>「Google Docsに縦書きがない」— 子供の宿題で気づいて、Claudeで作った話</h3>
-      <p>コード未経験から2ヶ月でアドオン公開までの体験記。子供の宿題がきっかけのストーリー。</p>
-      <span class="story-card-btn">▶ 読む</span>
-    </a>
-    <a class="story-card" href="https://qiita.com/TateGaki/items/770a64b8fb490816a50f" target="_blank" rel="noopener noreferrer" aria-label="Qiita記事「コード未経験者がClaudeでGoogle DocsアドオンをMarketplace公開するまで」を新しいタブで開く">
-      <span class="story-badge qiita">🔧 Qiita</span>
-      <h3>コード未経験者がClaudeでGoogle DocsアドオンをMarketplace公開するまで</h3>
-      <p>技術的な実装・GAS・Marketplace審査通過までの開発ログ。エンジニア向け詳細解説。</p>
-      <span class="story-card-btn">▶ 読む</span>
+    <a class="story-card" href="https://qiita.com/TateGaki/items/770a64b8fb490816a50f" target="_blank" rel="noopener noreferrer" aria-label="Open the Qiita article (Japanese) about building TateGaki with Claude in a new tab">
+      <span class="story-badge qiita">🔧 Qiita (Japanese)</span>
+      <h3>Building a Google Docs vertical-writing add-on with Claude — from no coding background to Marketplace launch</h3>
+      <p>Technical write-up covering Apps Script, the Marketplace review, and the Claude-driven workflow that got it shipped. Original article in Japanese.</p>
+      <span class="story-card-btn">▶ Read</span>
     </a>
   </div>
 </section>
 
 <section class="install-cta" id="install">
-  <h2>今すぐ無料でインストール</h2>
-  <p>Google Workspace Marketplaceからワンクリックでインストール可能です</p>
-  <a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="cta-button" target="_blank" rel="noopener">▶ 無料でインストール</a>
-  <p class="install-fomo">現在無料公開中</p>
+  <h2>Install free now</h2>
+  <p>One click to install from the Google Workspace Marketplace.</p>
+  <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button" target="_blank" rel="noopener">▶ Install free</a>
+  <p class="install-fomo">Free during current release</p>
 </section>
 
 <section class="faq" id="faq">
-  <h2>よくある質問</h2>
+  <h2>FAQ</h2>
   <div class="faq-list">
     <div class="faq-q">
-      <h3>Q. Googleドキュメントで縦書きはできますか？</h3>
-      <p>A. Googleドキュメントの標準機能では縦書きはできません。TateGakiをインストールすると、Googleドキュメント上で縦書き入力・原稿用紙レイアウトが使えるようになります。</p>
+      <h3>Q. Can Google Docs do vertical writing?</h3>
+      <p>A. Not out of the box. Once you install TateGaki, you get vertical writing and manuscript paper layouts inside a dialog in Google Docs.</p>
     </div>
     <div class="faq-q">
-      <h3>Q. 原稿用紙（400字詰め）には対応していますか？</h3>
-      <p>A. 400字詰め（20字×20行）と200字詰め（10字×20行）の両方に対応しています。</p>
+      <h3>Q. Does it support 400-character manuscript paper?</h3>
+      <p>A. Yes — both 400-character (20×20) and 200-character (10×20) genkō yōshi layouts are supported.</p>
     </div>
     <div class="faq-q">
-      <h3>Q. ルビ（ふりがな）は入れられますか？</h3>
-      <p>A. 対応しています。原稿用紙モードで各列の右側にルビ欄が表示されます。</p>
+      <h3>Q. Can I add ruby (furigana)?</h3>
+      <p>A. Yes. In manuscript paper mode, each column has a ruby field on its right side.</p>
     </div>
     <div class="faq-q">
-      <h3>Q. 禁則処理はされますか？</h3>
-      <p>A. 日本語の禁則処理（行頭禁則・行末禁則）に対応しています。</p>
+      <h3>Q. Does it apply Japanese line-breaking rules (kinsoku shori)?</h3>
+      <p>A. Yes — both line-start and line-end kinsoku rules are applied automatically.</p>
     </div>
     <div class="faq-q">
-      <h3>Q. TateGakiは無料で使えますか？</h3>
-      <p>A. はい、TateGakiは現在無料で公開しています。Google Workspace Marketplaceからワンクリックでインストールできます。</p>
+      <h3>Q. Is TateGaki free?</h3>
+      <p>A. Yes. TateGaki is free to install from the Google Workspace Marketplace.</p>
     </div>
   </div>
-  <p class="faq-more">その他のご質問は <a href="support.html">サポートページ</a> をご覧ください。</p>
+  <p class="faq-more">For more questions, see the <a href="/en/support.html">support page</a>.</p>
 </section>
 
 <section class="data-policy">
   <div class="data-policy-box">
-    <h2>ユーザーデータの取り扱いについて</h2>
-    <p>TateGakiは、<a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API サービスのユーザーデータポリシー</a>（Limited Use の要件を含む）に準拠しています。</p>
-    <p>本アドオンが取得するデータは、Google Docs™へのテーブル書き出しとGoogle Drive™へのファイル保存に必要な最小限の権限のみです。外部サーバーへのデータ送信は一切行いません。</p>
-    <p>詳細は<a href="/privacy.html">プライバシーポリシー</a>をご確認ください。</p>
+    <h2>How we handle your data</h2>
+    <p>TateGaki complies with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+    <p>This add-on requests only the minimum permissions needed to write tables to Google Docs™ and save files to Google Drive™. No user data is sent to any external server.</p>
+    <p>See the <a href="/privacy.html">Privacy Policy</a> (Japanese) for details.</p>
   </div>
 </section>
 
 <footer>
   <p>
-    <a href="/privacy.html">プライバシーポリシー</a>
-    <a href="/terms.html">利用規約</a>
-    <a href="/support.html">サポート</a>
+    <a href="/privacy.html">Privacy Policy (JA)</a>
+    <a href="/terms.html">Terms of Service (JA)</a>
+    <a href="/en/support.html">Support</a>
   </p>
   <p style="margin-top: 8px;">&copy; 2026 TateGaki. All rights reserved.</p>
-  <p class="trademark-notice" style="margin-top: 8px; font-size: 11px;">Google Docs および Google Drive は Google LLC の商標です。</p>
+  <p class="trademark-notice" style="margin-top: 8px; font-size: 11px;">Google Docs and Google Drive are trademarks of Google LLC.</p>
 </footer>
 
 <script>
@@ -928,7 +916,7 @@
   for (let i = 0; i < total; i++) {
     const dot = document.createElement('button');
     dot.className = 'slideshow-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', (i + 1) + '枚目');
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
     dot.addEventListener('click', () => goTo(i));
     dotsContainer.appendChild(dot);
   }
