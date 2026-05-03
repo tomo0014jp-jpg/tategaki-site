@@ -186,6 +186,68 @@
     cursor: default;
   }
 
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    flex-shrink: 0;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    padding: 16px 24px 20px;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: color 0.2s;
+  }
+
+  .mobile-menu a:hover { color: var(--color-text); }
+
+  .mobile-menu .lang-switch {
+    padding: 14px 0 4px;
+    font-size: 14px;
+  }
+
+  .mobile-menu .lang-switch a {
+    padding: 0;
+    border: none;
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+
   main {
     max-width: 720px;
     margin: 0 auto;
@@ -303,7 +365,7 @@
 <header>
   <nav>
     <a href="/en/" class="logo">Tate<span>Gaki</span></a>
-    <ul>
+    <ul class="nav-links">
       <li><a href="/privacy.html">Privacy Policy (JA)</a></li>
       <li><a href="/terms.html">Terms (JA)</a></li>
       <li><a href="/en/support.html">Support</a></li>
@@ -313,7 +375,22 @@
         <span class="current" aria-current="true">🇬🇧 English</span>
       </li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a href="/en/support.html">Support</a>
+    <a href="/terms.html">Terms (JA)</a>
+    <a href="/privacy.html">Privacy Policy (JA)</a>
+    <div class="lang-switch">
+      <a href="/support.html" hreflang="ja" lang="ja">🇯🇵 日本語</a>
+      <span class="sep">/</span>
+      <span class="current" aria-current="true">🇬🇧 English</span>
+    </div>
+  </div>
 </header>
 
 <main>
@@ -411,5 +488,27 @@
   <p style="margin-top: 8px; font-size: 11px;">Google Docs and Google Drive are trademarks of Google LLC.</p>
 </footer>
 
+<script>
+(function() {
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileMenu.setAttribute('aria-hidden', !isOpen);
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobileMenu.setAttribute('aria-hidden', true);
+    });
+  });
+})();
+</script>
 </body>
 </html>
