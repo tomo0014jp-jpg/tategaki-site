@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support - TateGaki</title>
+<meta name="description" content="Support page for TateGaki, the free Google Docs add-on for Japanese vertical writing. How-to guides, FAQ, troubleshooting, and contact info.">
+<link rel="canonical" href="https://tategaki.site/en/support.html">
+<link rel="alternate" hreflang="ja" href="https://tategaki.site/support.html">
+<link rel="alternate" hreflang="en" href="https://tategaki.site/en/support.html">
+<link rel="alternate" hreflang="x-default" href="https://tategaki.site/support.html">
+<!-- Open Graph -->
+<meta property="og:title" content="Support - TateGaki">
+<meta property="og:description" content="Support and FAQ for TateGaki, the free Google Docs vertical-writing add-on.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tategaki.site/en/support.html">
+<meta property="og:site_name" content="TateGaki">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<!-- Structured Data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can Google Docs do vertical writing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google Docs does not support vertical writing out of the box. Once you install the TateGaki add-on, you can use vertical writing — including manuscript paper and blank canvas modes — directly inside Google Docs. TateGaki is free to install from the Google Workspace Marketplace."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't Google Docs support vertical writing natively?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google Docs is built around horizontal writing, so vertical input isn't part of its standard feature set. TateGaki is an add-on that fills this gap: you can type vertically inside a dialog and export the result back into your Google Doc."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is TateGaki free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All features are currently free. Some features may become paid in the future, but for now the full vertical-writing environment is available at no cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add ruby (furigana)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In manuscript paper mode (400 or 200 character), click the ruby field on the right side of any column to open the ruby input modal. Once entered, the ruby is shown in reduced size next to the base characters. Ruby is not available in blank canvas mode."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I switch manuscript paper modes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the toolbar at the top of the editor to switch between '400-character', '200-character', 'Blank vertical', and 'Blank horizontal' modes. The 400-character grid is landscape (20×20) and the 200-character grid is portrait (10×20)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I use TateGaki?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open Google Docs, then choose Extensions → TateGaki → Open vertical editor from the menu. The vertical editor opens as a dialog where you can type in vertical layout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I save my document?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the save button in the toolbar. Files are saved to a TateGaki folder in your Google Drive (My Drive). Use 'Save as' for new files; if you have an existing file open, you can also save over it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does 'Export to Google Docs table' do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It writes the editor's content into your Google Doc as a grid table — one cell per character — preserving the kinsoku-shori (line-breaking) layout. Before exporting, a confirmation prompt warns you that the existing content of your Google Doc will be cleared."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --color-bg: #faf8f5;
+    --color-text: #2c2420;
+    --color-heading: #1a1210;
+    --color-accent: #c87a30;
+    --color-border: #e0d5c8;
+    --color-muted: #8a7e72;
+    --color-card: #fff;
+    --font-sans: 'Noto Sans JP', sans-serif;
+    --font-serif: 'Noto Serif JP', serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.9;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    border-bottom: 1px solid var(--color-border);
+    padding: 24px 0;
+    margin-bottom: 48px;
+  }
+
+  header nav {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-decoration: none;
+  }
+
+  .logo span { color: var(--color-accent); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--color-text); }
+
+  /* Language switcher */
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .lang-switch a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.2s;
+  }
+
+  .lang-switch a:hover { color: var(--color-text); }
+
+  .lang-switch .current,
+  .lang-switch .sep {
+    color: var(--color-muted);
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    color: var(--color-muted);
+    font-size: 15px;
+    margin-bottom: 48px;
+  }
+
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+
+  p { margin-bottom: 16px; }
+
+  .faq-item {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+  }
+
+  .faq-item summary {
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--color-heading);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .faq-item summary::marker {
+    color: var(--color-accent);
+  }
+
+  .faq-item p {
+    margin-top: 12px;
+    margin-bottom: 0;
+    color: var(--color-text);
+  }
+
+  .contact-box {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 32px;
+    margin-top: 24px;
+  }
+
+  .contact-box h3 {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--color-heading);
+  }
+
+  .contact-email {
+    display: inline-block;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 15px;
+    color: var(--color-accent);
+    text-decoration: none;
+    margin-top: 4px;
+  }
+
+  .contact-email:hover {
+    border-color: var(--color-accent);
+  }
+
+  .note {
+    color: var(--color-muted);
+    font-size: 13px;
+    margin-top: 12px;
+  }
+
+  footer {
+    border-top: 1px solid var(--color-border);
+    padding: 24px 0;
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 12px;
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2RTPQTJSP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z2RTPQTJSP');
+</script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/en/" class="logo">Tate<span>Gaki</span></a>
+    <ul>
+      <li><a href="/privacy.html">Privacy Policy (JA)</a></li>
+      <li><a href="/terms.html">Terms (JA)</a></li>
+      <li><a href="/en/support.html">Support</a></li>
+      <li class="lang-switch">
+        <a href="/support.html" hreflang="ja" lang="ja">🇯🇵 日本語</a>
+        <span class="sep">/</span>
+        <span class="current" aria-current="true">🇬🇧 English</span>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>Support &amp; FAQ</h1>
+  <p class="subtitle">Support page for TateGaki, the free Google Docs add-on for Japanese vertical writing. Common questions about how to use the add-on and how to fix problems are collected below.</p>
+
+  <h2>How to use TateGaki (vertical writing in Google Docs)</h2>
+
+  <details class="faq-item">
+    <summary>Can Google Docs do vertical writing?</summary>
+    <p>Google Docs does not support vertical writing out of the box. Once you install the TateGaki add-on, you can use vertical writing — including manuscript paper and blank canvas modes — directly inside Google Docs. TateGaki is free to install from the Google Workspace Marketplace.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Why doesn't Google Docs support vertical writing natively?</summary>
+    <p>Google Docs is built around horizontal writing, so vertical input isn't part of its standard feature set. TateGaki is an add-on that fills this gap: you can type vertically inside a dialog and export the result back into your Google Doc.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How do I use TateGaki?</summary>
+    <p>Open <strong>Google Docs™</strong>, then choose <em>Extensions → TateGaki → Open vertical editor</em> from the menu. The vertical editor opens as a dialog where you can type in vertical layout.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How do I switch manuscript paper modes?</summary>
+    <p>Use the toolbar at the top of the editor to switch between "400-character", "200-character", "Blank vertical", and "Blank horizontal" modes. The 400-character grid is landscape (20×20) and the 200-character grid is portrait (10×20).</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How do I add ruby (furigana)?</summary>
+    <p>In manuscript paper mode (400 or 200 character), click the ruby field on the right side of any column to open the ruby input modal. Once entered, the ruby is shown in reduced size next to the base characters. Ruby is not available in blank canvas mode.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How do I save my document?</summary>
+    <p>Use the save button in the toolbar to save into a TateGaki folder under My Drive on <strong>Google Drive™</strong>. Use "Save as" to create a new file; if you already have an existing file open, you can also save over it.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>What does "Export to Google Docs table" do?</summary>
+    <p>It writes the editor's content into your <strong>Google Docs™</strong> document as a grid table (one cell per character), preserving the kinsoku-shori (line-breaking) layout. Before exporting, a confirmation prompt warns you that the existing content of your Google Doc will be cleared.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Is TateGaki free?</summary>
+    <p>Yes. All features are currently free. Some features may become paid in the future, but for now the full vertical-writing environment is available at no cost.</p>
+  </details>
+
+  <h2>Troubleshooting</h2>
+
+  <details class="faq-item">
+    <summary>The dialog doesn't appear</summary>
+    <p>If your browser's pop-up blocker is on, the dialog may fail to appear. Allow pop-ups for the <strong>Google Docs™</strong> domain, then reload the page and try again.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Text looks wrong / fonts don't load</summary>
+    <p>On first launch, the Noto Serif JP font may take a few seconds to load. Check your internet connection and wait a moment. If the problem persists, close the dialog and reopen it.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>I can't find my saved file</summary>
+    <p>Saved files live in the "TateGaki" folder at the root of My Drive on Google Drive. Open Google Drive and check that folder. The file extension is <code>.tategaki.json</code>.</p>
+  </details>
+
+  <h2>Other</h2>
+
+  <details class="faq-item">
+    <summary>Which browsers are supported?</summary>
+    <p>Google Chrome is recommended. Other browsers may work, but full feature compatibility isn't guaranteed.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Does it work on phones and tablets?</summary>
+    <p>The add-on is designed for the desktop (web) version of <strong>Google Docs™</strong>. The mobile Google Docs app has limited add-on support.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How do I uninstall the add-on?</summary>
+    <p>From the <strong>Google Docs™</strong> menu, choose <em>Extensions → Add-ons → Manage add-ons</em>, open the "⋮" menu next to TateGaki, and select Uninstall. Files saved in your Google Drive will not be deleted.</p>
+  </details>
+
+  <h2>Contact</h2>
+
+  <div class="contact-box">
+    <h3>Email support</h3>
+    <p>If the FAQ above doesn't cover your question, please email us at the address below.</p>
+    <a href="mailto:support@tategaki.site" class="contact-email">support@tategaki.site</a>
+    <p class="note">We may take a few days to respond.</p>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 TateGaki. All rights reserved.</p>
+  <p style="margin-top: 8px; font-size: 11px;">Google Docs and Google Drive are trademarks of Google LLC.</p>
+</footer>
+
+</body>
+</html>

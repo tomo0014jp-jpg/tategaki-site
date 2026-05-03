@@ -6,6 +6,9 @@
 <title>サポート・よくある質問｜Googleドキュメント縦書きアドオン TateGaki</title>
 <meta name="description" content="TateGaki（Googleドキュメント縦書きアドオン）のサポートページ。使い方、原稿用紙モード、ルビ入力、禁則処理、トラブルシューティングなど、よくある質問に回答しています。">
 <link rel="canonical" href="https://tategaki.site/support.html">
+<link rel="alternate" hreflang="ja" href="https://tategaki.site/support.html">
+<link rel="alternate" hreflang="en" href="https://tategaki.site/en/support.html">
+<link rel="alternate" hreflang="x-default" href="https://tategaki.site/support.html">
 <!-- Open Graph -->
 <meta property="og:title" content="サポート・よくある質問｜TateGaki">
 <meta property="og:description" content="Googleドキュメント縦書きアドオン TateGaki のサポート・FAQページ。">
@@ -153,6 +156,31 @@
   
   nav a:hover { color: var(--color-text); }
   
+  /* Language switcher */
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .lang-switch a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.2s;
+  }
+
+  .lang-switch a:hover { color: var(--color-text); }
+
+  .lang-switch .current,
+  .lang-switch .sep {
+    color: var(--color-muted);
+    opacity: 0.4;
+    cursor: default;
+  }
+
   main {
     max-width: 720px;
     margin: 0 auto;
@@ -274,6 +302,11 @@
       <li><a href="/privacy.html">プライバシーポリシー</a></li>
       <li><a href="/terms.html">利用規約</a></li>
       <li><a href="/support.html">サポート</a></li>
+      <li class="lang-switch">
+        <span class="current" aria-current="true">🇯🇵 日本語</span>
+        <span class="sep">/</span>
+        <a href="/en/support.html" hreflang="en" lang="en">🇬🇧 English</a>
+      </li>
     </ul>
   </nav>
 </header>
