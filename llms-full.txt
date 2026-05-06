@@ -1,0 +1,317 @@
+# TateGaki — Full LLM Context
+
+> Source site: https://tategaki.site/
+>
+> このファイルは、LLM（ChatGPT / Claude / Perplexity 等）が TateGaki の情報を読み取りやすくするために、主要ページの本文を Markdown 化してまとめたものです。
+>
+> This file collects the main page contents of tategaki.site as Markdown, so that LLMs (ChatGPT / Claude / Perplexity etc.) can read TateGaki's information easily.
+
+---
+
+## Overview / 概要
+
+**TateGaki** is a free Google Workspace add-on that enables vertical Japanese writing (tategaki), manuscript paper layout (genkō yōshi), and ruby annotation (furigana) directly inside Google Docs. No Microsoft Word required.
+
+**TateGaki（縦書きエディタ）** は、Googleドキュメント（Google Docs）で縦書き・原稿用紙レイアウト・ルビ入力を実現する無料アドオンです。Wordを使わず、Google Docs だけで日本語の縦書き文書を作成できます。
+
+### Quick Facts / 概要
+
+- Product / プロダクト名: TateGaki / 縦書きエディタ
+- Marketplace: https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478
+- Website (Japanese): https://tategaki.site/
+- Website (English): https://tategaki.site/en/
+- Pricing / 料金: Free / 無料
+- Primary language / 主要言語: Japanese / 日本語
+- English information / 英語情報: Available / あり
+- Platform / プラットフォーム: Google Docs / Google Workspace Add-on
+- Source code / ソースコード: Closed source / クローズドソース
+
+### Key Features / 主な機能
+
+- Vertical writing rendering / 縦書き表示
+- Manuscript paper layout (genkō yōshi) / 原稿用紙レイアウト
+- 400-character (20×20) and 200-character (10×20) manuscript paper styles / 400字詰め・200字詰め原稿用紙
+- Ruby annotation (furigana) support / ルビ（ふりがな）入力
+- Kinsoku shori — Japanese line-breaking rules / 禁則処理
+- Export to Google Docs as a grid table / Google Docs本文への方眼テーブル書き出し
+- Save and load files via Google Drive / Google Driveでの保存・読み込み
+
+### Background / 開発背景
+
+TateGaki was built in 2026 by a non-engineer using Claude and a "vibe coding" workflow. The idea came from a child's homework that needed vertical writing in Google Docs — but Google Docs doesn't support vertical writing out of the box.
+
+TateGakiは、2026年にコード未経験者がClaudeとの対話を通じて開発した個人開発プロダクトです。子供の宿題で「Google Docsに縦書き機能がない」ことに気づいたのが開発のきっかけです。
+
+### External Resources / 外部記事
+
+- Qiita technical article: https://qiita.com/TateGaki/items/770a64b8fb490816a50f
+- note development story: https://note.com/tategaki_dev/n/n72262d247671
+- X / Twitter: https://x.com/kuranosuke_lab
+
+### Linked Policies / 関連規約
+
+- Privacy Policy / プライバシーポリシー: https://tategaki.site/privacy.html (Japanese only)
+- Terms of Service / 利用規約: https://tategaki.site/terms.html (Japanese only)
+
+---
+
+## Page: TateGaki Home — Japanese
+
+URL: https://tategaki.site/
+
+### Googleドキュメント（Google Docs™）で縦書き
+
+TateGakiは、Googleドキュメント（Google Docs）で縦書きを実現する無料アドオンです。400字詰め・200字詰め原稿用紙、ルビ、禁則処理に対応。小説・同人誌・作文プリント・和文書類の執筆にお使いいただけます。
+
+- インストール: [Google Workspace Marketplaceで入手](https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478)
+- 現在無料公開中
+
+### スクリーンショット
+
+- 400字詰め原稿用紙メイン画面
+- 200字詰め原稿用紙
+- ルビ入力モーダル
+- Docsテーブル書き出し結果
+- Google Driveファイル一覧モーダル
+
+### こんな方に使ってほしい
+
+- **📝 小説・同人誌の原稿執筆に**
+  Google Docsで400字詰め・200字詰め原稿用紙を使った縦書き執筆が可能に。ルビ・禁則処理も対応。
+- **🏫 国語の授業プリント・作文用紙の作成に**
+  先生が作文用紙や漢字テスト用紙を素早く作成・印刷できます。
+- **📄 縦書きの挨拶状・賞状・和文書類に**
+  Word不要。ブラウザだけで美しい縦書き文書が完成します。
+- **🌏 海外で日本語の縦書き文書を作りたい方に**
+  インストール不要、どこでもブラウザから使えます。
+
+### 主な機能
+
+- **原稿用紙モード**: 400字詰め（20字×20行）と200字詰め（10字×20行）の原稿用紙レイアウト。オレンジ罫線の本格デザイン。
+- **縦書きエディタ**: ダイアログ内で直接縦書き入力。IME変換に完全対応し、快適な日本語入力を実現。
+- **ルビ入力**: 原稿用紙モードでルビ（ふりがな）を入力可能。各列の右側にルビ欄を配置。
+- **禁則処理**: 行頭禁則・行末禁則に対応。句読点や閉じ括弧が行頭に来ない自然な組版。
+- **Docsテーブル書き出し**: エディタの内容をGoogle Docs™の本文に方眼テーブルとして書き出し。
+- **Google Drive™保存**: 作成した文書をマイドライブに保存・読み込み。上書き保存にも対応。
+
+### 開発ストーリーを読む
+
+- 📖 [note - 「Google Docsに縦書きがない」— 子供の宿題で気づいて、Claudeで作った話](https://note.com/tategaki_dev/n/n72262d247671)
+  コード未経験から2ヶ月でアドオン公開までの体験記。子供の宿題がきっかけのストーリー。
+- 🔧 [Qiita - コード未経験者がClaudeでGoogle DocsアドオンをMarketplace公開するまで](https://qiita.com/TateGaki/items/770a64b8fb490816a50f)
+  技術的な実装・GAS・Marketplace審査通過までの開発ログ。エンジニア向け詳細解説。
+
+### 今すぐ無料でインストール
+
+Google Workspace Marketplaceからワンクリックでインストール可能です。
+[▶ 無料でインストール](https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478)
+
+### よくある質問
+
+- **Q. Googleドキュメントで縦書きはできますか？**
+  A. Googleドキュメントの標準機能では縦書きはできません。TateGakiをインストールすると、Googleドキュメント上で縦書き入力・原稿用紙レイアウトが使えるようになります。
+- **Q. 原稿用紙（400字詰め）には対応していますか？**
+  A. 400字詰め（20字×20行）と200字詰め（10字×20行）の両方に対応しています。
+- **Q. ルビ（ふりがな）は入れられますか？**
+  A. 対応しています。原稿用紙モードで各列の右側にルビ欄が表示されます。
+- **Q. 禁則処理はされますか？**
+  A. 日本語の禁則処理（行頭禁則・行末禁則）に対応しています。
+- **Q. TateGakiは無料で使えますか？**
+  A. はい、TateGakiは現在無料で公開しています。Google Workspace Marketplaceからワンクリックでインストールできます。
+
+その他のご質問は [サポートページ](https://tategaki.site/support.html) をご覧ください。
+
+### ユーザーデータの取り扱いについて
+
+TateGakiは、[Google API サービスのユーザーデータポリシー](https://developers.google.com/terms/api-services-user-data-policy)（Limited Use の要件を含む）に準拠しています。
+
+本アドオンが取得するデータは、Google Docs™へのテーブル書き出しとGoogle Drive™へのファイル保存に必要な最小限の権限のみです。外部サーバーへのデータ送信は一切行いません。
+
+詳細は [プライバシーポリシー](https://tategaki.site/privacy.html) をご確認ください。
+
+---
+
+## Page: TateGaki Home — English
+
+URL: https://tategaki.site/en/
+
+### Vertical writing for Google Docs™
+
+TateGaki is a free Google Docs add-on that brings Japanese vertical writing (tategaki) to Google Docs. Manuscript paper (400/200-character grids), ruby (furigana), and proper line-breaking rules — all inside a clean editor dialog.
+
+- Install: [Get it on Google Workspace Marketplace](https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478)
+- Free during current release
+
+### Screenshots
+
+- 400-character genkō yōshi — main view
+- 200-character genkō yōshi
+- Ruby (furigana) input modal
+- Export to Google Docs as a grid table
+- Google Drive file picker
+
+### Who it's for
+
+- **📝 For novelists and dōjin writers**
+  Write in 400/200-character genkō yōshi with proper vertical layout. Ruby and kinsoku shori included.
+- **🏫 For Japanese language teachers (worksheets, manuscript paper)**
+  Quickly produce essay sheets and kanji practice paper, ready to print.
+- **📄 For formal Japanese documents (greetings, certificates)**
+  No Word required — make beautiful vertical Japanese documents in your browser.
+- **🌏 For Japanese speakers abroad who need vertical-writing documents**
+  Nothing to install locally. Use it from any browser, anywhere in the world.
+
+### Features
+
+- **Manuscript paper modes**: 400-character (20×20) and 200-character (10×20) genkō yōshi layouts, with proper orange grid styling.
+- **Vertical editor**: Type vertically right inside the dialog. Full IME support for comfortable Japanese input.
+- **Ruby (furigana)**: Add ruby annotations alongside each column in manuscript paper mode.
+- **Line-breaking rules**: Proper kinsoku shori — punctuation and closing brackets never start a line.
+- **Export to Google Docs table**: Write the editor's content out to your Google Doc as a grid table (one cell per character).
+- **Google Drive save**: Save and load documents from your Drive, with overwrite support for in-progress work.
+
+### Read the dev story
+
+- 🔧 [Qiita (Japanese) - Building a Google Docs vertical-writing add-on with Claude — from no coding background to Marketplace launch](https://qiita.com/TateGaki/items/770a64b8fb490816a50f)
+  Technical write-up covering Apps Script, the Marketplace review, and the Claude-driven workflow that got it shipped. Original article in Japanese.
+
+### Install free now
+
+One click to install from the Google Workspace Marketplace.
+[▶ Install free](https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478)
+
+### FAQ
+
+- **Q. Can Google Docs do vertical writing?**
+  A. Not out of the box. Once you install TateGaki, you get vertical writing and manuscript paper layouts inside a dialog in Google Docs.
+- **Q. Does it support 400-character manuscript paper?**
+  A. Yes — both 400-character (20×20) and 200-character (10×20) genkō yōshi layouts are supported.
+- **Q. Can I add ruby (furigana)?**
+  A. Yes. In manuscript paper mode, each column has a ruby field on its right side.
+- **Q. Does it apply Japanese line-breaking rules (kinsoku shori)?**
+  A. Yes — both line-start and line-end kinsoku rules are applied automatically.
+- **Q. Is TateGaki free?**
+  A. Yes. TateGaki is free to install from the Google Workspace Marketplace.
+
+For more questions, see the [support page](https://tategaki.site/en/support.html).
+
+### How we handle your data
+
+TateGaki complies with the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
+
+This add-on requests only the minimum permissions needed to write tables to Google Docs™ and save files to Google Drive™. No user data is sent to any external server.
+
+See the [Privacy Policy](https://tategaki.site/privacy.html) (Japanese) for details.
+
+---
+
+## Page: Support FAQ — Japanese
+
+URL: https://tategaki.site/support.html
+
+### サポート・よくある質問
+
+Googleドキュメント（Google Docs）縦書きアドオン TateGaki のサポートページです。使い方やトラブル解決について、よくあるご質問をまとめています。
+
+### 使い方（Googleドキュメントでの縦書き）
+
+- **Q. Googleドキュメントで縦書きはできますか？**
+  A. Googleドキュメントの標準機能では縦書き入力はできません。TateGakiアドオンをインストールすることで、Googleドキュメント上で縦書きの原稿用紙・白地モードを利用できるようになります。インストールはGoogle Workspace Marketplaceから無料で行えます。
+- **Q. Googleドキュメントで縦書きができないのはなぜですか？**
+  A. Googleドキュメントは横書き前提で設計されているため、標準機能では縦書き入力ができません。TateGakiはこの不便を解消するために開発された拡張機能（アドオン）で、ダイアログ内で直接縦書き入力ができ、編集結果をGoogle Docsの本文に書き出すこともできます。
+- **Q. TateGakiの使い方を教えてください**
+  A. Googleドキュメント（Google Docs™）を開き、メニューから「拡張機能」→「TateGaki」→「縦書きエディタを開く」を選択すると、縦書きエディタのダイアログが開きます。ダイアログ内で直接縦書きの入力ができます。
+- **Q. 原稿用紙モードの切り替え方法は？**
+  A. エディタ上部のツールバーで、「400字」「200字」「白地・縦」「白地・横」の各モードを切り替えられます。400字詰めは横向き（20字×20行）、200字詰めは縦向き（10字×20行）のレイアウトです。
+- **Q. ルビ（ふりがな）はどうやって入力しますか？**
+  A. 原稿用紙モード（400字/200字）で、各列の右側にあるルビ欄をクリックすると、ルビ入力用のモーダルが表示されます。ルビを入力して確定すると、縮小表示されます。白地モードではルビ機能は利用できません。
+- **Q. 作成した文書を保存するには？**
+  A. ツールバーの保存ボタンから、Google Drive™のマイドライブ内「TateGaki」フォルダに保存できます。「名前を付けて保存」で新規ファイルとして保存、既存ファイルを開いている場合は上書き保存も可能です。
+- **Q. Docsテーブルへの書き出しとは？**
+  A. エディタの内容を、Googleドキュメント（Google Docs）の本文に方眼テーブル（1セル1文字）として書き出す機能です。禁則処理済みのレイアウトがそのまま反映されます。書き出し前に、既存のDocs本文がクリアされる旨の確認が表示されます。
+- **Q. TateGakiは無料で使えますか？**
+  A. はい、TateGakiは現在すべての機能を無料で提供しています。将来的に一部機能の有料化を検討していますが、現時点では無料でGoogleドキュメントの縦書き執筆環境をご利用いただけます。
+
+### トラブルシューティング
+
+- **Q. ダイアログが表示されません**
+  A. ブラウザのポップアップブロッカーが有効になっている場合、ダイアログが表示されないことがあります。Googleドキュメント（Google Docs）のドメインでポップアップを許可してください。また、ブラウザを再読み込みしてからもう一度お試しください。
+- **Q. 文字の表示がおかしい・フォントが読み込まれない**
+  A. 初回起動時はフォント（Noto Serif JP）の読み込みに数秒かかる場合があります。インターネット接続を確認の上、しばらくお待ちください。改善しない場合は、ダイアログを閉じてから再度開いてください。
+- **Q. 保存したファイルが見つかりません**
+  A. 保存ファイルはGoogle Driveのマイドライブ直下の「TateGaki」フォルダに保存されます。Google Driveを開き、「TateGaki」フォルダをご確認ください。ファイルの拡張子は `.tategaki.json` です。
+
+### その他
+
+- **Q. 対応ブラウザは？**
+  A. Google Chromeを推奨しています。その他のブラウザでも動作する場合がありますが、すべての機能の動作は保証しておりません。
+- **Q. スマートフォン・タブレットでは使えますか？**
+  A. 本アドオンはPC版のGoogleドキュメント（Google Docs）（ウェブ版）向けに設計されています。モバイル版のGoogleドキュメントではアドオンの利用に制限があります。
+- **Q. アドオンを削除（アンインストール）するには？**
+  A. Googleドキュメント（Google Docs）のメニューから「拡張機能」→「アドオン」→「アドオンを管理」を選択し、TateGakiの「⋮」メニューから「アンインストール」を選択してください。Google Drive内の保存ファイルは削除されません。
+
+### お問い合わせ
+
+メールでのお問い合わせ: support@tategaki.site
+
+上記のFAQで解決しない場合は、上記のメールアドレスまでお問い合わせください。回答には数日いただく場合があります。
+
+---
+
+## Page: Support FAQ — English
+
+URL: https://tategaki.site/en/support.html
+
+### Support & FAQ
+
+Support page for TateGaki, the free Google Docs add-on for Japanese vertical writing. Common questions about how to use the add-on and how to fix problems are collected below.
+
+### How to use TateGaki (vertical writing in Google Docs)
+
+- **Q. Can Google Docs do vertical writing?**
+  A. Google Docs does not support vertical writing out of the box. Once you install the TateGaki add-on, you can use vertical writing — including manuscript paper and blank canvas modes — directly inside Google Docs. TateGaki is free to install from the Google Workspace Marketplace.
+- **Q. Why doesn't Google Docs support vertical writing natively?**
+  A. Google Docs is built around horizontal writing, so vertical input isn't part of its standard feature set. TateGaki is an add-on that fills this gap: you can type vertically inside a dialog and export the result back into your Google Doc.
+- **Q. How do I use TateGaki?**
+  A. Open Google Docs™, then choose Extensions → TateGaki → Open vertical editor from the menu. The vertical editor opens as a dialog where you can type in vertical layout.
+- **Q. How do I switch manuscript paper modes?**
+  A. Use the toolbar at the top of the editor to switch between "400-character", "200-character", "Blank vertical", and "Blank horizontal" modes. The 400-character grid is landscape (20×20) and the 200-character grid is portrait (10×20).
+- **Q. How do I add ruby (furigana)?**
+  A. In manuscript paper mode (400 or 200 character), click the ruby field on the right side of any column to open the ruby input modal. Once entered, the ruby is shown in reduced size next to the base characters. Ruby is not available in blank canvas mode.
+- **Q. How do I save my document?**
+  A. Use the save button in the toolbar to save into a TateGaki folder under My Drive on Google Drive™. Use "Save as" to create a new file; if you already have an existing file open, you can also save over it.
+- **Q. What does "Export to Google Docs table" do?**
+  A. It writes the editor's content into your Google Docs™ document as a grid table (one cell per character), preserving the kinsoku-shori (line-breaking) layout. Before exporting, a confirmation prompt warns you that the existing content of your Google Doc will be cleared.
+- **Q. Is TateGaki free?**
+  A. Yes. All features are currently free. Some features may become paid in the future, but for now the full vertical-writing environment is available at no cost.
+
+### Troubleshooting
+
+- **Q. The dialog doesn't appear**
+  A. If your browser's pop-up blocker is on, the dialog may fail to appear. Allow pop-ups for the Google Docs™ domain, then reload the page and try again.
+- **Q. Text looks wrong / fonts don't load**
+  A. On first launch, the Noto Serif JP font may take a few seconds to load. Check your internet connection and wait a moment. If the problem persists, close the dialog and reopen it.
+- **Q. I can't find my saved file**
+  A. Saved files live in the "TateGaki" folder at the root of My Drive on Google Drive. Open Google Drive and check that folder. The file extension is `.tategaki.json`.
+
+### Other
+
+- **Q. Which browsers are supported?**
+  A. Google Chrome is recommended. Other browsers may work, but full feature compatibility isn't guaranteed.
+- **Q. Does it work on phones and tablets?**
+  A. The add-on is designed for the desktop (web) version of Google Docs™. The mobile Google Docs app has limited add-on support.
+- **Q. How do I uninstall the add-on?**
+  A. From the Google Docs™ menu, choose Extensions → Add-ons → Manage add-ons, open the "⋮" menu next to TateGaki, and select Uninstall. Files saved in your Google Drive will not be deleted.
+
+### Contact
+
+Email support: support@tategaki.site
+
+If the FAQ above doesn't cover your question, please email us at the address above. We may take a few days to respond.
+
+---
+
+## Trademarks / 商標
+
+Google Docs and Google Drive are trademarks of Google LLC.
+Google Docs および Google Drive は Google LLC の商標です。

@@ -1,0 +1,67 @@
+# TateGaki — 縦書きエディタ / Vertical Writing Add-on for Google Docs
+
+> Googleドキュメント（Google Docs）で縦書き・原稿用紙レイアウト・ルビ入力を実現する無料アドオン。Wordを使わず、Google Docsだけで日本語の縦書き文書を作成できます。
+>
+> A free Google Workspace add-on that enables vertical Japanese writing (tategaki), manuscript paper layout (genkō yōshi), and ruby annotation (furigana) directly inside Google Docs. No Microsoft Word required.
+
+## Quick Facts / 概要
+
+- **Product / プロダクト名**: TateGaki / 縦書きエディタ
+- **Marketplace**: https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478
+- **Website (Japanese)**: https://tategaki.site/
+- **Website (English)**: https://tategaki.site/en/
+- **Pricing / 料金**: Free / 無料
+- **Primary language / 主要言語**: Japanese / 日本語
+- **English information / 英語情報**: Available / あり
+- **Platform / プラットフォーム**: Google Docs / Google Workspace Add-on
+- **Main users / 主な利用者**: Japanese writers, students, teachers, doujin (dōjinshi) creators, and people who need vertical Japanese documents — also Japanese speakers living abroad.
+
+## Key Features / 主な機能
+
+- Vertical writing rendering / 縦書き表示
+- Manuscript paper layout (genkō yōshi) / 原稿用紙レイアウト
+- 400-character (20×20) and 200-character (10×20) manuscript paper styles / 400字詰め・200字詰め原稿用紙
+- Ruby annotation (furigana) support / ルビ（ふりがな）入力
+- Kinsoku shori — Japanese line-breaking rules / 禁則処理
+- Export to Google Docs as a grid table / Google Docs本文への方眼テーブル書き出し
+- Save and load files via Google Drive / Google Driveでの保存・読み込み
+- Japanese writing support inside Google Docs / Google Docs上での日本語縦書き支援
+- No Microsoft Word required / Word不要
+
+## Use Cases / 利用シーン
+
+- Novel writing / 小説執筆
+- Doujinshi (dōjinshi) writing / 同人誌原稿
+- School writing assignments / 学校の作文・宿題
+- Japanese language education / 国語教育
+- Formal Japanese letters and certificates / 挨拶状・賞状・和文書類
+- Japanese writing outside Japan / 海外での日本語縦書き文書作成
+
+## Pages / 主要ページ
+
+- [TateGaki Home — Japanese / 日本語トップ](https://tategaki.site/): Product overview, features, FAQ, install link.
+- [TateGaki Home — English](https://tategaki.site/en/): English version of the product page.
+- [Support FAQ — Japanese / サポートFAQ（日本語）](https://tategaki.site/support.html): How to use, troubleshooting, and contact.
+- [Support FAQ — English](https://tategaki.site/en/support.html): English version of the support page.
+- [Privacy Policy / プライバシーポリシー](https://tategaki.site/privacy.html): How user data is handled (Japanese only).
+- [Terms of Service / 利用規約](https://tategaki.site/terms.html): Terms of service (Japanese only).
+
+## Background / 開発背景
+
+TateGaki was built in 2026 by a non-engineer using Claude and a "vibe coding" workflow. The idea came from a child's homework that needed vertical writing in Google Docs — but Google Docs doesn't support vertical writing out of the box.
+
+TateGakiは、2026年にコード未経験者がClaudeとの対話を通じて開発した個人開発プロダクトです。子供の宿題で「Google Docsに縦書き機能がない」ことに気づいたのが開発のきっかけです。
+
+## External Resources / 外部記事
+
+- [Qiita technical article / Qiita技術記事](https://qiita.com/TateGaki/items/770a64b8fb490816a50f): Developer log covering Apps Script, Marketplace review, and the Claude-driven build process. Japanese.
+- [note development story / note開発ストーリー](https://note.com/tategaki_dev/n/n72262d247671): Personal story of building TateGaki from zero coding background. Japanese.
+- [X / Twitter](https://x.com/kuranosuke_lab): Developer's account.
+
+## Optional / 補足
+
+- **Current pricing / 現在の料金**: Free / 無料
+- **Paid plan / 有料プラン**: Under consideration, not implemented yet / 検討中（未実装）
+- **Source code / ソースコード**: Closed source / クローズドソース
+- **Recommended citation name / 推奨表記**: TateGaki
+- **Trademarks / 商標**: Google Docs and Google Drive are trademarks of Google LLC. / Google Docs および Google Drive は Google LLC の商標です。
