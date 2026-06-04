@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>特定商取引法に基づく表記 — TateGaki</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --color-bg: #faf8f5;
+    --color-text: #2c2420;
+    --color-heading: #1a1210;
+    --color-accent: #c87a30;
+    --color-border: #e0d5c8;
+    --color-muted: #8a7e72;
+    --font-sans: 'Noto Sans JP', sans-serif;
+    --font-serif: 'Noto Serif JP', serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.9;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    border-bottom: 1px solid var(--color-border);
+    padding: 24px 0;
+    margin-bottom: 48px;
+  }
+
+  header nav {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-decoration: none;
+  }
+
+  .logo span { color: var(--color-accent); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+
+  nav a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--color-text); }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    flex-shrink: 0;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    padding: 16px 24px 20px;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: color 0.2s;
+  }
+
+  .mobile-menu a:hover { color: var(--color-text); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 8px;
+  }
+
+  .last-updated {
+    color: var(--color-muted);
+    font-size: 13px;
+    margin-bottom: 48px;
+  }
+
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-top: 40px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  p { margin-bottom: 16px; }
+
+  ul, ol {
+    margin: 0 0 16px 24px;
+  }
+
+  li { margin-bottom: 6px; }
+
+  /* 特定商取引法 表 */
+  .tokusho-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  .tokusho-table th,
+  .tokusho-table td {
+    border: 1px solid var(--color-border);
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.8;
+  }
+
+  .tokusho-table th {
+    background: #f3ede4;
+    width: 36%;
+    font-weight: 700;
+    color: var(--color-heading);
+  }
+
+  .tokusho-table td a {
+    color: var(--color-accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .tokusho-table td a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .tokusho-table,
+    .tokusho-table tbody,
+    .tokusho-table tr { display: block; width: 100%; }
+
+    .tokusho-table th,
+    .tokusho-table td {
+      display: block;
+      width: 100%;
+      border-bottom: none;
+    }
+
+    .tokusho-table td { border-top: none; }
+
+    .tokusho-table tr { margin-bottom: 0; }
+
+    .tokusho-table tr + tr th { border-top: 1px solid var(--color-border); }
+
+    .tokusho-table td:last-child { border-bottom: 1px solid var(--color-border); }
+  }
+
+  footer {
+    border-top: 1px solid var(--color-border);
+    padding: 24px 0;
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 12px;
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2RTPQTJSP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z2RTPQTJSP');
+</script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/" class="logo">Tate<span>Gaki</span></a>
+    <ul class="nav-links">
+      <li><a href="/privacy.html">プライバシーポリシー</a></li>
+      <li><a href="/terms.html">利用規約</a></li>
+      <li><a href="/support.html">サポート</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a href="/support.html">サポート</a>
+    <a href="/terms.html">利用規約</a>
+    <a href="/privacy.html">プライバシーポリシー</a>
+  </div>
+</header>
+
+<main>
+  <h1>特定商取引法に基づく表記</h1>
+  <p class="last-updated">最終更新日: 2026年6月5日</p>
+
+  <p>本表記は、有料プラン「TateGaki Pro」に関する特定商取引法（特定商取引に関する法律）に基づく表示です。</p>
+
+  <table class="tokusho-table">
+    <tbody>
+      <tr>
+        <th>販売事業者</th>
+        <td>株式会社セント・ミュージック（法人番号 1011001159591）</td>
+      </tr>
+      <tr>
+        <th>運営統括責任者</th>
+        <td>大石 智彦（取締役・実務窓口）</td>
+      </tr>
+      <tr>
+        <th>所在地</th>
+        <td>〒150-0043 東京都渋谷区道玄坂1丁目10-8 渋谷道玄坂東急ビル2F-C</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td>070-3798-8580</td>
+      </tr>
+      <tr>
+        <th>連絡先</th>
+        <td>お問い合わせは<a href="https://tategaki.site/support.html">サポートページ</a>（https://tategaki.site/support.html）よりお願いいたします。</td>
+      </tr>
+      <tr>
+        <th>販売価格</th>
+        <td>TateGaki Pro：月額500円（消費税込）</td>
+      </tr>
+      <tr>
+        <th>商品代金以外の必要料金</th>
+        <td>なし（インターネット接続にかかる通信料はお客様のご負担となります）</td>
+      </tr>
+      <tr>
+        <th>支払方法</th>
+        <td>クレジットカード（Stripe）</td>
+      </tr>
+      <tr>
+        <th>支払時期</th>
+        <td>お申し込み時、および毎月の自動更新時</td>
+      </tr>
+      <tr>
+        <th>引渡時期（提供開始）</th>
+        <td>決済完了後、ダイアログを開き直すと Pro 機能が有効になります。</td>
+      </tr>
+      <tr>
+        <th>返品・解約（返品特約）</th>
+        <td>
+          利用規約「有料プラン（TateGaki Pro）」の定めに準拠します。日割りでの返金は行いません。解約後も当月末（現在の請求期間の終了日）までは Pro 機能をご利用いただけます。解約は下記のカスタマーポータルから、ご登録のメールアドレスでログインのうえお手続きください。<br>
+          <a href="https://billing.stripe.com/p/login/cNiaEQdnt40L29P9RFdAk00" target="_blank" rel="noopener">https://billing.stripe.com/p/login/cNiaEQdnt40L29P9RFdAk00</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>TateGaki Pro は月額500円（消費税込）の定期課金（サブスクリプション）です。解約されるまで毎月自動的に更新・課金され、上記のカスタマーポータルからいつでも解約いただけます。</p>
+</main>
+
+<footer>
+  <p>&copy; 2026 TateGaki. All rights reserved.</p>
+  <p style="margin-top: 8px; font-size: 11px;">Google Docs および Google Drive は Google LLC の商標です。</p>
+</footer>
+
+<script>
+(function() {
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileMenu.setAttribute('aria-hidden', !isOpen);
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobileMenu.setAttribute('aria-hidden', true);
+    });
+  });
+})();
+</script>
+</body>
+</html>
