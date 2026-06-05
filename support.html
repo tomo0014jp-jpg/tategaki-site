@@ -144,13 +144,17 @@
   nav ul {
     list-style: none;
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px 16px;
   }
-  
+
   nav a {
     color: var(--color-muted);
     text-decoration: none;
     font-size: 13px;
+    white-space: nowrap;
     transition: color 0.2s;
   }
   
