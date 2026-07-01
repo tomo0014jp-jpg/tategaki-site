@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="22" fill="#c87a30"/>
+  <text x="50" y="54" font-family="'Noto Serif JP','Yu Mincho',serif" font-size="62" font-weight="700"
+        text-anchor="middle" dominant-baseline="central" fill="#ffffff">縦</text>
+</svg>

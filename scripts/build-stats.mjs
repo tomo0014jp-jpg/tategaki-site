@@ -31,35 +31,32 @@ const ms = stats.milestones;
 const last = ms[ms.length - 1];
 
 // ---- HTML (日本語) ----
+// 常に3行: ラベル / マイルストーン1 / マイルストーン2（＋評価）
 function renderIndexJa() {
-  const chunks = ms.map((m, i) => {
+  const rows = ms.map((m, i) => {
     const strong = i === ms.length - 1;
     const label = strong ? `<strong>${m.label}</strong>` : m.label;
-    return `<span class="nw"><time datetime="${m.date}">${m.dateLabel}</time> ${label}</span>`;
+    const rating =
+      strong && stats.showRating && stats.rating
+        ? ` <span class="nw">評価 <strong>★${stats.rating}</strong></span>`
+        : '';
+    return `<span class="news-row"><span class="nw"><time datetime="${m.date}">${m.dateLabel}</time> ${label}</span>${rating}</span>`;
   });
-  const rating =
-    stats.showRating && stats.rating
-      ? ` <span class="nw">評価 <strong>★${stats.rating}</strong></span>`
-      : '';
-  return `<p class="news-item"><span class="news-label">Google Workspace Marketplace</span> ${chunks.join(
-    ' <span class="news-arrow">→</span> '
-  )}${rating}</p>`;
+  return `<p class="news-item"><span class="news-label">Google Workspace Marketplace</span>${rows.join('')}</p>`;
 }
 
 // ---- HTML (English) ----
 function renderIndexEn() {
-  const chunks = ms.map((m, i) => {
+  const rows = ms.map((m, i) => {
     const strong = i === ms.length - 1;
     const label = strong ? `<strong>${m.labelEn}</strong>` : m.labelEn;
-    return `<span class="nw"><time datetime="${m.date}">${m.dateLabelEn}</time>: ${label}</span>`;
+    const rating =
+      strong && stats.showRating && stats.rating
+        ? ` <span class="nw">· <strong>★${stats.rating}</strong> rating</span>`
+        : '';
+    return `<span class="news-row"><span class="nw"><time datetime="${m.date}">${m.dateLabelEn}</time>: ${label}</span>${rating}</span>`;
   });
-  const rating =
-    stats.showRating && stats.rating
-      ? ` <span class="nw">★${stats.rating} rating</span>`
-      : '';
-  return `<p class="news-item"><span class="news-label">Google Workspace Marketplace</span> ${chunks.join(
-    ' <span class="news-arrow">→</span> '
-  )}${rating}</p>`;
+  return `<p class="news-item"><span class="news-label">Google Workspace Marketplace</span>${rows.join('')}</p>`;
 }
 
 // ---- テキスト (llms) ----

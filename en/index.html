@@ -6,6 +6,9 @@
 <title>TateGaki - Vertical Writing Add-on for Google Docs</title>
 <meta name="description" content="Free Google Docs add-on for Japanese vertical writing. Manuscript paper layout, ruby annotations, and proper line-breaking rules. Built by an indie developer with Claude.">
 <meta name="application-name" content="TateGaki">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#c87a30">
 <link rel="canonical" href="https://tategaki.site/en/">
 <link rel="alternate" hreflang="ja" href="https://tategaki.site/">
 <link rel="alternate" hreflang="en" href="https://tategaki.site/en/">
@@ -332,8 +335,8 @@
 
   .news-item time { color: var(--color-muted); font-weight: 700; }
   .news-item strong { color: var(--color-accent); font-weight: 700; }
-  .news-label { color: var(--color-muted); font-weight: 700; margin-right: 4px; }
-  .news-arrow { color: var(--color-accent); margin: 0 2px; }
+  .news-label { display: block; color: var(--color-muted); font-weight: 700; margin-bottom: 2px; }
+  .news-row { display: block; }
 
   /* Demo GIF */
   .demo-section {
@@ -752,6 +755,7 @@
     .slideshow-arrow { width: 30px; height: 30px; font-size: 15px; }
     .slide img { max-height: 280px; }
     .install-cta h2 { font-size: 22px; }
+    .cta-button { font-size: 13px; padding: 12px 20px; }
   }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -806,7 +810,7 @@
 
 <section class="news" aria-label="News">
   <!-- STATS:START -->
-  <p class="news-item"><span class="news-label">Google Workspace Marketplace</span> <span class="nw"><time datetime="2026-06-17">Jun 17</time>: 3,400 installs</span> <span class="news-arrow">→</span> <span class="nw"><time datetime="2026-06-22">Jun 22</time>: <strong>over 10,000 installs</strong></span> <span class="nw">★4.5 rating</span></p>
+  <p class="news-item"><span class="news-label">Google Workspace Marketplace</span><span class="news-row"><span class="nw"><time datetime="2026-06-17">Jun 17</time>: 3,400 installs</span></span><span class="news-row"><span class="nw"><time datetime="2026-06-22">Jun 22</time>: <strong>over 10,000 installs</strong></span> <span class="nw">· <strong>★4.5</strong> rating</span></span></p>
   <!-- STATS:END -->
 </section>
 

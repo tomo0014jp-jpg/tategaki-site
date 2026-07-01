@@ -6,6 +6,9 @@
 <title>Googleドキュメントで縦書き｜無料アドオン TateGaki（原稿用紙・ルビ・禁則処理対応）</title>
 <meta name="description" content="Googleドキュメント（Google Docs）で縦書きができる無料アドオン TateGaki。400字詰め・200字詰め原稿用紙、ルビ（ふりがな）、禁則処理に対応。小説・同人誌・作文プリント・和文書類の執筆に。">
 <meta name="application-name" content="TateGaki">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#c87a30">
 <link rel="canonical" href="https://tategaki.site/">
 <link rel="alternate" hreflang="ja" href="https://tategaki.site/">
 <link rel="alternate" hreflang="en" href="https://tategaki.site/en/">
@@ -332,8 +335,8 @@
 
   .news-item time { color: var(--color-muted); font-weight: 700; }
   .news-item strong { color: var(--color-accent); font-weight: 700; }
-  .news-label { color: var(--color-muted); font-weight: 700; margin-right: 4px; }
-  .news-arrow { color: var(--color-accent); margin: 0 2px; }
+  .news-label { display: block; color: var(--color-muted); font-weight: 700; margin-bottom: 2px; }
+  .news-row { display: block; }
 
   /* Demo GIF */
   .demo-section {
@@ -759,6 +762,7 @@
     .slideshow-arrow { width: 30px; height: 30px; font-size: 15px; }
     .slide img { max-height: 280px; }
     .install-cta h2 { font-size: 22px; }
+    .cta-button { font-size: 13px; padding: 12px 20px; }
   }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -807,13 +811,13 @@
 <section class="hero">
   <h1><span class="nw">Googleドキュメント</span>（<span class="nw">Google&nbsp;Docs™</span>）で<span class="nw accent">縦書き</span></h1>
   <p>TateGakiは、Googleドキュメント（<span class="nw">Google&nbsp;Docs</span>）で縦書きを実現する無料アドオンです。<span class="nw">400字詰め・200字詰め原稿用紙</span>、ルビ、禁則処理に対応。小説・同人誌・作文プリント・和文書類の<span class="nw">執筆にお使いいただけます。</span></p>
-  <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button" target="_blank" rel="noopener">Google Workspace Marketplaceで入手</a>
+  <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button" target="_blank" rel="noopener">Google Workspace Marketplace<span class="nw">で入手</span></a>
   <p class="hero-fomo"><span class="nw">基本機能は無料。</span>一部レイアウト機能は<span class="nw">TateGaki&nbsp;Pro（月額500円・税込）</span></p>
 </section>
 
 <section class="news" aria-label="実績・ニュース">
   <!-- STATS:START -->
-  <p class="news-item"><span class="news-label">Google Workspace Marketplace</span> <span class="nw"><time datetime="2026-06-17">6月17日</time> 3,400ダウンロード</span> <span class="news-arrow">→</span> <span class="nw"><time datetime="2026-06-22">6月22日</time> <strong>1万ダウンロード突破</strong></span> <span class="nw">評価 <strong>★4.5</strong></span></p>
+  <p class="news-item"><span class="news-label">Google Workspace Marketplace</span><span class="news-row"><span class="nw"><time datetime="2026-06-17">6月17日</time> 3,400ダウンロード</span></span><span class="news-row"><span class="nw"><time datetime="2026-06-22">6月22日</time> <strong>1万ダウンロード突破</strong></span> <span class="nw">評価 <strong>★4.5</strong></span></span></p>
   <!-- STATS:END -->
 </section>
 
