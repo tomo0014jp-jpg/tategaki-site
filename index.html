@@ -81,7 +81,12 @@
 
   body {
     font-family: var(--font-sans);
-    background: var(--color-bg);
+    /* 落ち着いた原稿用紙風の薄いグリッド地紋 */
+    background-color: var(--color-bg);
+    background-image:
+      linear-gradient(to right, rgba(160, 120, 80, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(160, 120, 80, 0.045) 1px, transparent 1px);
+    background-size: 32px 32px;
     color: var(--color-text);
     line-height: 1.9;
     font-size: 15px;
@@ -237,10 +242,23 @@
 
   /* Hero */
   .hero {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 80px 24px 60px;
+    padding: 96px 24px 72px;
     text-align: center;
+    position: relative;
+    /* 実写背景（原稿用紙・机まわり）＋暖色の明色オーバーレイで可読性確保 */
+    background-image:
+      linear-gradient(180deg, rgba(250, 248, 245, 0.92) 0%, rgba(250, 248, 245, 0.88) 55%, rgba(250, 248, 245, 0.94) 100%),
+      url('/images/hero.jpg');
+    background-size: cover, cover;
+    background-position: center, center 62%;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  .hero > * {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
   }
 
   .hero h1 {
@@ -252,13 +270,14 @@
     line-height: 1.4;
   }
 
-  .hero h1 span { color: var(--color-accent); }
+  .hero h1 .accent { color: var(--color-accent); }
 
   .hero p {
     font-size: 16px;
-    color: var(--color-muted);
+    color: #5f564c;
     max-width: 520px;
     margin: 0 auto 32px;
+    text-wrap: pretty;
   }
 
   .cta-button {
@@ -276,11 +295,45 @@
   .cta-button:hover { opacity: 0.85; }
 
   .hero-fomo {
-    margin-top: 12px;
-    font-size: 0.87em;
-    color: #888;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #8a7e72;
     text-align: center;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
   }
+
+  /* 途中で改行させたくない語のまとまり */
+  .nw { white-space: nowrap; }
+
+  .news {
+    max-width: 760px;
+    /* ヒーロー写真に少し重ねて上に浮かせる */
+    margin: -34px auto 0;
+    padding: 0 24px 8px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+  }
+
+  .news-item {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 9px 22px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--color-text);
+    box-shadow: 0 8px 24px rgba(44, 36, 32, 0.10);
+  }
+
+  .news-item time { color: var(--color-muted); font-weight: 700; }
+  .news-item strong { color: var(--color-accent); font-weight: 700; }
+  .news-label { color: var(--color-muted); font-weight: 700; margin-right: 4px; }
+  .news-arrow { color: var(--color-accent); margin: 0 2px; }
 
   /* Demo GIF */
   .demo-section {
@@ -752,10 +805,16 @@
 </header>
 
 <section class="hero">
-  <h1>Googleドキュメント（Google Docs™）で<span>縦書き</span></h1>
-  <p>TateGakiは、Googleドキュメント（Google Docs）で縦書きを実現する無料アドオンです。400字詰め・200字詰め原稿用紙、ルビ、禁則処理に対応。小説・同人誌・作文プリント・和文書類の執筆にお使いいただけます。</p>
+  <h1><span class="nw">Googleドキュメント</span>（<span class="nw">Google&nbsp;Docs™</span>）で<span class="nw accent">縦書き</span></h1>
+  <p>TateGakiは、Googleドキュメント（<span class="nw">Google&nbsp;Docs</span>）で縦書きを実現する無料アドオンです。<span class="nw">400字詰め・200字詰め原稿用紙</span>、ルビ、禁則処理に対応。小説・同人誌・作文プリント・和文書類の<span class="nw">執筆にお使いいただけます。</span></p>
   <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button" target="_blank" rel="noopener">Google Workspace Marketplaceで入手</a>
-  <p class="hero-fomo">現在無料公開中</p>
+  <p class="hero-fomo"><span class="nw">基本機能は無料。</span>一部レイアウト機能は<span class="nw">TateGaki&nbsp;Pro（月額500円・税込）</span></p>
+</section>
+
+<section class="news" aria-label="実績・ニュース">
+  <!-- STATS:START -->
+  <p class="news-item"><span class="news-label">Google Workspace Marketplace</span> <span class="nw"><time datetime="2026-06-17">6月17日</time> 3,400ダウンロード</span> <span class="news-arrow">→</span> <span class="nw"><time datetime="2026-06-22">6月22日</time> <strong>1万ダウンロード突破</strong></span> <span class="nw">評価 <strong>★4.5</strong></span></p>
+  <!-- STATS:END -->
 </section>
 
 <section class="demo-section">

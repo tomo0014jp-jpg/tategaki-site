@@ -82,7 +82,12 @@
 
   body {
     font-family: var(--font-sans);
-    background: var(--color-bg);
+    /* Calm manuscript-paper grid backdrop */
+    background-color: var(--color-bg);
+    background-image:
+      linear-gradient(to right, rgba(160, 120, 80, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(160, 120, 80, 0.045) 1px, transparent 1px);
+    background-size: 32px 32px;
     color: var(--color-text);
     line-height: 1.9;
     font-size: 15px;
@@ -238,10 +243,23 @@
 
   /* Hero */
   .hero {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 80px 24px 60px;
+    padding: 96px 24px 72px;
     text-align: center;
+    position: relative;
+    /* Photographic backdrop (manuscript paper & desk) + warm light overlay for legibility */
+    background-image:
+      linear-gradient(180deg, rgba(250, 248, 245, 0.92) 0%, rgba(250, 248, 245, 0.88) 55%, rgba(250, 248, 245, 0.94) 100%),
+      url('/images/hero.jpg');
+    background-size: cover, cover;
+    background-position: center, center 62%;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  .hero > * {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
   }
 
   .hero h1 {
@@ -253,13 +271,14 @@
     line-height: 1.4;
   }
 
-  .hero h1 span { color: var(--color-accent); }
+  .hero h1 .accent { color: var(--color-accent); }
 
   .hero p {
     font-size: 16px;
-    color: var(--color-muted);
+    color: #5f564c;
     max-width: 520px;
     margin: 0 auto 32px;
+    text-wrap: pretty;
   }
 
   .cta-button {
@@ -277,11 +296,44 @@
   .cta-button:hover { opacity: 0.85; }
 
   .hero-fomo {
-    margin-top: 12px;
-    font-size: 0.87em;
-    color: #888;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #8a7e72;
     text-align: center;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
   }
+
+  .nw { white-space: nowrap; }
+
+  .news {
+    max-width: 760px;
+    /* Overlap the hero photo slightly, floating upward */
+    margin: -34px auto 0;
+    padding: 0 24px 8px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+  }
+
+  .news-item {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 9px 22px;
+    box-shadow: 0 8px 24px rgba(44, 36, 32, 0.10);
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--color-text);
+  }
+
+  .news-item time { color: var(--color-muted); font-weight: 700; }
+  .news-item strong { color: var(--color-accent); font-weight: 700; }
+  .news-label { color: var(--color-muted); font-weight: 700; margin-right: 4px; }
+  .news-arrow { color: var(--color-accent); margin: 0 2px; }
 
   /* Demo GIF */
   .demo-section {
@@ -746,10 +798,16 @@
 </header>
 
 <section class="hero">
-  <h1><span>Vertical writing</span> for Google Docs™</h1>
-  <p>TateGaki is a free Google Docs add-on that brings Japanese vertical writing (tategaki) to Google Docs. Manuscript paper (400/200-character grids), ruby (furigana), and proper line-breaking rules — all inside a clean editor dialog.</p>
+  <h1><span class="nw accent">Vertical writing</span> for <span class="nw">Google&nbsp;Docs™</span></h1>
+  <p>TateGaki is a free <span class="nw">Google&nbsp;Docs</span> add-on that brings Japanese vertical writing (tategaki) to <span class="nw">Google&nbsp;Docs</span>. Manuscript paper (400/200-character grids), ruby (furigana), and proper line-breaking rules — all inside a clean editor dialog.</p>
   <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button" target="_blank" rel="noopener">Get it on Google Workspace Marketplace</a>
-  <p class="hero-fomo">Free during current release</p>
+  <p class="hero-fomo"><span class="nw">Core features free.</span> <span class="nw">Optional layout features via</span> <span class="nw">TateGaki&nbsp;Pro (¥500/month, tax&nbsp;incl.)</span></p>
+</section>
+
+<section class="news" aria-label="News">
+  <!-- STATS:START -->
+  <p class="news-item"><span class="news-label">Google Workspace Marketplace</span> <span class="nw"><time datetime="2026-06-17">Jun 17</time>: 3,400 installs</span> <span class="news-arrow">→</span> <span class="nw"><time datetime="2026-06-22">Jun 22</time>: <strong>over 10,000 installs</strong></span> <span class="nw">★4.5 rating</span></p>
+  <!-- STATS:END -->
 </section>
 
 <section class="demo-section">
