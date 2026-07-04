@@ -10,6 +10,7 @@
 <link rel="apple-touch-icon" href="/favicon.svg">
 <meta name="theme-color" content="#c87a30">
 <link rel="canonical" href="https://tategaki.site/en/">
+<link rel="alternate" type="text/plain" title="llms.txt" href="https://tategaki.site/llms.txt">
 <link rel="alternate" hreflang="ja" href="https://tategaki.site/">
 <link rel="alternate" hreflang="en" href="https://tategaki.site/en/">
 <link rel="alternate" hreflang="x-default" href="https://tategaki.site/">
@@ -21,10 +22,15 @@
 <meta property="og:site_name" content="TateGaki">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:image" content="https://tategaki.site/images/hero.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1282">
+<meta property="og:image:alt" content="TateGaki — vertical writing for Google Docs">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TateGaki - Vertical Writing Add-on for Google Docs">
 <meta name="twitter:description" content="Free Google Docs add-on for Japanese vertical writing. Manuscript paper, ruby (furigana), and proper line-breaking rules.">
+<meta name="twitter:image" content="https://tategaki.site/images/hero.jpg">
 <!-- Structured Data: SoftwareApplication + Publisher -->
 <script type="application/ld+json">
 {
@@ -64,10 +70,13 @@
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
-
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
   html { scroll-behavior: smooth; }
 
@@ -783,7 +792,7 @@
         <span class="sep">/</span>
         <span class="current" aria-current="true">🇬🇧 English</span>
       </li>
-      <li><a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 Get it free</a></li>
+      <li><a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 Get it free</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span>
@@ -797,14 +806,14 @@
     <a href="#faq" class="mobile-nav-link">FAQ</a>
     <a href="/en/support.html">Support</a>
     <a href="/" hreflang="ja" lang="ja">🇯🇵 日本語</a>
-    <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 Get it free</a>
+    <a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="nav-cta" target="_blank" rel="noopener">🧡 Get it free</a>
   </div>
 </header>
 
 <section class="hero">
   <h1><span class="nw accent">Vertical writing</span> for <span class="nw">Google&nbsp;Docs™</span></h1>
   <p>TateGaki is a free <span class="nw">Google&nbsp;Docs</span> add-on that brings Japanese vertical writing (tategaki) to <span class="nw">Google&nbsp;Docs</span>. Manuscript paper (400/200-character grids), ruby (furigana), and proper line-breaking rules — all inside a clean editor dialog.</p>
-  <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button" target="_blank" rel="noopener">Get it on Google Workspace Marketplace</a>
+  <a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="cta-button" target="_blank" rel="noopener">▶ <span class="nw">Install free</span></a>
   <p class="hero-fomo"><span class="nw">Core features free.</span> <span class="nw">Optional layout features via</span> <span class="nw">TateGaki&nbsp;Pro (¥500/month, tax&nbsp;incl.)</span></p>
 </section>
 
@@ -815,7 +824,7 @@
 </section>
 
 <section class="demo-section">
-  <img src="/images/demo.gif" alt="TateGaki demo — vertical writing in Google Docs" loading="lazy">
+  <img src="/images/demo.gif" alt="TateGaki demo — vertical writing in Google Docs" width="640" height="488" loading="lazy">
   <p class="demo-caption">TateGaki demo — vertical writing in Google Docs</p>
 </section>
 
@@ -823,23 +832,23 @@
   <div class="slideshow" id="slideshow">
     <div class="slides" id="slides">
       <div class="slide">
-        <img src="/images/01_400字詰め原稿用紙.png" alt="400-character genkō yōshi (manuscript paper) main view">
+        <img src="/images/01_400字詰め原稿用紙.png" alt="400-character genkō yōshi (manuscript paper) main view" width="1280" height="800" loading="lazy">
         <p class="slide-caption">400-character genkō yōshi — main view</p>
       </div>
       <div class="slide">
-        <img src="/images/02_200字詰め原稿用紙.png" alt="200-character genkō yōshi (manuscript paper)">
+        <img src="/images/02_200字詰め原稿用紙.png" alt="200-character genkō yōshi (manuscript paper)" width="1280" height="800" loading="lazy">
         <p class="slide-caption">200-character genkō yōshi</p>
       </div>
       <div class="slide">
-        <img src="/images/03_ルビ入力.png" alt="Ruby (furigana) input modal">
+        <img src="/images/03_ルビ入力.png" alt="Ruby (furigana) input modal" width="1280" height="800" loading="lazy">
         <p class="slide-caption">Ruby (furigana) input modal</p>
       </div>
       <div class="slide">
-        <img src="/images/04_Docsテーブル書き出し.png" alt="Export to Google Docs as a grid table">
+        <img src="/images/04_Docsテーブル書き出し.png" alt="Export to Google Docs as a grid table" width="1280" height="800" loading="lazy">
         <p class="slide-caption">Export to Google Docs as a grid table</p>
       </div>
       <div class="slide">
-        <img src="/images/05_GoogleDriveファイル一覧.png" alt="Google Drive file picker modal">
+        <img src="/images/05_GoogleDriveファイル一覧.png" alt="Google Drive file picker modal" width="1280" height="800" loading="lazy">
         <p class="slide-caption">Google Drive file picker</p>
       </div>
     </div>
@@ -916,8 +925,8 @@
 <section class="install-cta" id="install">
   <h2>Install free now</h2>
   <p>One click to install from the Google Workspace Marketplace.</p>
-  <a href="https://workspace.google.com/marketplace/app/tategaki_vertical_writing_editor/351112416478" class="cta-button" target="_blank" rel="noopener">▶ Install free</a>
-  <p class="install-fomo">Free during current release</p>
+  <a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="cta-button" target="_blank" rel="noopener">▶ <span class="nw">Install free</span></a>
+  <p class="install-fomo"><span class="nw">Core features free.</span> <span class="nw">Optional layout features via</span> <span class="nw">TateGaki&nbsp;Pro (¥500/month, tax&nbsp;incl.)</span></p>
 </section>
 
 <section class="faq" id="faq">

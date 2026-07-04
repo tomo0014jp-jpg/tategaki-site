@@ -10,6 +10,7 @@
 <link rel="apple-touch-icon" href="/favicon.svg">
 <meta name="theme-color" content="#c87a30">
 <link rel="canonical" href="https://tategaki.site/">
+<link rel="alternate" type="text/plain" title="llms.txt" href="https://tategaki.site/llms.txt">
 <link rel="alternate" hreflang="ja" href="https://tategaki.site/">
 <link rel="alternate" hreflang="en" href="https://tategaki.site/en/">
 <link rel="alternate" hreflang="x-default" href="https://tategaki.site/">
@@ -20,10 +21,15 @@
 <meta property="og:url" content="https://tategaki.site/">
 <meta property="og:site_name" content="TateGaki">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://tategaki.site/images/hero.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1282">
+<meta property="og:image:alt" content="TateGaki — Googleドキュメントで縦書き">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Googleドキュメントで縦書き｜無料アドオン TateGaki">
 <meta name="twitter:description" content="Googleドキュメント（Google Docs）で縦書きができる無料アドオン。400字詰め原稿用紙・ルビ・禁則処理対応。">
+<meta name="twitter:image" content="https://tategaki.site/images/hero.jpg">
 <!-- Structured Data: SoftwareApplication + Publisher -->
 <script type="application/ld+json">
 {
@@ -63,12 +69,15 @@
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
-
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   html { scroll-behavior: smooth; }
+
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
   :root {
     --color-bg: #faf8f5;
@@ -822,7 +831,7 @@
 </section>
 
 <section class="demo-section">
-  <img src="images/demo.gif" alt="TateGaki 動作デモ — Google Docsで縦書き入力" loading="lazy">
+  <img src="images/demo.gif" alt="TateGaki 動作デモ — Google Docsで縦書き入力" width="640" height="488" loading="lazy">
   <p class="demo-caption">TateGaki 動作デモ — Google Docsで縦書き入力</p>
 </section>
 
@@ -830,23 +839,23 @@
   <div class="slideshow" id="slideshow">
     <div class="slides" id="slides">
       <div class="slide">
-        <img src="images/01_400字詰め原稿用紙.png" alt="400字詰め原稿用紙メイン画面">
+        <img src="images/01_400字詰め原稿用紙.png" alt="400字詰め原稿用紙メイン画面" width="1280" height="800" loading="lazy">
         <p class="slide-caption">400字詰め原稿用紙メイン画面</p>
       </div>
       <div class="slide">
-        <img src="images/02_200字詰め原稿用紙.png" alt="200字詰め原稿用紙">
+        <img src="images/02_200字詰め原稿用紙.png" alt="200字詰め原稿用紙" width="1280" height="800" loading="lazy">
         <p class="slide-caption">200字詰め原稿用紙</p>
       </div>
       <div class="slide">
-        <img src="images/03_ルビ入力.png" alt="ルビ入力モーダル">
+        <img src="images/03_ルビ入力.png" alt="ルビ入力モーダル" width="1280" height="800" loading="lazy">
         <p class="slide-caption">ルビ入力モーダル</p>
       </div>
       <div class="slide">
-        <img src="images/04_Docsテーブル書き出し.png" alt="Docsテーブル書き出し結果">
+        <img src="images/04_Docsテーブル書き出し.png" alt="Docsテーブル書き出し結果" width="1280" height="800" loading="lazy">
         <p class="slide-caption">Docsテーブル書き出し結果</p>
       </div>
       <div class="slide">
-        <img src="images/05_GoogleDriveファイル一覧.png" alt="Google Driveファイル一覧モーダル">
+        <img src="images/05_GoogleDriveファイル一覧.png" alt="Google Driveファイル一覧モーダル" width="1280" height="800" loading="lazy">
         <p class="slide-caption">Google Driveファイル一覧モーダル</p>
       </div>
     </div>

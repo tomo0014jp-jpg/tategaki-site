@@ -20,6 +20,11 @@
 <meta property="og:site_name" content="TateGaki">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:image" content="https://tategaki.site/images/hero.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1282">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tategaki.site/images/hero.jpg">
 <!-- Structured Data: FAQPage -->
 <script type="application/ld+json">
 {
@@ -48,7 +53,7 @@
       "name": "Is TateGaki free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. All features are currently free. Some features may become paid in the future, but for now the full vertical-writing environment is available at no cost."
+        "text": "TateGaki's core features (manuscript paper modes, ruby, kinsoku shori, export to Google Docs table, Google Drive save, and more) are free, and the free features will stay free. In addition, an optional paid plan — TateGaki Pro (¥500/month, tax included) — offers extra features such as custom layouts matched to book trim sizes."
       }
     },
     {
@@ -90,14 +95,73 @@
         "@type": "Answer",
         "text": "It writes the editor's content into your Google Doc as a grid table — one cell per character — preserving the kinsoku-shori (line-breaking) layout. Before exporting, a confirmation prompt warns you that the existing content of your Google Doc will be cleared."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I write long documents or print in Blank (vertical) mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because Blank (vertical) mode is built on a textarea, it does not support scroll-follow or page splitting when printing. If your goal is writing long documents or printing, we recommend using manuscript paper mode with the grid lines turned OFF. Manuscript paper mode also supports page splitting when printing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "The dialog doesn't appear",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your browser's pop-up blocker is on, the dialog may fail to appear. Allow pop-ups for the Google Docs domain, then reload the page and try again."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Text looks wrong / fonts don't load",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On first launch, the Noto Serif JP font may take a few seconds to load. Check your internet connection and wait a moment. If the problem persists, close the dialog and reopen it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I can't find my saved file",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Saved files live in the TateGaki folder at the root of My Drive on Google Drive. Open Google Drive and check that folder. The file extension is .tategaki.json."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which browsers are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google Chrome is recommended. Other browsers may work, but full feature compatibility isn't guaranteed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on phones and tablets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The add-on is designed for the desktop (web) version of Google Docs. The mobile Google Docs app has limited add-on support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I uninstall the add-on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From the Google Docs menu, choose Extensions → Add-ons → Manage add-ons, open the three-dot menu next to TateGaki, and select Uninstall. Files saved in your Google Drive will not be deleted."
+      }
     }
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
-
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
   :root {
     --color-bg: #faf8f5;
@@ -423,6 +487,11 @@
   </details>
 
   <details class="faq-item">
+    <summary>Can I write long documents or print in Blank (vertical) mode?</summary>
+    <p>Because Blank (vertical) mode is built on a textarea, it does not support scroll-follow or page splitting when printing. If your goal is writing long documents or printing, we recommend using manuscript paper mode with the grid lines turned OFF. Manuscript paper mode also supports page splitting when printing.</p>
+  </details>
+
+  <details class="faq-item">
     <summary>How do I add ruby (furigana)?</summary>
     <p>In manuscript paper mode (400 or 200 character), click the ruby field on the right side of any column to open the ruby input modal. Once entered, the ruby is shown in reduced size next to the base characters. Ruby is not available in blank canvas mode.</p>
   </details>
@@ -439,7 +508,7 @@
 
   <details class="faq-item">
     <summary>Is TateGaki free?</summary>
-    <p>Yes. All features are currently free. Some features may become paid in the future, but for now the full vertical-writing environment is available at no cost.</p>
+    <p>TateGaki's core features (manuscript paper modes, ruby, kinsoku shori, export to Google Docs table, Google Drive save, and more) are free, and the free features will stay free. In addition, an optional paid plan — <strong>TateGaki Pro</strong> (¥500/month, tax included) — offers extra features such as custom layouts matched to book trim sizes.</p>
   </details>
 
   <h2>Troubleshooting</h2>
@@ -483,6 +552,30 @@
     <p>If the FAQ above doesn't cover your question, please email us at the address below.</p>
     <a href="mailto:support@tategaki.site" class="contact-email">support@tategaki.site</a>
     <p class="note">We may take a few days to respond.</p>
+  </div>
+
+  <h2>Canceling TateGaki Pro</h2>
+
+  <div class="contact-box">
+    <h3>Cancel via the Stripe customer portal</h3>
+    <p>To cancel TateGaki Pro, open the customer portal below and sign in with the email address you registered with.</p>
+    <a href="https://billing.stripe.com/p/login/cNiaEQdnt40L29P9RFdAk00" class="contact-email" target="_blank" rel="noopener">Cancel in the Stripe customer portal</a>
+    <p class="note">After canceling, you can keep using Pro features until the end of the current billing period. We do not offer prorated refunds.</p>
+  </div>
+
+  <h2>Registered for Pro but the features won't unlock?</h2>
+
+  <div class="contact-box">
+    <h3>This is often caused by a mismatched email address</h3>
+    <p>If you registered for Pro but the features won't open, the email address used at purchase may differ from the email of the Google account you are currently using. Please contact <a href="mailto:support@tategaki.site">support@tategaki.site</a> and we'll verify and unlock it right away.</p>
+  </div>
+
+  <h2>Support development</h2>
+
+  <div class="contact-box">
+    <h3>Support development on OFUSE (optional)</h3>
+    <p>TateGaki's core features will stay free forever. If you'd like to see it continue, an optional cheer via OFUSE is a real encouragement.</p>
+    <a href="https://ofuse.me/c0443beb" class="contact-email" target="_blank" rel="noopener">Support development on OFUSE</a>
   </div>
 </main>
 
