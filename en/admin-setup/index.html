@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#c87a30">
+<title>Admin Setup Guide (Organization-wide Deployment) | TateGaki</title>
+<meta name="description" content="Fixing errors like 'You don't have access to this add-on' or 'missing drive.files.insert permission' that appear after deploying TateGaki across a Google Workspace organization. Step-by-step Admin console instructions for administrators.">
+<link rel="canonical" href="https://tategaki.site/en/admin-setup/">
+<link rel="alternate" hreflang="ja" href="https://tategaki.site/admin-setup/">
+<link rel="alternate" hreflang="en" href="https://tategaki.site/en/admin-setup/">
+<link rel="alternate" hreflang="x-default" href="https://tategaki.site/admin-setup/">
+<!-- Open Graph -->
+<meta property="og:title" content="Admin Setup Guide (Organization-wide Deployment) | TateGaki">
+<meta property="og:description" content="Fix organization deployment permission errors with step-by-step Google Admin console instructions.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tategaki.site/en/admin-setup/">
+<meta property="og:site_name" content="TateGaki">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tategaki.site/images/hero.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1282">
+<meta property="article:modified_time" content="2026-07-13">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tategaki.site/images/hero.jpg">
+<!-- Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tategaki.site/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Admin Setup Guide" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  :root {
+    --color-bg: #faf8f5; --color-text: #2c2420; --color-heading: #1a1210;
+    --color-accent: #c87a30; --color-border: #e0d5c8; --color-muted: #8a7e72; --color-card: #fff;
+    --font-sans: 'Noto Sans JP', sans-serif; --font-serif: 'Noto Serif JP', serif;
+  }
+  body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text); line-height: 1.9; font-size: 15px; -webkit-font-smoothing: antialiased; }
+  header { border-bottom: 1px solid var(--color-border); padding: 24px 0; margin-bottom: 48px; }
+  header nav { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--color-heading); text-decoration: none; }
+  .logo span { color: var(--color-accent); }
+  nav ul { list-style: none; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px 16px; }
+  nav a { color: var(--color-muted); text-decoration: none; font-size: 13px; white-space: nowrap; transition: color 0.2s; }
+  nav a:hover { color: var(--color-text); }
+  .lang-switch { display: flex; align-items: center; gap: 6px; font-size: 12px; white-space: nowrap; }
+  .lang-switch a { color: var(--color-muted); text-decoration: none; font-size: 12px; }
+  .lang-switch a:hover { color: var(--color-text); }
+  .lang-switch .current, .lang-switch .sep { color: var(--color-muted); opacity: 0.4; cursor: default; }
+  main { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+  .breadcrumb { font-size: 12px; color: var(--color-muted); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--color-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-text); }
+  .breadcrumb .sep { margin: 0 6px; opacity: 0.5; }
+  h1 { font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--color-heading); margin-bottom: 8px; line-height: 1.5; }
+  .updated { color: var(--color-muted); font-size: 13px; margin-bottom: 16px; }
+  .trust { color: var(--color-muted); font-size: 13px; margin-bottom: 40px; }
+  h2 { font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--color-heading); margin-top: 44px; margin-bottom: 16px; line-height: 1.5; }
+  h3 { font-family: var(--font-serif); font-size: 16px; font-weight: 700; color: var(--color-heading); margin-top: 28px; margin-bottom: 12px; }
+  p { margin-bottom: 16px; }
+  ul, ol { margin: 0 0 16px; padding-left: 1.4em; }
+  li { margin-bottom: 8px; }
+  code { background: #f1e9de; border: 1px solid var(--color-border); border-radius: 4px; padding: 1px 6px; font-size: 13px; }
+  .cause-box { background: var(--color-card); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin-bottom: 20px; }
+  .cause-box h3 { margin-top: 0; }
+  .contact-box { background: var(--color-card); border: 1px solid var(--color-border); border-radius: 8px; padding: 32px; margin-top: 24px; }
+  .contact-box h3 { font-family: var(--font-serif); font-size: 16px; margin-bottom: 12px; color: var(--color-heading); margin-top: 0; }
+  .contact-email { display: inline-block; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 8px 16px; font-size: 15px; color: var(--color-accent); text-decoration: none; margin-top: 4px; }
+  .contact-email:hover { border-color: var(--color-accent); }
+  .note { color: var(--color-muted); font-size: 13px; margin-top: 12px; }
+  footer { border-top: 1px solid var(--color-border); padding: 24px 0; text-align: center; color: var(--color-muted); font-size: 12px; }
+  .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; margin-bottom: 8px; }
+  footer a { color: var(--color-muted); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--color-text); }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2RTPQTJSP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2RTPQTJSP');
+</script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/en/" class="logo">Tate<span>Gaki</span></a>
+    <ul class="nav-links">
+      <li><a href="/en/support.html">Support</a></li>
+      <li class="lang-switch">
+        <a href="/admin-setup/" hreflang="ja" lang="ja">🇯🇵 日本語</a>
+        <span class="sep">/</span>
+        <span class="current" aria-current="true">🇬🇧 English</span>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a><span class="sep">›</span>
+    Admin Setup Guide
+  </nav>
+
+  <h1>Admin Setup Guide (Organization-wide Deployment)</h1>
+  <p class="updated">Last updated: July 13, 2026</p>
+  <p class="trust">TateGaki has surpassed 10,000 cumulative installs, with adoption across 10 organization domains and roughly 2,400 weekly active users (★4.5 rating).</p>
+
+  <p>After deploying TateGaki organization-wide (Google Workspace), your users may see errors like the ones below. This page is a guide for <strong>organization administrators</strong> on how to resolve them.</p>
+
+  <h2>Common errors</h2>
+  <ul>
+    <li>"You don't have access to this add-on"</li>
+    <li>"Missing <code>drive.files.insert</code> permission" / exporting to or saving on Drive fails</li>
+    <li>The add-on launches, but only the Docs table export / Drive save fails</li>
+  </ul>
+  <p>Most of these come from one of the two causes below. Both are resolved in the Google Admin console (<code>admin.google.com</code>).</p>
+
+  <h2>Cause 1: OAuth scopes not approved on the organization side</h2>
+  <div class="cause-box">
+    <p>If your organization's security settings leave the OAuth scopes TateGaki needs (Google Drive <code>drive.file</code>, email address <code>userinfo.email</code>, etc.) unapproved or untrusted, users cannot consent and hit access / <code>drive.files.insert</code> permission errors.</p>
+    <h3>How to check and fix</h3>
+    <ol>
+      <li>Sign in to <code>admin.google.com</code> with an administrator account.</li>
+      <li>Go to <strong>Security</strong> &gt; <strong>Access and data control</strong> &gt; <strong>API controls</strong>.</li>
+      <li>Under <strong>Manage third-party app access</strong> (third-party apps / Google Workspace Marketplace apps), find <strong>TateGaki</strong>. If it isn't listed, choose "Add app" and select TateGaki from Marketplace apps.</li>
+      <li>Set TateGaki to <strong>"Trusted"</strong> and <strong>approve</strong> access to the requested scopes such as Drive (<code>drive.file</code>) and email address (<code>userinfo.email</code>).</li>
+      <li>Confirm the setting applies to the target organizational unit (OU).</li>
+    </ol>
+    <p class="note">Note: changes can take time to propagate. Afterward, ask users to reload the browser and reopen the add-on.</p>
+  </div>
+
+  <h2>Cause 2: App not distributed / permissions not granted to the target users or OU</h2>
+  <div class="cause-box">
+    <p>When installing from Marketplace organization-wide, if distribution is limited to only certain OUs or groups, users outside that scope cannot use the app and get access errors.</p>
+    <h3>How to check and fix</h3>
+    <ol>
+      <li>Sign in to <code>admin.google.com</code> with an administrator account.</li>
+      <li>Go to <strong>Apps</strong> &gt; <strong>Google Workspace Marketplace apps</strong> &gt; <strong>Apps list</strong>.</li>
+      <li>Select <strong>TateGaki</strong> from the list.</li>
+      <li>In the <strong>Distribution (who can use)</strong> setting, turn the app <strong>ON (available)</strong> for the target <strong>OU or group</strong>. For company-wide use, turn it on for the top-level organization.</li>
+      <li>If needed, also check your <strong>Marketplace allowlist settings</strong> so individual users are allowed to install.</li>
+    </ol>
+    <p class="note">Note: propagation can take from tens of minutes to a few hours. Wait a while, then ask affected users to try again.</p>
+  </div>
+
+  <h2>Still not resolved?</h2>
+  <div class="contact-box">
+    <h3>Contact support</h3>
+    <p>If the steps above don't resolve it, contact us with the exact error message, your organization domain, and the affected users' situation. We'll review and advise.</p>
+    <a href="mailto:support@tategaki.site" class="contact-email">support@tategaki.site</a>
+    <p class="note">For general questions, see <a href="/en/support.html">Support &amp; FAQ</a> as well.</p>
+  </div>
+</main>
+
+<footer>
+  <p class="footer-links">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="/en/support.html">Support</a>
+    <a href="https://ofuse.me/c0443beb" target="_blank" rel="noopener">Support development (OFUSE)</a>
+  </p>
+  <p style="margin-top: 8px;">&copy; 2026 TateGaki. All rights reserved.</p>
+  <p style="margin-top: 8px; font-size: 11px;">Google Docs and Google Drive are trademarks of Google LLC.</p>
+</footer>
+
+</body>
+</html>

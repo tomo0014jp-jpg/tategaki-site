@@ -158,6 +158,38 @@
         "@type": "Answer",
         "text": "Googleドキュメント（Google Docs）のメニューから「拡張機能」→「アドオン」→「アドオンを管理」を選択し、TateGakiの「⋮」メニューから「アンインストール」を選択してください。Google Drive内の保存ファイルは削除されません。"
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Wordの縦書きとの違いは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wordは標準で縦書きに対応していますが、Google Workspaceの外に出る必要があります。TateGakiはGoogleドキュメント内で完結するため、共同編集・クラウド保存・拡張機能の利便性をそのまま保てます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "「たてがきSuite（ゼッタリンクスのSuiteツール）」との違いは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Suiteツールは縦書きを画像に変換する方式で年額1,650円です。TateGakiはGoogleドキュメント内で縦書き・原稿用紙レイアウトを直接編集でき、基本機能は無料（Pro 月500円または年1,500円・税込）です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "「こどもSuite たて書きできる版」との違いは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "こどもSuiteは教育向けに特化しています。TateGakiは教育・出版・一般用途を横断し、書籍判型5種（Pro）まで対応します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "外部ツール「縦書きくん」との違いは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "縦書きくんはGoogleドキュメント外のWebツールで、文字を縦に並べ替えるだけです。TateGakiはDocsネイティブで、原稿用紙・ルビ・禁則処理まで対応します。"
+      }
     }
   ]
 }
@@ -493,7 +525,7 @@
 
   <details class="faq-item">
     <summary>Googleドキュメントで縦書きはできますか？</summary>
-    <p>Googleドキュメントの標準機能では縦書き入力はできません。TateGakiアドオンをインストールすることで、Googleドキュメント上で縦書きの原稿用紙・白地モードを利用できるようになります。インストールはGoogle Workspace Marketplaceから無料で行えます。</p>
+    <p>Googleドキュメントの標準機能では縦書き入力はできません。TateGakiアドオンをインストールすることで、Googleドキュメント上で縦書きの原稿用紙・白地モードを利用できるようになります。インストールはGoogle Workspace Marketplaceから無料で行えます。詳しい手順は<a href="/guide/google-docs-tategaki/">Googleドキュメントで縦書きにする方法</a>をご覧ください。</p>
   </details>
 
   <details class="faq-item">
@@ -539,6 +571,28 @@
   <details class="faq-item">
     <summary>Proの支払い方法を教えてください。</summary>
     <p>月額500円（税込）または年額1,500円（税込）のクレジットカード決済（Stripe）です。いつでも解約でき、カード明細には「TATEGAKI」と表示されます。年額は月あたり125円です。</p>
+  </details>
+
+  <h2>他ツール・他の方法との比較</h2>
+
+  <details class="faq-item">
+    <summary>Wordの縦書きとの違いは？</summary>
+    <p>Wordは標準で縦書きに対応していますが、Google Workspaceの外に出る必要があります。TateGakiはGoogleドキュメント内で完結するため、共同編集・クラウド保存・拡張機能の利便性をそのまま保てます。</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>「たてがきSuite（ゼッタリンクスのSuiteツール）」との違いは？</summary>
+    <p>Suiteツールは縦書きを画像に変換する方式で年額1,650円です。TateGakiはGoogleドキュメント内で縦書き・原稿用紙レイアウトを直接編集でき、基本機能は無料（Pro 月500円または年1,500円・税込）です。</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>「こどもSuite たて書きできる版」との違いは？</summary>
+    <p>こどもSuiteは教育向けに特化しています。TateGakiは教育・出版・一般用途を横断し、書籍判型5種（Pro）まで対応します。</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>外部ツール「縦書きくん」との違いは？</summary>
+    <p>縦書きくんはGoogleドキュメント外のWebツールで、文字を縦に並べ替えるだけです。TateGakiはDocsネイティブで、原稿用紙・ルビ・禁則処理まで対応します。</p>
   </details>
 
   <h2>トラブルシューティング</h2>
@@ -598,6 +652,14 @@
   <div class="contact-box">
     <h3>メールアドレスの不一致が原因の場合があります</h3>
     <p>Proにご登録したのに機能が開かない方へ：ご購入時のメールアドレスと、今お使いのGoogleアカウントのメールアドレスが異なる可能性があります。<a href="mailto:support@tategaki.site">support@tategaki.site</a> までご連絡ください。確認のうえ、すぐに解放します。</p>
+  </div>
+
+  <h2>組織で一括導入された管理者の方へ</h2>
+
+  <div class="contact-box">
+    <h3>「アクセス権がありません」「drive.files.insert 権限がありません」等のエラー</h3>
+    <p>組織（Google Workspace）で TateGaki を一括導入した際にこれらのエラーが表示される場合、多くは管理コンソール側の OAuth スコープの承認漏れ、またはアプリ配布・権限の未付与が原因です。Google 管理コンソールでの確認・対処手順を管理者向けガイドにまとめています。</p>
+    <a href="/admin-setup/" class="contact-email">管理者向けセットアップガイドを見る</a>
   </div>
 
   <h2>開発を応援する</h2>

@@ -159,6 +159,38 @@
         "@type": "Answer",
         "text": "From the Google Docs menu, choose Extensions → Add-ons → Manage add-ons, open the three-dot menu next to TateGaki, and select Uninstall. Files saved in your Google Drive will not be deleted."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from Word's vertical writing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Word supports vertical writing natively, but you have to leave Google Workspace. TateGaki works entirely inside Google Docs, so you keep collaborative editing, cloud storage, and the convenience of add-ons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from TategakiSuite (Zetalinks' Suite tool)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Suite tool converts vertical text into an image and costs ¥1,650/year. TateGaki lets you edit vertical writing and manuscript-paper layouts directly inside Google Docs, and its core features are free (Pro ¥500/month or ¥1,500/year, tax incl.)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from Kodomo Suite (vertical-writing edition)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kodomo Suite is specialized for education. TateGaki spans education, publishing, and general use, and supports five book trim sizes (Pro)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from the external tool Tategaki-kun?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tategaki-kun is a web tool outside Google Docs that only rearranges characters vertically. TateGaki is Docs-native and supports manuscript paper, ruby (furigana), and kinsoku shori."
+      }
     }
   ]
 }
@@ -524,6 +556,28 @@
     <p>TateGaki Pro is ¥500/month (tax included) or ¥1,500/year (tax included), paid by credit card via Stripe. You can cancel anytime, and your card statement shows "TATEGAKI". The annual plan works out to ¥125 per month.</p>
   </details>
 
+  <h2>Comparison with other tools and methods</h2>
+
+  <details class="faq-item">
+    <summary>How is this different from Word's vertical writing?</summary>
+    <p>Word supports vertical writing natively, but you have to leave Google Workspace. TateGaki works entirely inside Google Docs, so you keep collaborative editing, cloud storage, and the convenience of add-ons.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How is this different from TategakiSuite (Zetalinks' Suite tool)?</summary>
+    <p>The Suite tool converts vertical text into an image and costs ¥1,650/year. TateGaki lets you edit vertical writing and manuscript-paper layouts directly inside Google Docs, and its core features are free (Pro ¥500/month or ¥1,500/year, tax incl.).</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How is this different from Kodomo Suite (vertical-writing edition)?</summary>
+    <p>Kodomo Suite is specialized for education. TateGaki spans education, publishing, and general use, and supports five book trim sizes (Pro).</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How is this different from the external tool Tategaki-kun?</summary>
+    <p>Tategaki-kun is a web tool outside Google Docs that only rearranges characters vertically. TateGaki is Docs-native and supports manuscript paper, ruby (furigana), and kinsoku shori.</p>
+  </details>
+
   <h2>Troubleshooting</h2>
 
   <details class="faq-item">
@@ -581,6 +635,14 @@
   <div class="contact-box">
     <h3>This is often caused by a mismatched email address</h3>
     <p>If you registered for Pro but the features won't open, the email address used at purchase may differ from the email of the Google account you are currently using. Please contact <a href="mailto:support@tategaki.site">support@tategaki.site</a> and we'll verify and unlock it right away.</p>
+  </div>
+
+  <h2>For administrators deploying organization-wide</h2>
+
+  <div class="contact-box">
+    <h3>Errors like "You don't have access" or "missing drive.files.insert permission"</h3>
+    <p>If these errors appear after deploying TateGaki organization-wide (Google Workspace), the cause is usually unapproved OAuth scopes in the Admin console, or the app not being distributed / permitted for the target users. We've put the Admin console steps together in the administrator guide.</p>
+    <a href="/en/admin-setup/" class="contact-email">Open the Admin Setup Guide</a>
   </div>
 
   <h2>Support development</h2>

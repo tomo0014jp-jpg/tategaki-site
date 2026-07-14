@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#c87a30">
+<title>管理者向けセットアップガイド（組織一括導入）｜TateGaki</title>
+<meta name="description" content="組織で TateGaki を一括導入した際に出る「このアドオンへのアクセス権がありません」「drive.files.insert 権限がありません」などのエラーの原因と、Google 管理コンソールでの解決手順を管理者向けに解説します。">
+<link rel="canonical" href="https://tategaki.site/admin-setup/">
+<link rel="alternate" hreflang="ja" href="https://tategaki.site/admin-setup/">
+<link rel="alternate" hreflang="en" href="https://tategaki.site/en/admin-setup/">
+<link rel="alternate" hreflang="x-default" href="https://tategaki.site/admin-setup/">
+<!-- Open Graph -->
+<meta property="og:title" content="管理者向けセットアップガイド（組織一括導入）｜TateGaki">
+<meta property="og:description" content="組織導入時の権限エラーの原因と、Google 管理コンソールでの解決手順を管理者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tategaki.site/admin-setup/">
+<meta property="og:site_name" content="TateGaki">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://tategaki.site/images/hero.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1282">
+<meta property="article:modified_time" content="2026-07-13">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tategaki.site/images/hero.jpg">
+<!-- Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://tategaki.site/" },
+    { "@type": "ListItem", "position": 2, "name": "管理者向けセットアップガイド" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  :root {
+    --color-bg: #faf8f5; --color-text: #2c2420; --color-heading: #1a1210;
+    --color-accent: #c87a30; --color-border: #e0d5c8; --color-muted: #8a7e72; --color-card: #fff;
+    --font-sans: 'Noto Sans JP', sans-serif; --font-serif: 'Noto Serif JP', serif;
+  }
+  body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text); line-height: 1.9; font-size: 15px; -webkit-font-smoothing: antialiased; }
+  header { border-bottom: 1px solid var(--color-border); padding: 24px 0; margin-bottom: 48px; }
+  header nav { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--color-heading); text-decoration: none; }
+  .logo span { color: var(--color-accent); }
+  nav ul { list-style: none; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px 16px; }
+  nav a { color: var(--color-muted); text-decoration: none; font-size: 13px; white-space: nowrap; transition: color 0.2s; }
+  nav a:hover { color: var(--color-text); }
+  .lang-switch { display: flex; align-items: center; gap: 6px; font-size: 12px; white-space: nowrap; }
+  .lang-switch a { color: var(--color-muted); text-decoration: none; font-size: 12px; }
+  .lang-switch a:hover { color: var(--color-text); }
+  .lang-switch .current, .lang-switch .sep { color: var(--color-muted); opacity: 0.4; cursor: default; }
+  main { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+  .breadcrumb { font-size: 12px; color: var(--color-muted); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--color-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-text); }
+  .breadcrumb .sep { margin: 0 6px; opacity: 0.5; }
+  h1 { font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--color-heading); margin-bottom: 8px; line-height: 1.5; }
+  .updated { color: var(--color-muted); font-size: 13px; margin-bottom: 16px; }
+  .trust { color: var(--color-muted); font-size: 13px; margin-bottom: 40px; }
+  h2 { font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--color-heading); margin-top: 44px; margin-bottom: 16px; line-height: 1.5; }
+  h3 { font-family: var(--font-serif); font-size: 16px; font-weight: 700; color: var(--color-heading); margin-top: 28px; margin-bottom: 12px; }
+  p { margin-bottom: 16px; }
+  ul, ol { margin: 0 0 16px; padding-left: 1.4em; }
+  li { margin-bottom: 8px; }
+  code { background: #f1e9de; border: 1px solid var(--color-border); border-radius: 4px; padding: 1px 6px; font-size: 13px; }
+  .cause-box { background: var(--color-card); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin-bottom: 20px; }
+  .cause-box h3 { margin-top: 0; }
+  .contact-box { background: var(--color-card); border: 1px solid var(--color-border); border-radius: 8px; padding: 32px; margin-top: 24px; }
+  .contact-box h3 { font-family: var(--font-serif); font-size: 16px; margin-bottom: 12px; color: var(--color-heading); margin-top: 0; }
+  .contact-email { display: inline-block; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 8px 16px; font-size: 15px; color: var(--color-accent); text-decoration: none; margin-top: 4px; }
+  .contact-email:hover { border-color: var(--color-accent); }
+  .note { color: var(--color-muted); font-size: 13px; margin-top: 12px; }
+  footer { border-top: 1px solid var(--color-border); padding: 24px 0; text-align: center; color: var(--color-muted); font-size: 12px; }
+  .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; margin-bottom: 8px; }
+  footer a { color: var(--color-muted); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--color-text); }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2RTPQTJSP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2RTPQTJSP');
+</script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/" class="logo">Tate<span>Gaki</span></a>
+    <ul class="nav-links">
+      <li><a href="/support.html">サポート</a></li>
+      <li class="lang-switch">
+        <span class="current" aria-current="true">🇯🇵 日本語</span>
+        <span class="sep">/</span>
+        <a href="/en/admin-setup/" hreflang="en" lang="en">🇬🇧 English</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">ホーム</a><span class="sep">›</span>
+    管理者向けセットアップガイド
+  </nav>
+
+  <h1>管理者向けセットアップガイド（組織一括導入）</h1>
+  <p class="updated">最終更新日：2026年7月13日</p>
+  <p class="trust">TateGaki は累計10,000インストールを超え、10組織ドメイン・週次実利用 約2,400 の導入実績があります（評価 ★4.5）。</p>
+
+  <p>組織（Google Workspace）で TateGaki を一括導入したあと、利用者側で次のようなエラーが表示されることがあります。本ページは、こうしたエラーに対処する<strong>組織管理者向け</strong>のガイドです。</p>
+
+  <h2>よくあるエラー</h2>
+  <ul>
+    <li>「このアドオンへのアクセス権がありません」</li>
+    <li>「<code>drive.files.insert</code> 権限がありません」／ Drive への書き出し・保存が失敗する</li>
+    <li>アドオンは起動するが、Docs テーブル書き出し・Drive 保存だけが失敗する</li>
+  </ul>
+  <p>これらの多くは、次の2つの原因のいずれかで発生します。いずれも Google 管理コンソール（<code>admin.google.com</code>）での設定で解決できます。</p>
+
+  <h2>原因1：OAuth スコープの組織側承認漏れ</h2>
+  <div class="cause-box">
+    <p>組織のセキュリティ設定で、TateGaki が必要とする OAuth スコープ（Google Drive の <code>drive.file</code>、メールアドレスの <code>userinfo.email</code> など）が「未承認／未信頼」の状態だと、利用者が同意できず、アクセス権・<code>drive.files.insert</code> 権限のエラーになります。</p>
+    <h3>確認・対処手順</h3>
+    <ol>
+      <li>管理者アカウントで <code>admin.google.com</code> にログインします。</li>
+      <li><strong>セキュリティ</strong> ＞ <strong>アクセスとデータの管理</strong> ＞ <strong>API の制御</strong> を開きます。</li>
+      <li><strong>アプリのアクセス制御を管理</strong>（サードパーティ製アプリ／Google Workspace Marketplace アプリ）で <strong>TateGaki</strong> を探します。見つからない場合は「アプリを追加」→ Marketplace アプリから TateGaki を選択します。</li>
+      <li>TateGaki を <strong>「信頼できる（Trusted）」</strong> に設定し、要求される Drive（<code>drive.file</code>）・メールアドレス（<code>userinfo.email</code>）などのスコープへのアクセスを<strong>承認</strong>します。</li>
+      <li>対象の組織部門（OU）に設定が適用されていることを確認します。</li>
+    </ol>
+    <p class="note">※ 設定変更の反映には時間がかかる場合があります。反映後、利用者にブラウザの再読み込みとアドオンの再起動を依頼してください。</p>
+  </div>
+
+  <h2>原因2：対象ユーザー／組織部門へのアプリ配布・権限が未付与</h2>
+  <div class="cause-box">
+    <p>Marketplace から組織インストールする際、配布対象が「一部の組織部門・グループのみ」に限定されていると、対象外のユーザーはアプリを利用できず、アクセス権エラーになります。</p>
+    <h3>確認・対処手順</h3>
+    <ol>
+      <li>管理者アカウントで <code>admin.google.com</code> にログインします。</li>
+      <li><strong>アプリ</strong> ＞ <strong>Google Workspace Marketplace アプリ</strong> ＞ <strong>アプリリスト</strong> を開きます。</li>
+      <li>一覧から <strong>TateGaki</strong> を選択します。</li>
+      <li><strong>配布（利用可能なユーザー）</strong> の設定で、利用させたい<strong>組織部門（OU）またはグループ</strong>を「オン（利用可能）」にします。全社利用の場合は最上位の組織に対してオンにします。</li>
+      <li>必要に応じて、個々のユーザーがインストールできるよう <strong>Marketplace の許可設定</strong>（ホワイトリスト等）も確認します。</li>
+    </ol>
+    <p class="note">※ 反映に数十分〜数時間かかることがあります。時間をおいてから、対象ユーザーに再試行を依頼してください。</p>
+  </div>
+
+  <h2>それでも解決しない場合</h2>
+  <div class="contact-box">
+    <h3>サポートにご連絡ください</h3>
+    <p>上記を確認しても解決しない場合は、発生しているエラーメッセージ・組織ドメイン・対象ユーザーの状況を添えて、下記までご連絡ください。確認のうえご案内します。</p>
+    <a href="mailto:support@tategaki.site" class="contact-email">support@tategaki.site</a>
+    <p class="note">一般的なご質問は <a href="/support.html">サポート・よくある質問</a> もご覧ください。</p>
+  </div>
+</main>
+
+<footer>
+  <p class="footer-links">
+    <a href="/privacy.html">プライバシーポリシー</a>
+    <a href="/terms.html">利用規約</a>
+    <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+    <a href="/support.html">サポート</a>
+    <a href="https://ofuse.me/c0443beb" target="_blank" rel="noopener">開発を応援（OFUSE）</a>
+  </p>
+  <p style="margin-top: 8px;">&copy; 2026 TateGaki. All rights reserved.</p>
+  <p style="margin-top: 8px; font-size: 11px;">Google Docs および Google Drive は Google LLC の商標です。</p>
+</footer>
+
+</body>
+</html>
