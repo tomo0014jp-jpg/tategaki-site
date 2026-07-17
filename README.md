@@ -27,9 +27,9 @@ TateGaki（Googleドキュメント向け縦書きアドオン）の公式サイ
 | --- | --- | --- |
 | `asOf` | 基準月（`<time datetime>` に使用） | `"2026-06"` |
 | `asOfLabel` / `asOfLabelEn` | 「〜時点」の表示ラベル | `"2026年6月時点"` / `"As of June 2026"` |
-| `installs` | 生の件数（llms.txt 用） | `"10,000"` |
-| `installsLabel` / `installsLabelEn` | 表示ラベル | `"1万ダウンロード突破"` / `"Over 10,000 installs"` |
-| `rating` | 評価（★の値） | `"4.5"` |
+| `installs` | 生の件数（llms.txt 用） | `"30,000"` |
+| `installsLabel` / `installsLabelEn` | 表示ラベル | `"3万ダウンロード突破"` / `"Over 30,000 installs"` |
+| `rating` | 評価（★の値） | `"4"` |
 | `reviewCount` | レビュー件数（未使用なら `null`） | `null` |
 | `showRating` | 評価を表示するか | `true` / `false` |
 

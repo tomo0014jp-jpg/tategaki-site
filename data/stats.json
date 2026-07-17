@@ -1,7 +1,7 @@
 {
-  "asOf": "2026-06",
-  "asOfLabel": "2026年6月時点",
-  "asOfLabelEn": "As of June 2026",
+  "asOf": "2026-07",
+  "asOfLabel": "2026年7月時点",
+  "asOfLabelEn": "As of July 2026",
   "milestones": [
     {
       "date": "2026-06-17",
@@ -16,9 +16,16 @@
       "dateLabelEn": "Jun 22",
       "label": "1万ダウンロード突破",
       "labelEn": "over 10,000 installs"
+    },
+    {
+      "date": "2026-07-17",
+      "dateLabel": "7月17日",
+      "dateLabelEn": "Jul 17",
+      "label": "3万ダウンロード突破",
+      "labelEn": "over 30,000 installs"
     }
   ],
-  "rating": "4.5",
+  "rating": "4",
   "reviewCount": null,
   "showRating": true
 }

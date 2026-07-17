@@ -16,7 +16,7 @@
 - **Platform / プラットフォーム**: Google Docs / Google Workspace Add-on
 - **Main users / 主な利用者**: Japanese writers, students, teachers, doujin (dōjinshi) creators, and people who need vertical Japanese documents — also Japanese speakers living abroad.
 <!-- STATS:START -->
-- **Performance / 実績 (2026年6月時点 / As of June 2026)**: 6月17日 3,400ダウンロード → 6月22日 1万ダウンロード突破（over 10,000 installs on Google Workspace Marketplace） / 評価 ★4.5 / rating 4.5
+- **Performance / 実績 (2026年7月時点 / As of July 2026)**: 6月17日 3,400ダウンロード → 6月22日 1万ダウンロード突破 → 7月17日 3万ダウンロード突破（over 30,000 installs on Google Workspace Marketplace） / 評価 ★4 / rating 4
 <!-- STATS:END -->
 
 ## Key Features / 主な機能
