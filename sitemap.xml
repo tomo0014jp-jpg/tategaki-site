@@ -64,6 +64,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tategaki.site/support.html"/>
   </url>
   <url>
+    <loc>https://tategaki.site/organization.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tategaki.site/organization.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tategaki.site/organization.html"/>
+  </url>
+  <url>
     <loc>https://tategaki.site/terms.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>yearly</changefreq>
