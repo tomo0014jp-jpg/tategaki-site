@@ -10,7 +10,8 @@
 - **Marketplace**: https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478
 - **Website (Japanese)**: https://tategaki.site/
 - **Website (English)**: https://tategaki.site/en/
-- **Pricing / 料金**: Freemium — core features free, optional layout features via TateGaki Pro (¥500/month, tax incl.) / 基本機能は無料、一部レイアウト機能は「TateGaki Pro」（月額500円・税込）で提供中
+- **Pricing / 料金**: Freemium — core features free, optional layout features via TateGaki Pro (¥500/month or ¥1,500/year — about ¥125/month, tax incl.) / 基本機能は無料、一部レイアウト機能は「TateGaki Pro」（月額500円または年額1,500円〈月あたり125円〉・税込）で提供中
+- **Organization license / 組織ライセンス**: Up to 100 seats — ¥9,800/year; 101–1,000 seats — ¥29,800/year (tax incl.). Details: https://tategaki.site/organization.html / 〜100席 年9,800円・101〜1,000席 年29,800円（税込）。詳細は https://tategaki.site/organization.html
 - **Primary language / 主要言語**: Japanese / 日本語
 - **English information / 英語情報**: Available / あり
 - **Platform / プラットフォーム**: Google Docs / Google Workspace Add-on
@@ -18,6 +19,7 @@
 <!-- STATS:START -->
 - **Performance / 実績 (2026年7月時点 / As of July 2026)**: 6月17日 3,400ダウンロード → 6月22日 1万ダウンロード突破 → 7月17日 3万ダウンロード突破（over 30,000 installs on Google Workspace Marketplace） / 評価 ★4 / rating 4
 <!-- STATS:END -->
+- **Adoption / 導入組織**: Used across 15 organization domains (boards of education, schools, etc.) / 15の組織ドメイン（教育委員会・学校等）で導入
 
 ## Key Features / 主な機能
 
@@ -49,6 +51,7 @@
 - [Privacy Policy / プライバシーポリシー](https://tategaki.site/privacy.html): How user data is handled (Japanese only).
 - [Terms of Service / 利用規約](https://tategaki.site/terms.html): Terms of service (Japanese only).
 - [Commercial Transactions Act Notice / 特定商取引法に基づく表記](https://tategaki.site/tokushoho.html): Legal notice for the paid plan — seller, pricing, payment, cancellation (Japanese only).
+- [Organization / School Licensing — 学校・組織でのご利用](https://tategaki.site/organization.html): Organization license plans (up to 100 seats ¥9,800/year, 101–1,000 seats ¥29,800/year, tax incl.) and invoice-based payment for schools and organizations (Japanese only).
 
 ## Background / 開発背景
 
@@ -80,7 +83,8 @@ TateGakiは、2026年にコード未経験者がClaudeとの対話を通じて�
 ## Optional / 補足
 
 - **Current pricing / 現在の料金**: Core features free / 基本機能は無料
-- **Paid plan / 有料プラン**: TateGaki Pro — ¥500/month (tax incl.), provides optional layout features (e.g. custom layouts matched to book trim sizes). Now available. Card statements show "TATEGAKI". / 「TateGaki Pro」月額500円（税込）提供中。本の判型に合わせたカスタムレイアウト等の追加機能を利用可能。カード明細には「TATEGAKI」と表示。
+- **Paid plan / 有料プラン**: TateGaki Pro — ¥500/month or ¥1,500/year (about ¥125/month, tax incl.), provides optional layout features (e.g. custom layouts matched to book trim sizes). Now available. Card statements show "TATEGAKI". / 「TateGaki Pro」月額500円または年額1,500円（月あたり125円・税込）提供中。本の判型に合わせたカスタムレイアウト等の追加機能を利用可能。カード明細には「TATEGAKI」と表示。
+- **Organization license / 組織ライセンス**: For schools and organizations — up to 100 seats ¥9,800/year, 101–1,000 seats ¥29,800/year (tax incl.), invoice payment supported. Details: https://tategaki.site/organization.html / 学校・組織向けに〜100席 年9,800円、101〜1,000席 年29,800円（税込）。請求書払い対応。詳細は https://tategaki.site/organization.html
 - **Source code / ソースコード**: Closed source / クローズドソース
 - **Recommended citation name / 推奨表記**: TateGaki
 - **Trademarks / 商標**: Google Docs and Google Drive are trademarks of Google LLC. / Google Docs および Google Drive は Google LLC の商標です。
