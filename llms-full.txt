@@ -27,7 +27,7 @@
 - Platform / プラットフォーム: Google Docs / Google Workspace Add-on
 - Source code / ソースコード: Closed source / クローズドソース
 <!-- STATS:START -->
-- Performance / 実績 (2026年7月時点 / As of July 2026): 6月17日 3,400ダウンロード → 6月22日 1万ダウンロード突破 → 7月17日 3万ダウンロード突破（over 30,000 installs on Google Workspace Marketplace） / 評価 ★4 / rating 4
+- Performance / 実績 (2026年8月時点 / As of August 2026): 6月17日 3,400インストール → 6月22日 1万インストール突破 → 7月17日 3万インストール突破 → 8月13日 3万5千インストール突破（over 35,000 installs on Google Workspace Marketplace） / 評価 ★4 / rating 4
 <!-- STATS:END -->
 - Adoption / 導入組織: Used across 15 organization domains (boards of education, schools, etc.) / 15の組織ドメイン（教育委員会・学校等）で導入
 
