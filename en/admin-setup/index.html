@@ -158,6 +158,20 @@
     <p class="note">Note: propagation can take from tens of minutes to a few hours. Wait a while, then ask affected users to try again.</p>
   </div>
 
+  <h2>Cause 3: The user is signed in to multiple Google accounts</h2>
+  <div class="cause-box">
+    <p><strong>This symptom occurs even when the administrator-side settings (User Access / Data Access) are correct. Please ask the user to try the steps below first.</strong></p>
+    <p><strong>Symptom:</strong> The add-on opens, but &quot;Import from Docs&quot;, &quot;Export to Docs&quot;, and &quot;Save to Drive&quot; fail with <code>Authorization is required to perform that action.</code> The add-on itself may also fail to start.</p>
+    <p><strong>Cause:</strong> When several Google accounts are signed in at the same time, the account running the add-on can differ from the account that granted permission. This is how Google handles multiple sessions and cannot be worked around by the add-on.</p>
+    <h3>What to ask the user to do (any one of these resolves it)</h3>
+    <ol>
+      <li>Open the document in an Incognito window, signed in with only the account they use.</li>
+      <li>Make that account their default account (the first one they sign in with).</li>
+      <li>Use a separate Chrome profile for each account.</li>
+    </ol>
+    <p class="note">Note: This symptom cannot be resolved by changing organization settings. It requires isolating the user's sign-in state.</p>
+  </div>
+
   <h2>Still not resolved?</h2>
   <div class="contact-box">
     <h3>Contact support</h3>

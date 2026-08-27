@@ -428,6 +428,21 @@
     color: var(--color-text);
   }
 
+  .faq-item ol {
+    margin-top: 12px;
+    margin-bottom: 0;
+    padding-left: 1.5em;
+    color: var(--color-text);
+  }
+  
+  .faq-item ol li {
+    margin-bottom: 6px;
+  }
+  
+  .faq-item ol li:last-child {
+    margin-bottom: 0;
+  }
+
   .contact-box {
     background: var(--color-card);
     border: 1px solid var(--color-border);
@@ -600,6 +615,19 @@
   </details>
 
   <h2>Troubleshooting</h2>
+
+
+  <details class="faq-item">
+    <summary>If you are signed in to multiple Google accounts</summary>
+    <p><strong>Symptom:</strong> The add-on opens, but &quot;Import from Docs&quot;, &quot;Export to Docs&quot;, and &quot;Save to Drive&quot; fail with <code>Authorization is required to perform that action.</code> The add-on itself may also fail to start.</p>
+    <p><strong>Cause:</strong> When several Google accounts are signed in at the same time, the account running the add-on can differ from the account that granted permission. This is how Google handles multiple sessions and cannot be worked around by the add-on.</p>
+    <p><strong>What to do (any one of these resolves it):</strong></p>
+    <ol>
+      <li>Open the document in an Incognito window, signed in with only the account you use.</li>
+      <li>Make that account your default account (the first one you sign in with).</li>
+      <li>Use a separate Chrome profile for each account.</li>
+    </ol>
+  </details>
 
   <details class="faq-item">
     <summary>The dialog doesn't appear</summary>

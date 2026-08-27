@@ -426,6 +426,21 @@
     margin-bottom: 0;
     color: var(--color-text);
   }
+
+  .faq-item ol {
+    margin-top: 12px;
+    margin-bottom: 0;
+    padding-left: 1.5em;
+    color: var(--color-text);
+  }
+  
+  .faq-item ol li {
+    margin-bottom: 6px;
+  }
+  
+  .faq-item ol li:last-child {
+    margin-bottom: 0;
+  }
   
   .contact-box {
     background: var(--color-card);
@@ -618,6 +633,19 @@
   </details>
 
   <h2>トラブルシューティング</h2>
+
+
+  <details class="faq-item">
+    <summary>複数のGoogleアカウントにログインしている場合</summary>
+    <p><strong>症状：</strong>アドオンは開くのに、「Docsから取り込み」「Docsに書き出し」「Driveに保存」だけが権限エラー（<code>Authorization is required to perform that action.</code>）になります。アドオンの起動自体が失敗することもあります。</p>
+    <p><strong>原因：</strong>複数のGoogleアカウントに同時にログインしていると、アドオンを実行するアカウントと、権限を許可したアカウントが食い違うことがあります。Google側の仕組みによるもので、アドオン側では回避できません。</p>
+    <p><strong>対処（どれか1つで解決します）：</strong></p>
+    <ol>
+      <li>シークレットウィンドウで、使うアカウントだけログインして開く</li>
+      <li>使うアカウントを既定（最初にログインしたアカウント）にする</li>
+      <li>Chromeのプロフィールをアカウントごとに分ける</li>
+    </ol>
+  </details>
 
   <details class="faq-item">
     <summary>ダイアログが表示されません</summary>

@@ -242,6 +242,8 @@ Googleドキュメント（Google Docs）縦書きアドオン TateGaki のサ�
 
 ### トラブルシューティング
 
+- **Q. 複数のGoogleアカウントにログインしている場合**
+  A. 症状：アドオンは開くのに、「Docsから取り込み」「Docsに書き出し」「Driveに保存」だけが権限エラー（Authorization is required to perform that action.）になります。アドオンの起動自体が失敗することもあります。原因：複数のGoogleアカウントに同時にログインしていると、アドオンを実行するアカウントと、権限を許可したアカウントが食い違うことがあります。Google側の仕組みによるもので、アドオン側では回避できません。対処（どれか1つで解決します）：①シークレットウィンドウで、使うアカウントだけログインして開く ②使うアカウントを既定（最初にログインしたアカウント）にする ③Chromeのプロフィールをアカウントごとに分ける。なお、組織で一括導入している場合、管理者側の設定（User Access / Data Access）が正しくてもこの症状は起こります。
 - **Q. ダイアログが表示されません**
   A. ブラウザのポップアップブロッカーが有効になっている場合、ダイアログが表示されないことがあります。Googleドキュメント（Google Docs）のドメインでポップアップを許可してください。また、ブラウザを再読み込みしてからもう一度お試しください。
 - **Q. 文字の表示がおかしい・フォントが読み込まれない**
@@ -307,6 +309,8 @@ Support page for TateGaki, the free Google Docs add-on for Japanese vertical wri
 
 ### Troubleshooting
 
+- **Q. If you are signed in to multiple Google accounts**
+  A. Symptom: The add-on opens, but "Import from Docs", "Export to Docs", and "Save to Drive" fail with "Authorization is required to perform that action." The add-on itself may also fail to start. Cause: When several Google accounts are signed in at the same time, the account running the add-on can differ from the account that granted permission. This is how Google handles multiple sessions and cannot be worked around by the add-on. What to do (any one of these resolves it): 1) Open the document in an Incognito window, signed in with only the account you use. 2) Make that account your default account (the first one you sign in with). 3) Use a separate Chrome profile for each account. Note for organization-wide deployments: this symptom occurs even when the administrator-side settings (User Access / Data Access) are correct.
 - **Q. The dialog doesn't appear**
   A. If your browser's pop-up blocker is on, the dialog may fail to appear. Allow pop-ups for the Google Docs™ domain, then reload the page and try again.
 - **Q. Text looks wrong / fonts don't load**
