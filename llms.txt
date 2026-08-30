@@ -50,11 +50,17 @@
 - [TateGaki Home — English](https://tategaki.site/en/): English version of the product page.
 - [Support FAQ — Japanese / サポートFAQ（日本語）](https://tategaki.site/support.html): How to use, troubleshooting, and contact.
 - [Support FAQ — English](https://tategaki.site/en/support.html): English version of the support page.
+- [Vertical Writing Guide — Googleドキュメントで縦書きにする方法](https://tategaki.site/guide/google-docs-tategaki/): How to write vertically (tategaki) in Google Docs — why the built-in features, Word, and Slides fall short, and step-by-step setup with TateGaki for manuscript paper, ruby, and kinsoku shori (Japanese only).
+- [Ruby (Furigana) Guide — Googleドキュメントでルビ（ふりがな）を振る方法](https://tategaki.site/guide/google-docs-ruby/): How to add ruby (furigana) in Google Docs with TateGaki's manuscript paper mode — a free feature; ruby stays editable text rather than a pasted image (Japanese only).
+- [Organization / School Licensing — 学校・組織でのご利用](https://tategaki.site/organization.html): Organization license plans (up to 100 seats ¥9,800/year, 101–1,000 seats ¥29,800/year, tax incl.) and invoice-based payment for schools and organizations (Japanese only).
+- [Admin Setup Guide — 管理者向けセットアップガイド（組織一括導入）](https://tategaki.site/admin-setup/): For Google Workspace administrators deploying TateGaki organization-wide — fixes for "You don't have access to this add-on" and missing `drive.files.insert` permission errors, with Admin console steps (Japanese).
+- [Admin Setup Guide — English](https://tategaki.site/en/admin-setup/): English version of the administrator setup guide for organization-wide deployment.
 - [Privacy Policy / プライバシーポリシー](https://tategaki.site/privacy.html): How user data is handled (Japanese only).
 - [Terms of Service / 利用規約](https://tategaki.site/terms.html): Terms of service (Japanese only).
 - [Commercial Transactions Act Notice / 特定商取引法に基づく表記](https://tategaki.site/tokushoho.html): Legal notice for the paid plan — seller, pricing, payment, cancellation (Japanese only).
-- [Ruby (Furigana) Guide — Googleドキュメントでルビ（ふりがな）を振る方法](https://tategaki.site/guide/google-docs-ruby/): How to add ruby (furigana) in Google Docs with TateGaki's manuscript paper mode — a free feature; ruby stays editable text rather than a pasted image (Japanese only).
-- [Organization / School Licensing — 学校・組織でのご利用](https://tategaki.site/organization.html): Organization license plans (up to 100 seats ¥9,800/year, 101–1,000 seats ¥29,800/year, tax incl.) and invoice-based payment for schools and organizations (Japanese only).
+
+<!-- MAINTENANCE: このページ一覧は sitemap.xml の <loc> と 1:1 で対応させること。
+     どちらか一方だけを更新しないこと（llms-full.txt の "Pages Index" も同様）。 -->
 
 ## Background / 開発背景
 

@@ -55,6 +55,27 @@ TateGakiは、2026年にコード未経験者がClaudeとの対話を通じて�
 - note development story: https://note.com/tategaki_dev/n/n72262d247671
 - X / Twitter: https://x.com/kuranosuke_lab
 
+### Pages Index / ページ一覧
+
+サイト内の全公開ページ（sitemap.xml と 1:1 対応）。「本文収録」はこのファイルに本文を掲載しているページ。
+All public pages on the site (1:1 with sitemap.xml). "Full text below" marks pages whose body is included in this file.
+
+- https://tategaki.site/ — TateGaki Home (Japanese) / 日本語トップ ... 本文収録 / full text below
+- https://tategaki.site/en/ — TateGaki Home (English) ... 本文収録 / full text below
+- https://tategaki.site/support.html — Support FAQ (Japanese) / サポートFAQ ... 本文収録 / full text below
+- https://tategaki.site/en/support.html — Support FAQ (English) ... 本文収録 / full text below
+- https://tategaki.site/guide/google-docs-tategaki/ — Googleドキュメントで縦書きにする方法（縦書きガイド）/ Vertical writing guide (Japanese)
+- https://tategaki.site/guide/google-docs-ruby/ — Googleドキュメントでルビ（ふりがな）を振る方法 / Ruby (furigana) guide (Japanese)
+- https://tategaki.site/organization.html — 学校・組織でのご利用（サイトライセンス・請求書払い）/ Organization & school licensing (Japanese)
+- https://tategaki.site/admin-setup/ — 管理者向けセットアップガイド（組織一括導入）/ Admin setup guide for organization-wide deployment (Japanese)
+- https://tategaki.site/en/admin-setup/ — Admin Setup Guide (Organization-wide Deployment) (English)
+- https://tategaki.site/privacy.html — プライバシーポリシー / Privacy Policy (Japanese only)
+- https://tategaki.site/terms.html — 利用規約 / Terms of Service (Japanese only)
+- https://tategaki.site/tokushoho.html — 特定商取引法に基づく表記 / Commercial Transactions Act Notice (Japanese only)
+
+<!-- MAINTENANCE: この一覧は sitemap.xml の <loc> および llms.txt の "Pages / 主要ページ" と
+     1:1 で対応させること。ページを追加・削除したら 3ファイルすべてを更新する。 -->
+
 ### Linked Policies / 関連規約
 
 - Privacy Policy / プライバシーポリシー: https://tategaki.site/privacy.html (Japanese only)
