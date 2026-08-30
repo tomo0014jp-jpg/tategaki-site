@@ -16,6 +16,12 @@
  *
  *   <!-- STATS:START -->          … トップページのお知らせ枠 / llms の実績行（マイルストーン）
  *   <!-- STATS:ADOPTION:START --> … 導入実績の一文（累計インストール数＋組織ドメイン数＋評価）
+ *   <!-- PAGES:START -->          … 公開ページ一覧（生成はせず、整合チェックのみ行う）
+ *
+ * また、実行の最後に「ページ一覧の整合チェック」を行います。
+ * sitemap.xml の <loc> と llms.txt / llms-full.txt の PAGES ブロックを突き合わせ、
+ * 差分があれば、どのURLがどちら側に無いのかを表示して exit 1 で終了します。
+ * ページを追加・削除・URL変更したときは、3ファイルすべてを更新してください。
  *
  * 表記の文言そのもの（言い回し）を変えたいときは、このファイル内の render 関数を
  * 編集してください。数値・日付だけを変えたいときは data/stats.json のみでOKです。
@@ -98,6 +104,23 @@ function renderAdoptionTxt(bold) {
   return `- ${bullet}: Used across ${stats.domainCount} organization domains (boards of education, schools, etc.) / ${stats.domainCount}の組織ドメイン（教育委員会・学校等）で導入`;
 }
 
+// ---- llms-full.txt のページ本文に埋め込む実績表記（プレーンテキスト版） ----
+// HTML ページ本文を Markdown 化して収録しているため、数値を手書きすると
+// stats.json の一元管理から外れてしまう。ここでも同じ数値を生成する。
+function renderAdoptionOrgTxt() {
+  return `TateGakiは全国の学校・教育委員会を中心に、累計${stats.installsLabel}超・${stats.domainCount}組織ドメインでご利用いただいています。組織でのご利用には、クレジットカード不要の請求書払いに対応しています。`;
+}
+
+function renderAdoptionAdminTxtJa() {
+  const rating = ratingJa ? `（${ratingJa}）` : '';
+  return `TateGaki は累計${stats.installsLabelNum}インストールを超え、${stats.domainCount}組織ドメインでの導入実績があります${rating}。`;
+}
+
+function renderAdoptionAdminTxtEn() {
+  const rating = ratingEn ? ` (${ratingEn})` : '';
+  return `TateGaki has surpassed ${stats.installsLabelNum} cumulative installs, with adoption across ${stats.domainCount} organization domains${rating}.`;
+}
+
 function renderAdoptionAdminJa() {
   const rating = ratingJa ? `（${ratingJa}）` : '';
   return `  <p class="trust">TateGaki は累計${stats.installsLabelNum}インストールを超え、${stats.domainCount}組織ドメインでの導入実績があります${rating}。</p>`;
@@ -133,6 +156,12 @@ const BLOCKS = [
     marker: 'STATS:ADOPTION',
     render: renderAdoptionGuide,
   },
+
+  // llms-full.txt に収録したページ本文の中の実績表記。
+  // 1ファイル内に複数のブロックを置くため、マーカー名を分けている。
+  { file: 'llms-full.txt', marker: 'STATS:ADOPTION:ORG', render: renderAdoptionOrgTxt },
+  { file: 'llms-full.txt', marker: 'STATS:ADOPTION:ADMIN', render: renderAdoptionAdminTxtJa },
+  { file: 'llms-full.txt', marker: 'STATS:ADOPTION:ADMINEN', render: renderAdoptionAdminTxtEn },
 ];
 
 let changed = 0;
@@ -181,3 +210,121 @@ console.log(
     `\n  マイルストーン: ${ms.map((m) => `${m.dateLabel}:${m.label}`).join(' → ')}` +
     `\n  導入組織: ${stats.domainCount}ドメイン / 累計: ${stats.installsLabel} / 評価: ★${stats.rating}`
 );
+
+// ---------------------------------------------------------------------------
+// ページ一覧の整合チェック / Pages consistency check
+//
+// 公開ページの一覧は sitemap.xml・llms.txt・llms-full.txt の3箇所に手書きで
+// 存在します。同じ情報を複数箇所に書いている以上、片方だけ更新される事故は
+// 必ず起きます（実際に2026-08-30、縦書きガイドと admin-setup 日英の3件が
+// llms 側にだけ載っていない状態が発生しました）。
+//
+// コメントによる注意書きは読み飛ばされれば機能しないため、ここで機械的に
+// 突き合わせ、差分があればビルドを異常終了（exit 1）させます。
+//
+// 対象ブロックは <!-- PAGES:START --> 〜 <!-- PAGES:END --> で囲みます。
+// ---------------------------------------------------------------------------
+
+// 正規表現で拾った際に紛れ込む前後の空白や末尾の記号（句読点・閉じ括弧）を落とす。
+// 末尾スラッシュの有無は正規化しない（別URLとして扱い、表記を揃えさせる）。
+function normalizeUrl(u) {
+  return u.trim().replace(/[)\s.,]+$/, '');
+}
+
+function readPagesBlock(file) {
+  const src = readFileSync(resolve(root, file), 'utf8');
+  const START = '<!-- PAGES:START -->';
+  const END = '<!-- PAGES:END -->';
+  const a = src.indexOf(START);
+  const b = src.indexOf(END);
+  if (a === -1 || b === -1 || b < a) {
+    return null; // マーカー欠落。呼び出し側でエラーにする。
+  }
+  return src.slice(a + START.length, b);
+}
+
+// ブロック中に現れる https://tategaki.site/... をすべて拾う。
+// Markdown リンク形式（llms.txt）でも素の URL 形式（llms-full.txt）でも
+// 同じ抽出でよいので、記法の違いに依存しない。
+function extractUrls(block) {
+  const found = block.match(/https:\/\/tategaki\.site[^\s)<>"']*/g) || [];
+  return found.map(normalizeUrl);
+}
+
+function readSitemapUrls() {
+  const src = readFileSync(resolve(root, 'sitemap.xml'), 'utf8');
+  const locs = [...src.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/g)].map((m) => normalizeUrl(m[1]));
+  return locs;
+}
+
+// 重複は「同じページを2行書いてしまった」ケース。差分と同じく事故なので拾う。
+function findDuplicates(urls) {
+  const seen = new Set();
+  const dup = new Set();
+  for (const u of urls) {
+    if (seen.has(u)) dup.add(u);
+    seen.add(u);
+  }
+  return [...dup];
+}
+
+function checkPages() {
+  const problems = [];
+
+  const sitemapUrls = readSitemapUrls();
+  if (sitemapUrls.length === 0) {
+    problems.push('sitemap.xml から <loc> を1件も読み取れませんでした。');
+  }
+  for (const d of findDuplicates(sitemapUrls)) {
+    problems.push(`sitemap.xml に重複した <loc> があります: ${d}`);
+  }
+
+  const sitemapSet = new Set(sitemapUrls);
+
+  for (const file of ['llms.txt', 'llms-full.txt']) {
+    const block = readPagesBlock(file);
+    if (block === null) {
+      problems.push(
+        `${file}: <!-- PAGES:START --> / <!-- PAGES:END --> マーカーが見つかりません。` +
+          `\n      ページ一覧をこのマーカーで囲んでください（整合チェックができません）。`
+      );
+      continue;
+    }
+
+    const urls = extractUrls(block);
+    const urlSet = new Set(urls);
+
+    for (const d of findDuplicates(urls)) {
+      problems.push(`${file}: ページ一覧に同じURLが2回出てきます: ${d}`);
+    }
+
+    // sitemap にあるが llms 側に無い = AI から参照されないページ（機会損失）
+    const missingInFile = sitemapUrls.filter((u) => !urlSet.has(u));
+    for (const u of missingInFile) {
+      problems.push(`${u}\n      → sitemap.xml にはあるが ${file} のページ一覧に【無い】`);
+    }
+
+    // llms 側にあるが sitemap に無い = 消したページ・URL変更の取り残し
+    const missingInSitemap = urls.filter((u) => !sitemapSet.has(u));
+    for (const u of missingInSitemap) {
+      problems.push(`${u}\n      → ${file} のページ一覧にはあるが sitemap.xml に【無い】`);
+    }
+  }
+
+  if (problems.length > 0) {
+    console.error('\n' + '─'.repeat(70));
+    console.error('✖ ページ一覧の不整合を検出しました / Pages consistency check FAILED');
+    console.error('─'.repeat(70));
+    for (const p of problems) console.error(`  ・${p}`);
+    console.error('─'.repeat(70));
+    console.error(
+      'sitemap.xml / llms.txt / llms-full.txt のページ一覧は 1:1 で対応させてください。\n' +
+        'ページを追加・削除・URL変更したときは3ファイルすべてを更新します。\n'
+    );
+    process.exit(1);
+  }
+
+  console.log(`  ✓ ページ一覧の整合チェック: ${sitemapUrls.length}件が sitemap.xml と一致`);
+}
+
+checkPages();

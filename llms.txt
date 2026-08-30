@@ -46,6 +46,11 @@
 
 ## Pages / 主要ページ
 
+<!-- PAGES:START -->
+<!-- このブロックは sitemap.xml の <loc> と 1:1 で対応します。
+     ページを追加・削除・URL変更したときは sitemap.xml / llms.txt / llms-full.txt を
+     すべて更新してください。`node scripts/build-stats.mjs` が3ファイルを突き合わせ、
+     差分があればビルドをエラー終了させます（注意書きではなく機械チェックです）。 -->
 - [TateGaki Home — Japanese / 日本語トップ](https://tategaki.site/): Product overview, features, FAQ, install link.
 - [TateGaki Home — English](https://tategaki.site/en/): English version of the product page.
 - [Support FAQ — Japanese / サポートFAQ（日本語）](https://tategaki.site/support.html): How to use, troubleshooting, and contact.
@@ -58,9 +63,7 @@
 - [Privacy Policy / プライバシーポリシー](https://tategaki.site/privacy.html): How user data is handled (Japanese only).
 - [Terms of Service / 利用規約](https://tategaki.site/terms.html): Terms of service (Japanese only).
 - [Commercial Transactions Act Notice / 特定商取引法に基づく表記](https://tategaki.site/tokushoho.html): Legal notice for the paid plan — seller, pricing, payment, cancellation (Japanese only).
-
-<!-- MAINTENANCE: このページ一覧は sitemap.xml の <loc> と 1:1 で対応させること。
-     どちらか一方だけを更新しないこと（llms-full.txt の "Pages Index" も同様）。 -->
+<!-- PAGES:END -->
 
 ## Background / 開発背景
 

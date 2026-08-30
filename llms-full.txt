@@ -60,6 +60,11 @@ TateGakiは、2026年にコード未経験者がClaudeとの対話を通じて�
 サイト内の全公開ページ（sitemap.xml と 1:1 対応）。「本文収録」はこのファイルに本文を掲載しているページ。
 All public pages on the site (1:1 with sitemap.xml). "Full text below" marks pages whose body is included in this file.
 
+<!-- PAGES:START -->
+<!-- このブロックは sitemap.xml の <loc> と 1:1 で対応します。
+     ページを追加・削除・URL変更したときは sitemap.xml / llms.txt / llms-full.txt を
+     すべて更新してください。`node scripts/build-stats.mjs` が3ファイルを突き合わせ、
+     差分があればビルドをエラー終了させます（注意書きではなく機械チェックです）。 -->
 - https://tategaki.site/ — TateGaki Home (Japanese) / 日本語トップ ... 本文収録 / full text below
 - https://tategaki.site/en/ — TateGaki Home (English) ... 本文収録 / full text below
 - https://tategaki.site/support.html — Support FAQ (Japanese) / サポートFAQ ... 本文収録 / full text below
@@ -72,9 +77,7 @@ All public pages on the site (1:1 with sitemap.xml). "Full text below" marks pag
 - https://tategaki.site/privacy.html — プライバシーポリシー / Privacy Policy (Japanese only)
 - https://tategaki.site/terms.html — 利用規約 / Terms of Service (Japanese only)
 - https://tategaki.site/tokushoho.html — 特定商取引法に基づく表記 / Commercial Transactions Act Notice (Japanese only)
-
-<!-- MAINTENANCE: この一覧は sitemap.xml の <loc> および llms.txt の "Pages / 主要ページ" と
-     1:1 で対応させること。ページを追加・削除したら 3ファイルすべてを更新する。 -->
+<!-- PAGES:END -->
 
 ### Linked Policies / 関連規約
 
@@ -365,6 +368,184 @@ If the FAQ above doesn't cover your question, please email us at the address abo
 ### Support development (optional)
 
 TateGaki's core features will stay free forever. If you'd like to see it continue, an optional cheer via OFUSE (https://ofuse.me/c0443beb) is a real encouragement.
+
+---
+
+## Page: Organization / School Licensing — 学校・組織でのご利用
+
+URL: https://tategaki.site/organization.html
+
+### 学校・組織でのご利用（サイトライセンス・請求書払い）
+
+<!-- STATS:ADOPTION:ORG:START -->
+TateGakiは全国の学校・教育委員会を中心に、累計3万6千インストール超・31組織ドメインでご利用いただいています。組織でのご利用には、クレジットカード不要の請求書払いに対応しています。
+<!-- STATS:ADOPTION:ORG:END -->
+
+TateGaki is used mainly by schools and boards of education across Japan. For organizations, invoice-based payment is supported — no credit card required, so schools and public bodies that cannot pay by card can still adopt it.
+
+### 料金目安 / Pricing
+
+| 席数 / Seats | 年額・税込 / Annual, tax incl. |
+| --- | --- |
+| 〜100席 / Up to 100 seats | 年9,800円 / ¥9,800 |
+| 101〜1,000席 / 101–1,000 seats | 年29,800円 / ¥29,800 |
+| 1,000席超・自治体・教育委員会での一括導入 / Over 1,000 seats, municipalities, boards of education | 個別見積 / Individual quote |
+
+※ 席数は目安です。まずはお気軽にお問い合わせください。 / Seat counts are a guide only — please get in touch first.
+
+### お問い合わせ / Contact
+
+- **メールでのご相談（請求書払い・一括導入）/ Email (invoice payment, organization-wide deployment)**: support@tategaki.site
+- 学校・団体名と、おおよそのご利用人数をお知らせください。担当より折り返しご連絡いたします。件名は「【組織利用の相談】学校・団体名」の形式です（学校・団体名の部分を貴組織名に書き換えてください）。
+- Please include your school or organization name and the approximate number of users. We will reply directly.
+
+### 個人でのご利用について / For individual use
+
+個人でのご利用は、アドオン内から TateGaki Pro（月額500円または年額1,500円・税込）にご登録いただけます。組織ライセンスは学校・団体向けの契約です。
+
+Individual users can subscribe to TateGaki Pro (¥500/month or ¥1,500/year, tax incl.) from inside the add-on. The organization license is a separate contract intended for schools and organizations.
+
+---
+
+## Page: Admin Setup Guide — 管理者向けセットアップガイド（日本語）
+
+URL: https://tategaki.site/admin-setup/
+
+### 管理者向けセットアップガイド（組織一括導入）
+
+最終更新日：2026年8月15日
+
+<!-- STATS:ADOPTION:ADMIN:START -->
+TateGaki は累計36,000インストールを超え、31組織ドメインでの導入実績があります（評価 ★4）。
+<!-- STATS:ADOPTION:ADMIN:END -->
+
+組織（Google Workspace）で TateGaki を一括導入したあと、利用者側で次のようなエラーが表示されることがあります。本ページは、こうしたエラーに対処する組織管理者向けのガイドです。
+
+### よくあるエラー
+
+- 「このアドオンへのアクセス権がありません」
+- 「drive.files.insert 権限がありません」／ Drive への書き出し・保存が失敗する
+- アドオンは起動するが、Docs テーブル書き出し・Drive 保存だけが失敗する
+
+これらの多くは、次の原因のいずれかで発生します。原因1・2は Google 管理コンソール（admin.google.com）での設定で解決できます。
+
+### 原因1：OAuth スコープの組織側承認漏れ
+
+組織のセキュリティ設定で、TateGaki が必要とする OAuth スコープ（Google Drive の `drive.file`、メールアドレスの `userinfo.email` など）が「未承認／未信頼」の状態だと、利用者が同意できず、アクセス権・`drive.files.insert` 権限のエラーになります。
+
+確認・対処手順：
+
+1. 管理者アカウントで admin.google.com にログインします。
+2. セキュリティ ＞ アクセスとデータの管理 ＞ API の制御 を開きます。
+3. アプリのアクセス制御を管理（サードパーティ製アプリ／Google Workspace Marketplace アプリ）で TateGaki を探します。見つからない場合は「アプリを追加」→ Marketplace アプリから TateGaki を選択します。
+4. TateGaki を「信頼できる（Trusted）」に設定し、要求される Drive（`drive.file`）・メールアドレス（`userinfo.email`）などのスコープへのアクセスを承認します。
+5. 対象の組織部門（OU）に設定が適用されていることを確認します。
+
+※ 設定変更の反映には時間がかかる場合があります。反映後、利用者にブラウザの再読み込みとアドオンの再起動を依頼してください。
+
+### 原因2：対象ユーザー／組織部門へのアプリ配布・権限が未付与
+
+Marketplace から組織インストールする際、配布対象が「一部の組織部門・グループのみ」に限定されていると、対象外のユーザーはアプリを利用できず、アクセス権エラーになります。
+
+確認・対処手順：
+
+1. 管理者アカウントで admin.google.com にログインします。
+2. アプリ ＞ Google Workspace Marketplace アプリ ＞ アプリリスト を開きます。
+3. 一覧から TateGaki を選択します。
+4. 配布（利用可能なユーザー）の設定で、利用させたい組織部門（OU）またはグループを「オン（利用可能）」にします。全社利用の場合は最上位の組織に対してオンにします。
+5. 必要に応じて、個々のユーザーがインストールできるよう Marketplace の許可設定（ホワイトリスト等）も確認します。
+
+※ 反映に数十分〜数時間かかることがあります。時間をおいてから、対象ユーザーに再試行を依頼してください。
+
+### 原因3：利用者が複数のGoogleアカウントにログインしている
+
+管理者側の設定（User Access / Data Access）が正しくても、この症状は起こります。まず下記の切り分けを利用者に案内してください。
+
+- **症状**: アドオンは開くのに、「Docsから取り込み」「Docsに書き出し」「Driveに保存」だけが権限エラー（Authorization is required to perform that action.）になります。アドオンの起動自体が失敗することもあります。
+- **原因**: 複数のGoogleアカウントに同時にログインしていると、アドオンを実行するアカウントと、権限を許可したアカウントが食い違うことがあります。Google側の仕組みによるもので、アドオン側では回避できません。
+
+利用者に案内する対処（どれか1つで解決します）：
+
+1. シークレットウィンドウで、使うアカウントだけログインして開いてもらう。
+2. 使うアカウントを既定（最初にログインしたアカウント）にしてもらう。
+3. Chromeのプロフィールをアカウントごとに分けてもらう。
+
+※ この症状は組織の設定変更では解消しません。利用者側のログイン状態の切り分けが必要です。
+
+### それでも解決しない場合
+
+上記を確認しても解決しない場合は、発生しているエラーメッセージ・組織ドメイン・対象ユーザーの状況を添えて support@tategaki.site までご連絡ください。確認のうえご案内します。一般的なご質問は https://tategaki.site/support.html もご覧ください。
+
+---
+
+## Page: Admin Setup Guide — English
+
+URL: https://tategaki.site/en/admin-setup/
+
+### Admin Setup Guide (Organization-wide Deployment)
+
+Last updated: August 15, 2026
+
+<!-- STATS:ADOPTION:ADMINEN:START -->
+TateGaki has surpassed 36,000 cumulative installs, with adoption across 31 organization domains (★4 rating).
+<!-- STATS:ADOPTION:ADMINEN:END -->
+
+After deploying TateGaki organization-wide (Google Workspace), your users may see errors like the ones below. This page is a guide for organization administrators on how to resolve them.
+
+### Common errors
+
+- "You don't have access to this add-on"
+- "Missing drive.files.insert permission" / exporting to or saving on Drive fails
+- The add-on launches, but only the Docs table export / Drive save fails
+
+Most of these come from one of the causes below. Causes 1 and 2 are resolved in the Google Admin console (admin.google.com).
+
+### Cause 1: OAuth scopes not approved on the organization side
+
+If your organization's security settings leave the OAuth scopes TateGaki needs (Google Drive `drive.file`, email address `userinfo.email`, etc.) unapproved or untrusted, users cannot consent and hit access / `drive.files.insert` permission errors.
+
+How to check and fix:
+
+1. Sign in to admin.google.com with an administrator account.
+2. Go to Security > Access and data control > API controls.
+3. Under Manage third-party app access (third-party apps / Google Workspace Marketplace apps), find TateGaki. If it isn't listed, choose "Add app" and select TateGaki from Marketplace apps.
+4. Set TateGaki to "Trusted" and approve access to the requested scopes such as Drive (`drive.file`) and email address (`userinfo.email`).
+5. Confirm the setting applies to the target organizational unit (OU).
+
+Note: changes can take time to propagate. Afterward, ask users to reload the browser and reopen the add-on.
+
+### Cause 2: App not distributed / permissions not granted to the target users or OU
+
+When installing from Marketplace organization-wide, if distribution is limited to only certain OUs or groups, users outside that scope cannot use the app and get access errors.
+
+How to check and fix:
+
+1. Sign in to admin.google.com with an administrator account.
+2. Go to Apps > Google Workspace Marketplace apps > Apps list.
+3. Select TateGaki from the list.
+4. In the Distribution (who can use) setting, turn the app ON (available) for the target OU or group. For company-wide use, turn it on for the top-level organization.
+5. If needed, also check your Marketplace allowlist settings so individual users are allowed to install.
+
+Note: propagation can take from tens of minutes to a few hours. Wait a while, then ask affected users to try again.
+
+### Cause 3: The user is signed in to multiple Google accounts
+
+This symptom occurs even when the administrator-side settings (User Access / Data Access) are correct. Please ask the user to try the steps below first.
+
+- **Symptom**: The add-on opens, but "Import from Docs", "Export to Docs", and "Save to Drive" fail with `Authorization is required to perform that action.` The add-on itself may also fail to start.
+- **Cause**: When several Google accounts are signed in at the same time, the account running the add-on can differ from the account that granted permission. This is how Google handles multiple sessions and cannot be worked around by the add-on.
+
+What to ask the user to do (any one of these resolves it):
+
+1. Open the document in an Incognito window, signed in with only the account they use.
+2. Make that account their default account (the first one they sign in with).
+3. Use a separate Chrome profile for each account.
+
+Note: This symptom cannot be resolved by changing organization settings. It requires isolating the user's sign-in state.
+
+### Still not resolved?
+
+If the steps above don't resolve it, contact support@tategaki.site with the exact error message, your organization domain, and the affected users' situation. We'll review and advise. For general questions, see https://tategaki.site/en/support.html as well.
 
 ---
 
