@@ -17,9 +17,11 @@
 - **Platform / プラットフォーム**: Google Docs / Google Workspace Add-on
 - **Main users / 主な利用者**: Japanese writers, students, teachers, doujin (dōjinshi) creators, and people who need vertical Japanese documents — also Japanese speakers living abroad.
 <!-- STATS:START -->
-- **Performance / 実績 (2026年8月時点 / As of August 2026)**: 6月17日 3,400インストール → 6月22日 1万インストール突破 → 7月17日 3万インストール突破 → 8月13日 3万5千インストール突破（over 35,000 installs on Google Workspace Marketplace） / 評価 ★4 / rating 4
+- **Performance / 実績 (2026年8月時点 / As of August 2026)**: 6月17日 3,400インストール → 6月22日 1万インストール突破 → 7月17日 3万インストール突破 → 8月13日 3万5千インストール突破 → 8月28日 3万6千インストール突破／導入組織 31ドメイン（36,000+ installs on Google Workspace Marketplace） / 評価 ★4 / rating 4
 <!-- STATS:END -->
-- **Adoption / 導入組織**: Used across 15 organization domains (boards of education, schools, etc.) / 15の組織ドメイン（教育委員会・学校等）で導入
+<!-- STATS:ADOPTION:START -->
+- **Adoption / 導入組織**: Used across 31 organization domains (boards of education, schools, etc.) / 31の組織ドメイン（教育委員会・学校等）で導入
+<!-- STATS:ADOPTION:END -->
 
 ## Key Features / 主な機能
 
@@ -51,6 +53,7 @@
 - [Privacy Policy / プライバシーポリシー](https://tategaki.site/privacy.html): How user data is handled (Japanese only).
 - [Terms of Service / 利用規約](https://tategaki.site/terms.html): Terms of service (Japanese only).
 - [Commercial Transactions Act Notice / 特定商取引法に基づく表記](https://tategaki.site/tokushoho.html): Legal notice for the paid plan — seller, pricing, payment, cancellation (Japanese only).
+- [Ruby (Furigana) Guide — Googleドキュメントでルビ（ふりがな）を振る方法](https://tategaki.site/guide/google-docs-ruby/): How to add ruby (furigana) in Google Docs with TateGaki's manuscript paper mode — a free feature; ruby stays editable text rather than a pasted image (Japanese only).
 - [Organization / School Licensing — 学校・組織でのご利用](https://tategaki.site/organization.html): Organization license plans (up to 100 seats ¥9,800/year, 101–1,000 seats ¥29,800/year, tax incl.) and invoice-based payment for schools and organizations (Japanese only).
 
 ## Background / 開発背景

@@ -6,23 +6,23 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/favicon.svg">
 <meta name="theme-color" content="#c87a30">
-<title>2026年最新｜Googleドキュメントで縦書きにする方法｜TateGaki</title>
-<meta name="description" content="Googleドキュメントで縦書きにする方法を2026年最新版で解説。標準機能・Word・スライドなど従来の方法を検証し、無料アドオン「TateGaki」で原稿用紙・ルビ・禁則処理まで対応する手順を紹介します。">
-<link rel="canonical" href="https://tategaki.site/guide/google-docs-tategaki/">
-<link rel="alternate" hreflang="ja" href="https://tategaki.site/guide/google-docs-tategaki/">
-<link rel="alternate" hreflang="x-default" href="https://tategaki.site/guide/google-docs-tategaki/">
+<title>Googleドキュメントでルビ（ふりがな）を振る方法｜無料アドオン TateGaki</title>
+<meta name="description" content="Googleドキュメントには標準のルビ機能がありません。無料アドオン TateGaki の原稿用紙モードなら、ふりがなをテキストのまま入力し、あとから何度でも修正できます。400字詰め・200字詰めに対応。">
+<link rel="canonical" href="https://tategaki.site/guide/google-docs-ruby/">
+<link rel="alternate" hreflang="ja" href="https://tategaki.site/guide/google-docs-ruby/">
+<link rel="alternate" hreflang="x-default" href="https://tategaki.site/guide/google-docs-ruby/">
 <!-- Open Graph -->
-<meta property="og:title" content="2026年最新｜Googleドキュメントで縦書きにする方法">
-<meta property="og:description" content="標準機能・外部ツール・Word・スライドを検証し、無料アドオン「TateGaki」でGoogleドキュメントのまま縦書き・原稿用紙で執筆する方法を解説。">
+<meta property="og:title" content="Googleドキュメントでルビ（ふりがな）を振る方法">
+<meta property="og:description" content="Googleドキュメントの標準機能ではルビを振れません。無料アドオン「TateGaki」の原稿用紙モードで、ふりがなをテキストのまま入力・再編集する手順を解説します。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://tategaki.site/guide/google-docs-tategaki/">
+<meta property="og:url" content="https://tategaki.site/guide/google-docs-ruby/">
 <meta property="og:site_name" content="TateGaki">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://tategaki.site/images/hero.jpg">
 <meta property="og:image:width" content="1920">
 <meta property="og:image:height" content="1282">
-<meta property="article:published_time" content="2026-07-13">
-<meta property="article:modified_time" content="2026-07-13">
+<meta property="article:published_time" content="2026-08-30">
+<meta property="article:modified_time" content="2026-08-30">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://tategaki.site/images/hero.jpg">
 <!-- Structured Data: Article -->
@@ -31,11 +31,11 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "inLanguage": "ja",
-  "headline": "2026年最新｜Googleドキュメントで縦書きにする方法",
-  "description": "標準機能・外部ツール・Word・スライドなど従来の方法を検証したうえで、無料アドオン「TateGaki」でGoogleドキュメントのまま縦書き・原稿用紙で執筆する方法を解説します。",
+  "headline": "Googleドキュメントでルビ（ふりがな）を振る方法",
+  "description": "Googleドキュメントには標準のルビ機能がありません。無料アドオン「TateGaki」の原稿用紙モードで、ふりがなをテキストのまま入力し、あとから修正する手順を解説します。",
   "image": "https://tategaki.site/images/hero.jpg",
-  "datePublished": "2026-07-13",
-  "dateModified": "2026-07-17",
+  "datePublished": "2026-08-30",
+  "dateModified": "2026-08-30",
   "author": {
     "@type": "Organization",
     "name": "TateGaki",
@@ -48,7 +48,7 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://tategaki.site/guide/google-docs-tategaki/"
+    "@id": "https://tategaki.site/guide/google-docs-ruby/"
   }
 }
 </script>
@@ -68,12 +68,12 @@
       "@type": "ListItem",
       "position": 2,
       "name": "ガイド",
-      "item": "https://tategaki.site/guide/google-docs-tategaki/"
+      "item": "https://tategaki.site/guide/google-docs-ruby/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Googleドキュメントで縦書きにする方法"
+      "name": "Googleドキュメントでルビ（ふりがな）を振る方法"
     }
   ]
 }
@@ -214,6 +214,58 @@
   article ul, article ol { margin: 0 0 16px; padding-left: 1.4em; }
   article li { margin-bottom: 8px; }
 
+  article a { color: var(--color-accent); }
+  article a:hover { text-decoration: none; }
+
+  .figure { margin: 24px 0 28px; }
+  .figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+  }
+  .figure figcaption {
+    font-size: 12px;
+    color: var(--color-muted);
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .spec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .spec-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px 22px;
+  }
+
+  .spec-card h3 { margin-top: 0; margin-bottom: 10px; font-size: 15px; }
+  .spec-card ul { margin-bottom: 0; }
+  .spec-card li { font-size: 14px; }
+  .spec-card.can h3 { color: var(--color-accent); }
+
+  .note-box {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .note-box p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 600px) {
+    .spec-grid { grid-template-columns: 1fr; }
+  }
+
   .cta-block {
     text-align: center;
     background: var(--color-card);
@@ -260,21 +312,13 @@
   footer a { color: var(--color-muted); text-decoration: none; transition: color 0.2s; }
   footer a:hover { color: var(--color-text); }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2RTPQTJSP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z2RTPQTJSP');
-</script>
 </head>
 <body>
 
 <header>
   <nav>
     <a href="/" class="logo">Tate<span>Gaki</span></a>
-    <ul class="nav-links">
+    <ul>
       <li><a href="/#features">主な機能</a></li>
       <li><a href="/support.html">サポート</a></li>
       <li><a href="/organization.html">学校・組織</a></li>
@@ -291,66 +335,72 @@
 <main>
   <nav class="breadcrumb" aria-label="パンくずリスト">
     <a href="/">ホーム</a><span class="sep">›</span>
-    <a href="/guide/google-docs-tategaki/">ガイド</a><span class="sep">›</span>
-    Googleドキュメントで縦書きにする方法
+    <a href="/guide/google-docs-ruby/">ガイド</a><span class="sep">›</span>
+    Googleドキュメントでルビ（ふりがな）を振る方法
   </nav>
 
   <article>
-    <h1>2026年最新｜Googleドキュメントで縦書きにする方法</h1>
-    <p class="updated">最終更新日：2026年7月17日</p>
+    <h1>Googleドキュメントでルビ（ふりがな）を振る方法</h1>
+    <p class="updated">最終更新日：2026年8月30日</p>
 
-    <h2>結論：2026年はアドオン「TateGaki」でGoogleドキュメントが縦書きになる</h2>
-    <p>Googleドキュメントには標準の縦書き機能がありません。しかし2026年現在、Google Workspaceアドオン「TateGaki」を入れれば、使い慣れたGoogleドキュメントのまま縦書き・原稿用紙レイアウトで執筆できます。基本機能は無料です。</p>
-    <p>この記事では、標準機能・外部ツール・Word・スライドなど従来の方法を一通り検証したうえで、なぜ今アドオンが最適解なのかを解説します。</p>
+    <h2>結論：標準機能にルビはないが、無料アドオンで振れる</h2>
+    <p>Googleドキュメント（グーグルドキュメント）には、標準でルビ（ふりがな）を振る機能がありません。「書式」メニューにも「挿入」メニューにもルビの項目は用意されていません。</p>
+    <p>ただし、無料アドオン「TateGaki」を入れると、<strong>原稿用紙モードで各文字にルビを振れる</strong>ようになります。ルビは無料機能なので、有料プランに登録しなくても使えます。</p>
 
     <div class="cta-block">
       <a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" class="cta-button" target="_blank" rel="noopener">▶ 無料でインストール</a>
       <p class="cta-note">基本無料・Pro 月500円または年1,500円（税込）</p>
     </div>
 
-    <h2>Googleドキュメントに標準の縦書き機能はある？</h2>
-    <p>2026年時点でも、「ファイル」＞「ページ設定」やページスタイルに縦書きの項目はありません。スマホ版・Chromebookでも同様です。つまり標準機能だけでは縦書きにできません。</p>
-
-    <h2>最適解：アドオン「TateGaki」で縦書き・原稿用紙</h2>
-    <p>TateGakiはGoogle Workspace Marketplaceで公開されているアドオンです。</p>
-    <ul>
-      <li>Googleドキュメント上で縦書き・原稿用紙レイアウトの執筆ができる</li>
-      <li>ルビ（ふりがな）・禁則処理に対応</li>
-      <li>基本機能は無料。有料版「TateGaki Pro」（月額500円または年額1,500円・税込）は文庫／新書／46判／A5判／おおきめ文字の書籍判型5種に対応</li>
-      <!-- STATS:ADOPTION:START -->
-      <li>2026年4月公開、累計36,000インストールを突破</li>
-      <!-- STATS:ADOPTION:END -->
-    </ul>
-    <p>作文・読書感想文・小論文・小説など、縦書きが必要な場面を別アプリへ移行せずに完結できるのが強みです。</p>
-
-    <h3>導入手順（かんたん）</h3>
+    <h2>ルビの入力手順</h2>
     <ol>
-      <li>Google Workspace Marketplaceで「TateGaki」を検索しインストール</li>
-      <li>Googleドキュメントの「拡張機能」メニューからTateGakiを起動</li>
-      <li>本文を入力し、縦書き／原稿用紙レイアウトで出力</li>
+      <li>Googleドキュメントを開き、メニューの「拡張機能」→「TateGaki」→「縦書きエディタを開く」を選びます。</li>
+      <li>エディタ上部のツールバーで、<strong>400字詰めまたは200字詰めの原稿用紙モード</strong>に切り替えます。</li>
+      <li>ルビを振りたい文字の<strong>右側にあるルビ欄をクリック</strong>します。</li>
+      <li>表示されたモーダルにふりがなを入力して確定します。文字数が多い場合は、マス幅に収まるよう自動で縮小表示されます。</li>
     </ol>
 
-    <h2>他のアドオン・外部ツールとの比較</h2>
-    <ul>
-      <li>ゼッタリンクス「Suiteツール」：縦書き画像に変換できるが年額1,650円</li>
-      <li>「こどもSuite たて書きできる版」：教育向けに特化</li>
-      <li>外部Webツール「縦書きくん」：無料だがGoogleドキュメント外。文字を縦に並べ替えるのみ</li>
-      <li>TateGaki：Googleドキュメント内で完結・基本無料・書籍判型まで対応</li>
-    </ul>
+    <figure class="figure">
+      <img src="/images/03_ルビ入力.png" alt="TateGaki のルビ入力モーダル — 原稿用紙の各列右側にあるルビ欄からふりがなを入力する" width="1280" height="800" loading="lazy">
+      <figcaption>ルビ入力モーダル（原稿用紙モード）</figcaption>
+    </figure>
 
-    <h2>代替案（アドオンを使わない場合）</h2>
-    <ul>
-      <li>Microsoft Word：標準で縦書き対応。ただしGoogle Workspaceの外に出る</li>
-      <li>Googleスライド：テキストボックスを1文字幅に縮める裏ワザ。長文には不向き</li>
-      <li>画像化して貼り付け：体裁は保てるが編集できない</li>
-    </ul>
-    <p>いずれも「Googleドキュメントのまま編集を続けたい」というニーズには応えにくく、アドオン導入が最も現実的です。</p>
+    <p>入力したルビは、あとからルビ欄をクリックすればいつでも編集・削除できます。</p>
 
-    <h2>まとめ</h2>
+    <h2>できること・できないこと</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card can">
+        <h3>できること</h3>
+        <ul>
+          <li>原稿用紙モード（400字詰め・200字詰め）でのルビ入力</li>
+          <li>あとからの再編集・削除</li>
+          <li>禁則処理との併用</li>
+          <li>Google Docs™ 本文への方眼テーブル書き出し</li>
+          <li>Googleドライブ（Google Drive™）への保存・読み込み</li>
+        </ul>
+      </div>
+      <div class="spec-card">
+        <h3>できないこと</h3>
+        <ul>
+          <li>白地（縦）モード・白地（横）モードではルビ機能を利用できません。ルビを使う場合は原稿用紙モードに切り替えてください。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <p><strong>料金について：</strong>ルビは無料機能です。有料プラン「TateGaki Pro」（月500円または年1,500円・税込）に登録しなくてもご利用いただけます。</p>
+    </div>
+
+    <h2>画像として貼り付ける方法との違い</h2>
+    <p>Googleドキュメントでふりがなを付けたいとき、一般的には<strong>ルビを振った文字列を画像にして貼り付ける</strong>方法が使われます。この方法は見た目の体裁は保てますが、貼り付けたあとは画像なので、読みを間違えていても本文からは直せません。修正するたびに作り直して貼り替える必要があります。</p>
+    <p>TateGaki のルビは<strong>テキストのまま保持されます</strong>。ルビ欄をクリックすれば何度でも書き換えられるので、推敲しながら書き進める原稿や、配布前に読みを直したい教材に向いています。</p>
+
+    <h2>こんな場面で使えます</h2>
     <ul>
-      <li>Googleドキュメントに標準の縦書き機能はない（2026年時点）</li>
-      <li>アドオン「TateGaki」なら、無料でGoogleドキュメントのまま縦書き・原稿用紙が使える</li>
-      <li>出版・同人誌レベルの判型が必要ならPro版（月額500円または年額1,500円・税込）</li>
+      <li><strong>小説・同人誌</strong>：難読な固有名詞や当て字にルビを振る</li>
+      <li><strong>国語の教材・作文プリント</strong>：学年に応じて未習の漢字にふりがなを付ける</li>
+      <li><strong>児童向けの文書・おたより</strong>：読み手に合わせてふりがなを調整する</li>
     </ul>
 
     <div class="cta-block">
@@ -359,7 +409,7 @@
     </div>
 
     <div class="related">
-      関連ページ：<a href="/support.html">サポート・よくある質問</a> ／ <a href="/">TateGaki トップ</a>
+      関連ページ：<a href="/guide/google-docs-tategaki/">Googleドキュメントで縦書きにする方法</a> ／ <a href="/support.html">サポート・よくある質問</a> ／ <a href="/">TateGaki トップ</a>
     </div>
   </article>
 </main>

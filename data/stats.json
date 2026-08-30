@@ -2,6 +2,10 @@
   "asOf": "2026-08",
   "asOfLabel": "2026年8月時点",
   "asOfLabelEn": "As of August 2026",
+  "installsLabel": "3万6千インストール",
+  "installsLabelNum": "36,000",
+  "installsLabelEn": "36,000+ installs",
+  "domainCount": 31,
   "milestones": [
     {
       "date": "2026-06-17",
@@ -30,6 +34,13 @@
       "dateLabelEn": "Aug 13",
       "label": "3万5千インストール突破",
       "labelEn": "over 35,000 installs"
+    },
+    {
+      "date": "2026-08-28",
+      "dateLabel": "8月28日",
+      "dateLabelEn": "Aug 28",
+      "label": "3万6千インストール突破／導入組織 31ドメイン",
+      "labelEn": "36,000+ installs / 31 organization domains"
     }
   ],
   "rating": "4",

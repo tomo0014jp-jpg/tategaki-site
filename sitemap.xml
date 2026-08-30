@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tategaki.site/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://tategaki.site/"/>
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://tategaki.site/en/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://tategaki.site/"/>
@@ -21,15 +21,23 @@
   </url>
   <url>
     <loc>https://tategaki.site/guide/google-docs-tategaki/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://tategaki.site/guide/google-docs-tategaki/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tategaki.site/guide/google-docs-tategaki/"/>
   </url>
   <url>
+    <loc>https://tategaki.site/guide/google-docs-ruby/</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tategaki.site/guide/google-docs-ruby/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tategaki.site/guide/google-docs-ruby/"/>
+  </url>
+  <url>
     <loc>https://tategaki.site/admin-setup/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://tategaki.site/admin-setup/"/>
@@ -38,7 +46,7 @@
   </url>
   <url>
     <loc>https://tategaki.site/en/admin-setup/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://tategaki.site/admin-setup/"/>
@@ -47,7 +55,7 @@
   </url>
   <url>
     <loc>https://tategaki.site/support.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://tategaki.site/support.html"/>
@@ -56,7 +64,7 @@
   </url>
   <url>
     <loc>https://tategaki.site/en/support.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://tategaki.site/support.html"/>
@@ -65,7 +73,7 @@
   </url>
   <url>
     <loc>https://tategaki.site/organization.html</loc>
-    <lastmod>2026-07-17</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://tategaki.site/organization.html"/>
@@ -73,19 +81,19 @@
   </url>
   <url>
     <loc>https://tategaki.site/terms.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://tategaki.site/privacy.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://tategaki.site/tokushoho.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

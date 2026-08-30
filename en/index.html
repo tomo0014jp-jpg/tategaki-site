@@ -325,28 +325,84 @@
     max-width: 760px;
     /* Overlap the hero photo slightly, floating upward */
     margin: -34px auto 0;
-    padding: 0 24px 8px;
-    text-align: center;
+    padding: 0 24px 16px;
     position: relative;
     z-index: 3;
   }
 
-  .news-item {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.92);
+  .news-box {
+    background: rgba(255, 255, 255, 0.96);
     border: 1px solid var(--color-border);
-    border-radius: 999px;
-    padding: 9px 22px;
+    border-radius: 12px;
+    padding: 14px 18px 12px;
     box-shadow: 0 8px 24px rgba(44, 36, 32, 0.10);
-    font-size: 14px;
-    line-height: 1.9;
-    color: var(--color-text);
+    position: relative;
   }
 
-  .news-item time { color: var(--color-muted); font-weight: 700; }
-  .news-item strong { color: var(--color-accent); font-weight: 700; }
-  .news-label { display: block; color: var(--color-muted); font-weight: 700; margin-bottom: 2px; }
-  .news-row { display: block; }
+  .news-title {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+
+  /* Fixed height so the block never shifts layout as entries are added.
+     About 4-5 rows are visible; the rest scrolls inside the box. */
+  .news-scroll {
+    height: 140px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #cbbba7 rgba(44, 36, 32, 0.06);
+  }
+
+  /* Keep the scrollbar always visible so it is clear the list scrolls */
+  .news-scroll::-webkit-scrollbar { width: 8px; }
+  .news-scroll::-webkit-scrollbar-track {
+    background: rgba(44, 36, 32, 0.06);
+    border-radius: 999px;
+  }
+  .news-scroll::-webkit-scrollbar-thumb {
+    background: #cbbba7;
+    border-radius: 999px;
+  }
+  .news-scroll::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+
+  /* Bottom fade hinting at more content — kept light enough to read through */
+  .news-box::after {
+    content: '';
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    height: 20px;
+    border-radius: 0 0 12px 12px;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+    pointer-events: none;
+  }
+
+  .news-label {
+    display: block;
+    text-align: center;
+    color: var(--color-muted);
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .news-list { list-style: none; text-align: center; }
+  .news-list li { font-size: 14px; line-height: 1.9; color: var(--color-text); }
+  .news-list time { color: var(--color-muted); font-weight: 700; }
+  .news-list strong { color: var(--color-accent); font-weight: 700; }
+
+  @media (max-width: 600px) {
+    .news { margin-top: -24px; padding-bottom: 12px; }
+    .news-scroll { height: 132px; }
+  }
 
   /* Demo GIF */
   .demo-section {
@@ -818,10 +874,27 @@
   <p class="hero-fomo"><span class="nw">Core features free.</span> <span class="nw">Optional layout features via</span> <span class="nw">TateGaki&nbsp;Pro (¥500/month or ¥1,500/year, tax&nbsp;incl.)</span></p>
 </section>
 
-<section class="news" aria-label="News">
-  <!-- STATS:START -->
-  <p class="news-item"><span class="news-label">Google Workspace Marketplace</span><span class="news-row"><span class="nw"><time datetime="2026-06-17">Jun 17</time>: 3,400 installs</span></span><span class="news-row"><span class="nw"><time datetime="2026-06-22">Jun 22</time>: over 10,000 installs</span></span><span class="news-row"><span class="nw"><time datetime="2026-07-17">Jul 17</time>: over 30,000 installs</span></span><span class="news-row"><span class="nw"><time datetime="2026-08-13">Aug 13</time>: <strong>over 35,000 installs</strong></span> <span class="nw">· <strong>★4</strong> rating</span></span></p>
-  <!-- STATS:END -->
+<section class="news" aria-labelledby="news-title">
+  <div class="news-box">
+    <h2 class="news-title" id="news-title">News</h2>
+    <!--
+      Everything below is generated. Do not edit it by hand.
+      To add one entry, append an object to the milestones array in
+      data/stats.json and run `node scripts/build-stats.mjs`.
+    -->
+    <!-- STATS:START -->
+    <div class="news-scroll" role="region" aria-label="News list" tabindex="0">
+      <p class="news-label">Google Workspace Marketplace</p>
+      <ul class="news-list">
+        <li><span class="nw"><time datetime="2026-08-28">Aug 28</time></span>: <strong>36,000+ installs / 31 organization domains</strong></li>
+        <li><span class="nw"><time datetime="2026-08-13">Aug 13</time></span>: over 35,000 installs</li>
+        <li><span class="nw"><time datetime="2026-07-17">Jul 17</time></span>: over 30,000 installs</li>
+        <li><span class="nw"><time datetime="2026-06-22">Jun 22</time></span>: over 10,000 installs</li>
+        <li><span class="nw"><time datetime="2026-06-17">Jun 17</time></span>: 3,400 installs</li>
+      </ul>
+    </div>
+    <!-- STATS:END -->
+  </div>
 </section>
 
 <section class="demo-section">

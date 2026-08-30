@@ -325,28 +325,84 @@
     max-width: 760px;
     /* ヒーロー写真に少し重ねて上に浮かせる */
     margin: -34px auto 0;
-    padding: 0 24px 8px;
-    text-align: center;
+    padding: 0 24px 16px;
     position: relative;
     z-index: 3;
   }
 
-  .news-item {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.92);
+  .news-box {
+    background: rgba(255, 255, 255, 0.96);
     border: 1px solid var(--color-border);
-    border-radius: 999px;
-    padding: 9px 22px;
-    font-size: 14px;
-    line-height: 1.9;
-    color: var(--color-text);
+    border-radius: 12px;
+    padding: 14px 18px 12px;
     box-shadow: 0 8px 24px rgba(44, 36, 32, 0.10);
+    position: relative;
   }
 
-  .news-item time { color: var(--color-muted); font-weight: 700; }
-  .news-item strong { color: var(--color-accent); font-weight: 700; }
-  .news-label { display: block; color: var(--color-muted); font-weight: 700; margin-bottom: 2px; }
-  .news-row { display: block; }
+  .news-title {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+
+  /* 高さは固定値で確保する（お知らせが増えてもレイアウトシフトしない）。
+     4〜5件が見える高さで、それ以降は枠内で縦スクロールする。 */
+  .news-scroll {
+    height: 140px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #cbbba7 rgba(44, 36, 32, 0.06);
+  }
+
+  /* スクロールできることが分かるよう、スクロールバーは常時見せる */
+  .news-scroll::-webkit-scrollbar { width: 8px; }
+  .news-scroll::-webkit-scrollbar-track {
+    background: rgba(44, 36, 32, 0.06);
+    border-radius: 999px;
+  }
+  .news-scroll::-webkit-scrollbar-thumb {
+    background: #cbbba7;
+    border-radius: 999px;
+  }
+  .news-scroll::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+
+  /* 下端のフェード（続きがあることの示唆）。文字が読める濃さに留める */
+  .news-box::after {
+    content: '';
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    height: 20px;
+    border-radius: 0 0 12px 12px;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+    pointer-events: none;
+  }
+
+  .news-label {
+    display: block;
+    text-align: center;
+    color: var(--color-muted);
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .news-list { list-style: none; text-align: center; }
+  .news-list li { font-size: 14px; line-height: 1.9; color: var(--color-text); }
+  .news-list time { color: var(--color-muted); font-weight: 700; }
+  .news-list strong { color: var(--color-accent); font-weight: 700; }
+
+  @media (max-width: 600px) {
+    .news { margin-top: -24px; padding-bottom: 12px; }
+    .news-scroll { height: 132px; }
+  }
 
   /* Demo GIF */
   .demo-section {
@@ -827,10 +883,27 @@
   <p class="hero-fomo"><span class="nw">基本無料・</span><span class="nw">Pro 月500円または年1,500円（税込）</span></p>
 </section>
 
-<section class="news" aria-label="実績・ニュース">
-  <!-- STATS:START -->
-  <p class="news-item"><span class="news-label">Google Workspace Marketplace</span><span class="news-row"><span class="nw"><time datetime="2026-06-17">6月17日</time> 3,400インストール</span></span><span class="news-row"><span class="nw"><time datetime="2026-06-22">6月22日</time> 1万インストール突破</span></span><span class="news-row"><span class="nw"><time datetime="2026-07-17">7月17日</time> 3万インストール突破</span></span><span class="news-row"><span class="nw"><time datetime="2026-08-13">8月13日</time> <strong>3万5千インストール突破</strong></span> <span class="nw">評価 <strong>★4</strong></span></span></p>
-  <!-- STATS:END -->
+<section class="news" aria-labelledby="news-title">
+  <div class="news-box">
+    <h2 class="news-title" id="news-title">お知らせ</h2>
+    <!--
+      ここから下は自動生成です。直接編集しないでください。
+      新しいお知らせを1行追加するときは data/stats.json の milestones 配列の
+      末尾にオブジェクトを1つ追記し、`node scripts/build-stats.mjs` を実行します。
+    -->
+    <!-- STATS:START -->
+    <div class="news-scroll" role="region" aria-label="お知らせ一覧" tabindex="0">
+      <p class="news-label">Google Workspace Marketplace</p>
+      <ul class="news-list">
+        <li><span class="nw"><time datetime="2026-08-28">8月28日</time></span> <strong>3万6千インストール突破／導入組織 31ドメイン</strong></li>
+        <li><span class="nw"><time datetime="2026-08-13">8月13日</time></span> 3万5千インストール突破</li>
+        <li><span class="nw"><time datetime="2026-07-17">7月17日</time></span> 3万インストール突破</li>
+        <li><span class="nw"><time datetime="2026-06-22">6月22日</time></span> 1万インストール突破</li>
+        <li><span class="nw"><time datetime="2026-06-17">6月17日</time></span> 3,400インストール</li>
+      </ul>
+    </div>
+    <!-- STATS:END -->
+  </div>
 </section>
 
 <section class="demo-section">
@@ -903,7 +976,7 @@
     </div>
     <div class="feature-card">
       <h3>ルビ入力</h3>
-      <p>原稿用紙モードでルビ（ふりがな）を入力可能。各列の右側にルビ欄を配置。</p>
+      <p>原稿用紙モードでルビ（ふりがな）を入力可能。各列の右側にルビ欄を配置。<a href="/guide/google-docs-ruby/">ルビの入れ方をくわしく見る</a></p>
     </div>
     <div class="feature-card">
       <h3>禁則処理</h3>
@@ -915,7 +988,7 @@
     </div>
     <div class="feature-card">
       <h3>Google Drive™保存</h3>
-      <p>作成した文書をマイドライブに保存・読み込み。上書き保存にも対応。</p>
+      <p>作成した原稿はGoogleドライブ（Google Drive™）のマイドライブに保存・読み込みできます。上書き保存にも対応。</p>
     </div>
   </div>
 </section>
@@ -950,7 +1023,11 @@
   <div class="faq-list">
     <div class="faq-q">
       <h3>Q. Googleドキュメントで縦書きはできますか？</h3>
-      <p>A. Googleドキュメントの標準機能では縦書きはできません。TateGakiをインストールすると、Googleドキュメント上で縦書き入力・原稿用紙レイアウトが使えるようになります。詳しい手順は<a href="/guide/google-docs-tategaki/">Googleドキュメントで縦書きにする方法</a>をご覧ください。</p>
+      <p>A. Googleドキュメント（グーグルドキュメント）の標準機能では縦書きはできません。TateGakiをインストールすると、Googleドキュメント上で縦書き入力・原稿用紙レイアウトが使えるようになります。詳しい手順は<a href="/guide/google-docs-tategaki/">Googleドキュメントで縦書きにする方法</a>をご覧ください。</p>
+    </div>
+    <div class="faq-q">
+      <h3>Q. ドキュメントを縦書きにしたいのですが、どうすればいいですか？</h3>
+      <p>A. Googleドキュメントを開き、メニューの「拡張機能」→「TateGaki」→「縦書きエディタを開く」を選ぶと、縦書きエディタが開きます。400字詰め・200字詰めの原稿用紙モードにも切り替えられます。詳しい手順は<a href="/guide/google-docs-tategaki/">Googleドキュメントで縦書きにする方法</a>をご覧ください。</p>
     </div>
     <div class="faq-q">
       <h3>Q. 原稿用紙（400字詰め）には対応していますか？</h3>
@@ -982,6 +1059,7 @@
 </section>
 
 <footer>
+  <p style="margin-bottom: 8px;">ガイド：<a href="/guide/google-docs-tategaki/">Googleドキュメントで縦書きにする方法</a> ／ <a href="/guide/google-docs-ruby/">ルビ（ふりがな）を振る方法</a></p>
   <p>
     <a href="/privacy.html">プライバシーポリシー</a>
     <a href="/terms.html">利用規約</a>
