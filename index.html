@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Googleドキュメントで縦書き｜無料アドオン TateGaki（原稿用紙・ルビ・禁則処理対応）</title>
-<meta name="description" content="Googleドキュメント（Google Docs）で縦書きができる無料アドオン TateGaki。400字詰め・200字詰め原稿用紙、ルビ（ふりがな）、禁則処理に対応。小説・同人誌・作文プリント・和文書類の執筆に。">
+<title>TateGaki｜Googleドキュメントを縦書きにする方法（無料アドオン）</title>
+<meta name="description" content="結論、拡張機能を入れればGoogleドキュメントのまま縦書きにできます。表で1文字ずつ入れる・画像にして貼る必要はありません。追加から3クリック、無料。ルビ・原稿用紙にも対応。">
 <meta name="application-name" content="TateGaki">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/favicon.svg">
@@ -16,7 +16,7 @@
 <link rel="alternate" hreflang="x-default" href="https://tategaki.site/">
 <!-- Open Graph -->
 <meta property="og:title" content="Googleドキュメントで縦書き｜無料アドオン TateGaki">
-<meta property="og:description" content="Googleドキュメント（Google Docs）で縦書きができる無料アドオン。400字詰め原稿用紙・ルビ・禁則処理対応。">
+<meta property="og:description" content="結論、拡張機能を入れればGoogleドキュメントのまま縦書きにできます。表で1文字ずつ入れる・画像にして貼る必要はありません。追加から3クリック、無料。ルビ・原稿用紙にも対応。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tategaki.site/">
 <meta property="og:site_name" content="TateGaki">
@@ -821,6 +821,71 @@
 
   footer a:hover { color: var(--color-text); }
 
+  /* Howto — Googleドキュメントを縦書きにする方法（3ステップ） */
+  .howto {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    scroll-margin-top: 80px;
+  }
+
+  .howto-lead {
+    font-size: 15px;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 10px;
+    text-wrap: pretty;
+  }
+
+  .howto h2 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .howto-steps {
+    list-style: none;
+    display: grid;
+    gap: 16px;
+    counter-reset: howto;
+  }
+
+  .howto-step {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 24px;
+    counter-increment: howto;
+  }
+
+  .howto-step h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 6px;
+  }
+
+  .howto-step h3::before {
+    content: 'STEP ' counter(howto);
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin-bottom: 2px;
+  }
+
+  .howto-step p {
+    font-size: 14px;
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  .howto-step a { color: var(--color-accent); }
+
   /* Responsive */
   @media (max-width: 560px) {
     .feature-grid { grid-template-columns: 1fr; }
@@ -904,6 +969,25 @@
     </div>
     <!-- STATS:END -->
   </div>
+</section>
+
+<section class="howto" id="howto">
+  <p class="howto-lead">Googleドキュメントを縦書きにする方法は、拡張機能を追加する1つだけです。</p>
+  <h2>Googleドキュメントを縦書きにする方法（3ステップ）</h2>
+  <ol class="howto-steps">
+    <li class="howto-step">
+      <h3>TateGaki を追加する</h3>
+      <p>Google Workspace Marketplace の<a href="https://workspace.google.com/marketplace/app/tategaki_%E7%B8%A6%E6%9B%B8%E3%81%8D%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF/351112416478" target="_blank" rel="noopener">TateGaki のページ</a>を開き、「インストール」を押します。無料で、Googleドキュメントの拡張機能として追加されます。</p>
+    </li>
+    <li class="howto-step">
+      <h3>Googleドキュメントを開く</h3>
+      <p>縦書きにしたいGoogleドキュメントを開きます。新規作成でも、すでにある文書でもかまいません。</p>
+    </li>
+    <li class="howto-step">
+      <h3>縦書きにする</h3>
+      <p>メニューの「拡張機能」→「TateGaki」→「縦書きエディタを開く」を選ぶと、縦書きエディタが開きます。400字詰め・200字詰めの原稿用紙モードやルビにも切り替えられます。</p>
+    </li>
+  </ol>
 </section>
 
 <section class="demo-section">
