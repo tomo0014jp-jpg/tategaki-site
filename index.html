@@ -805,21 +805,31 @@
     color: var(--color-accent);
   }
 
-  /* 開発者ページへの導線（1行テキストリンクのみ。セクション・カードは作らない） */
+  /* 開発者ページへの導線（枠付きの1行。見出しや説明文は置かない） */
   .about-link {
     max-width: 720px;
     margin: 0 auto;
     padding: 0 24px 48px;
-    text-align: center;
-    font-size: 14px;
   }
 
   .about-link a {
+    display: block;
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    text-align: center;
     color: var(--color-accent);
+    font-size: 14px;
+    font-weight: 700;
     text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
   }
 
-  .about-link a:hover { text-decoration: underline; }
+  .about-link a:hover {
+    border-color: var(--color-accent);
+    background: #fffdfa;
+  }
 
   footer {
     border-top: 1px solid var(--color-border);
@@ -1158,7 +1168,7 @@
   </div>
 </section>
 
-<p class="about-link"><a href="/about.html">開発者について</a></p>
+<p class="about-link"><a href="/about.html">▶ <span class="nw">開発者について</span></a></p>
 
 <footer>
   <p style="margin-bottom: 8px;">ガイド：<a href="/guide/google-docs-tategaki/">Googleドキュメントで縦書きにする方法</a> ／ <a href="/guide/google-docs-ruby/">ルビ（ふりがな）を振る方法</a></p>
