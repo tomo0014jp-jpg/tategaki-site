@@ -805,6 +805,22 @@
     color: var(--color-accent);
   }
 
+  /* 開発者ページへの導線（1行テキストリンクのみ。セクション・カードは作らない） */
+  .about-link {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .about-link a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .about-link a:hover { text-decoration: underline; }
+
   footer {
     border-top: 1px solid var(--color-border);
     padding: 24px;
@@ -1142,6 +1158,8 @@
   </div>
 </section>
 
+<p class="about-link"><a href="/about.html">開発者について</a></p>
+
 <footer>
   <p style="margin-bottom: 8px;">ガイド：<a href="/guide/google-docs-tategaki/">Googleドキュメントで縦書きにする方法</a> ／ <a href="/guide/google-docs-ruby/">ルビ（ふりがな）を振る方法</a></p>
   <p>
@@ -1150,6 +1168,7 @@
     <a href="/tokushoho.html">特定商取引法に基づく表記</a>
     <a href="/support.html">サポート</a>
     <a href="/organization.html">学校・組織でのご利用</a>
+    <a href="/about.html">開発者について</a>
     <a href="https://ofuse.me/c0443beb" target="_blank" rel="noopener">開発を応援（OFUSE）</a>
   </p>
   <p style="margin-top: 8px;">&copy; 2026 TateGaki. All rights reserved.</p>

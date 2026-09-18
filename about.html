@@ -6,19 +6,23 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/favicon.svg">
 <meta name="theme-color" content="#c87a30">
-<title>特定商取引法に基づく表記 — TateGaki</title>
-<meta name="description" content="TateGaki（有料プラン TateGaki Pro）の特定商取引法に基づく表記。販売事業者、対価、支払方法・時期、役務の提供時期、解約・返金についてのご案内です。">
-<link rel="canonical" href="https://tategaki.site/tokushoho.html">
-<link rel="alternate" hreflang="ja" href="https://tategaki.site/tokushoho.html">
-<link rel="alternate" hreflang="x-default" href="https://tategaki.site/tokushoho.html">
+<title>開発者について｜Googleドキュメント縦書きアドオン TateGaki</title>
+<meta name="description" content="TateGaki（Googleドキュメント縦書きアドオン）の開発者ページ。非エンジニアが自分の困りごとをAIで解いてきた記録として、つくったもの・AI個人開発レッスン・Notionテンプレートをご紹介します。">
+<link rel="canonical" href="https://tategaki.site/about.html">
+<link rel="alternate" hreflang="ja" href="https://tategaki.site/about.html">
+<link rel="alternate" hreflang="x-default" href="https://tategaki.site/about.html">
 <!-- Open Graph -->
-<meta property="og:title" content="特定商取引法に基づく表記 — TateGaki">
-<meta property="og:description" content="TateGaki Pro の特定商取引法に基づく表記。販売事業者・対価・支払方法・解約についてのご案内。">
+<meta property="og:title" content="開発者について｜TateGaki">
+<meta property="og:description" content="非エンジニアが自分の困りごとをAIで解いてきた記録。TateGakiの開発者ページです。">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://tategaki.site/tokushoho.html">
+<meta property="og:url" content="https://tategaki.site/about.html">
 <meta property="og:site_name" content="TateGaki">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://tategaki.site/images/hero.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1282">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tategaki.site/images/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -34,6 +38,7 @@
     --color-accent: #c87a30;
     --color-border: #e0d5c8;
     --color-muted: #8a7e72;
+    --color-card: #fff;
     --font-sans: 'Noto Sans JP', sans-serif;
     --font-serif: 'Noto Serif JP', serif;
   }
@@ -75,16 +80,17 @@
   nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 24px;
+    justify-content: flex-end;
+    gap: 8px 16px;
   }
-
-  header nav li { margin-bottom: 0; }
 
   nav a {
     color: var(--color-muted);
     text-decoration: none;
     font-size: 13px;
+    white-space: nowrap;
     transition: color 0.2s;
   }
 
@@ -155,83 +161,38 @@
     margin-bottom: 8px;
   }
 
-  .last-updated {
-    color: var(--color-muted);
-    font-size: 13px;
-    margin-bottom: 48px;
-  }
-
   h2 {
     font-family: var(--font-serif);
     font-size: 18px;
     font-weight: 700;
     color: var(--color-heading);
     margin-top: 40px;
-    margin-bottom: 12px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 16px;
   }
 
   p { margin-bottom: 16px; }
 
-  ul, ol {
-    margin: 0 0 16px 24px;
+  .lead {
+    font-size: 15px;
+    margin-bottom: 32px;
   }
 
-  li { margin-bottom: 6px; }
+  main a { color: var(--color-accent); }
 
-  /* 特定商取引法 表 */
-  .tokusho-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 24px;
-    font-size: 14px;
+  /* つくったもの：カードやバナーは作らず、素朴なリストにとどめる */
+  .works {
+    list-style: none;
+    margin-bottom: 16px;
   }
 
-  .tokusho-table th,
-  .tokusho-table td {
-    border: 1px solid var(--color-border);
-    padding: 12px 16px;
-    text-align: left;
-    vertical-align: top;
-    line-height: 1.8;
+  .works li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .tokusho-table th {
-    background: #f3ede4;
-    width: 36%;
-    font-weight: 700;
-    color: var(--color-heading);
-  }
+  .works li:last-child { border-bottom: none; }
 
-  .tokusho-table td a {
-    color: var(--color-accent);
-    text-decoration: none;
-    word-break: break-all;
-  }
-
-  .tokusho-table td a:hover { text-decoration: underline; }
-
-  @media (max-width: 768px) {
-    .tokusho-table,
-    .tokusho-table tbody,
-    .tokusho-table tr { display: block; width: 100%; }
-
-    .tokusho-table th,
-    .tokusho-table td {
-      display: block;
-      width: 100%;
-      border-bottom: none;
-    }
-
-    .tokusho-table td { border-top: none; }
-
-    .tokusho-table tr { margin-bottom: 0; }
-
-    .tokusho-table tr + tr th { border-top: 1px solid var(--color-border); }
-
-    .tokusho-table td:last-child { border-bottom: 1px solid var(--color-border); }
-  }
+  .works b { color: var(--color-heading); }
 
   footer {
     border-top: 1px solid var(--color-border);
@@ -277,7 +238,7 @@
       <li><a href="/terms.html">利用規約</a></li>
       <li><a href="/tokushoho.html">特定商取引法に基づく表記</a></li>
       <li><a href="/support.html">サポート</a></li>
-      <li><a href="/organization.html">学校・組織</a></li>
+      <li><a href="/organization.html">学校・組織でのご利用</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
       <span></span>
@@ -287,6 +248,7 @@
   </nav>
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <a href="/support.html">サポート</a>
+    <a href="/organization.html">学校・組織でのご利用</a>
     <a href="/terms.html">利用規約</a>
     <a href="/tokushoho.html">特定商取引法に基づく表記</a>
     <a href="/privacy.html">プライバシーポリシー</a>
@@ -294,64 +256,30 @@
 </header>
 
 <main>
-  <h1>特定商取引法に基づく表記</h1>
-  <p class="last-updated">最終更新日: 2026年6月5日</p>
+  <h1>開発者について</h1>
 
-  <p>本表記は、有料プラン「TateGaki Pro」に関する特定商取引法（特定商取引に関する法律）に基づく表示です。</p>
+  <p class="lead">非エンジニアです。自分が困ったことを、AIを使って自分で解いています。<br>
+    TateGaki は、子どもの宿題で縦書きの原稿用紙が必要になり、Googleドキュメントにその機能がないと分かったところから作りました。</p>
 
-  <table class="tokusho-table">
-    <tbody>
-      <tr>
-        <th>販売事業者</th>
-        <td>株式会社セント・ミュージック（法人番号 1011001159591）</td>
-      </tr>
-      <tr>
-        <th>運営統括責任者</th>
-        <td>大石 智彦（取締役・実務窓口）</td>
-      </tr>
-      <tr>
-        <th>所在地</th>
-        <td>〒150-0043 東京都渋谷区道玄坂1丁目10-8 渋谷道玄坂東急ビル2F-C</td>
-      </tr>
-      <tr>
-        <th>電話番号</th>
-        <td>070-3798-8580</td>
-      </tr>
-      <tr>
-        <th>連絡先</th>
-        <td>お問い合わせは<a href="https://tategaki.site/support.html">サポートページ</a>（https://tategaki.site/support.html）よりお願いいたします。</td>
-      </tr>
-      <tr>
-        <th>販売価格</th>
-        <td>TateGaki Pro：月額500円（消費税込）または年額1,500円（消費税込）</td>
-      </tr>
-      <tr>
-        <th>商品代金以外の必要料金</th>
-        <td>なし（インターネット接続にかかる通信料はお客様のご負担となります）</td>
-      </tr>
-      <tr>
-        <th>支払方法</th>
-        <td>クレジットカード（Stripe）</td>
-      </tr>
-      <tr>
-        <th>支払時期</th>
-        <td>お申し込み時、および各自動更新時（月額プランは毎月、年額プランは毎年）</td>
-      </tr>
-      <tr>
-        <th>引渡時期（提供開始）</th>
-        <td>決済完了後、ダイアログを開き直すと Pro 機能が有効になります。</td>
-      </tr>
-      <tr>
-        <th>返品・解約（返品特約）</th>
-        <td>
-          利用規約「有料プラン（TateGaki Pro）」の定めに準拠します。日割りでの返金は行いません。解約後も現在の請求期間の終了日までは Pro 機能をご利用いただけます。解約は下記のカスタマーポータルから、ご登録のメールアドレスでログインのうえお手続きください。<br>
-          <a href="https://billing.stripe.com/p/login/cNiaEQdnt40L29P9RFdAk00" target="_blank" rel="noopener">https://billing.stripe.com/p/login/cNiaEQdnt40L29P9RFdAk00</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <h2>つくったもの</h2>
 
-  <p>TateGaki Pro は月額500円（消費税込）または年額1,500円（消費税込）の定期課金（サブスクリプション）です。ご選択のプランに応じて、月額プランは毎月、年額プランは毎年自動的に更新・課金され、上記のカスタマーポータルからいつでも解約いただけます。</p>
+  <ul class="works">
+    <li><b><a href="/">TateGaki</a></b>｜Googleドキュメントで縦書きの原稿用紙を使えるようにするアドオン。</li>
+    <li><b><a href="https://bokesatei.com/" target="_blank" rel="noopener">AIボケ査定</a></b>｜お題に投稿したボケをAIが採点するWebサービス。</li>
+    <li><b><a href="https://rhythm-game-kuranosuke.netlify.app/" target="_blank" rel="noopener">Youのリズムあまくない？</a></b>｜ブラウザで遊べるリズムゲーム。</li>
+  </ul>
+
+  <h2>AI個人開発レッスン（ココナラ）</h2>
+
+  <p>AIを使って自分の困りごとを形にする進め方を、<a href="https://coconala.com/users/254228?ref=service_main_column" target="_blank" rel="noopener">ココナラ</a>でお伝えしています。</p>
+
+  <h2>Notionテンプレート</h2>
+
+  <p>NotionをAI前提の業務基盤として使うためのテンプレートを、<a href="https://www.notion.com/@kuranosuke" target="_blank" rel="noopener">Notionマーケットプレイス</a>で公開しています。</p>
+
+  <h2>メディア掲載</h2>
+
+  <p>掲載準備中です。公開後にこちらでご紹介します。</p>
 </main>
 
 <footer>

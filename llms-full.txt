@@ -74,6 +74,7 @@ All public pages on the site (1:1 with sitemap.xml). "Full text below" marks pag
 - https://tategaki.site/organization.html — 学校・組織でのご利用（サイトライセンス・請求書払い）/ Organization & school licensing (Japanese)
 - https://tategaki.site/admin-setup/ — 管理者向けセットアップガイド（組織一括導入）/ Admin setup guide for organization-wide deployment (Japanese)
 - https://tategaki.site/en/admin-setup/ — Admin Setup Guide (Organization-wide Deployment) (English)
+- https://tategaki.site/about.html — 開発者について / About the developer (Japanese only)
 - https://tategaki.site/privacy.html — プライバシーポリシー / Privacy Policy (Japanese only)
 - https://tategaki.site/terms.html — 利用規約 / Terms of Service (Japanese only)
 - https://tategaki.site/tokushoho.html — 特定商取引法に基づく表記 / Commercial Transactions Act Notice (Japanese only)
