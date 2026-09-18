@@ -161,34 +161,98 @@
     margin-bottom: 8px;
   }
 
+  /* 見出しは左のアクセントバーで区切る（本文の文言は足さない） */
   h2 {
+    position: relative;
     font-family: var(--font-serif);
     font-size: 18px;
     font-weight: 700;
     color: var(--color-heading);
-    margin-top: 40px;
+    margin-top: 48px;
     margin-bottom: 16px;
+    padding-left: 14px;
+  }
+
+  h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    bottom: 0.3em;
+    width: 3px;
+    border-radius: 2px;
+    background: var(--color-accent);
   }
 
   p { margin-bottom: 16px; }
 
-
   main a { color: var(--color-accent); }
 
-  /* つくったもの：カードやバナーは作らず、素朴なリストにとどめる */
+  /* 外部リンクであることを記号で示す（本文の文言は変えない） */
+  main a[target="_blank"]::after {
+    content: "\2197";
+    font-size: 0.85em;
+    margin-left: 2px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  /* つくったもの：1件ずつカードに載せる */
   .works {
     list-style: none;
-    margin-bottom: 16px;
+    display: grid;
+    gap: 12px;
+    margin-bottom: 8px;
   }
 
   .works li {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--color-border);
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
 
-  .works li:last-child { border-bottom: none; }
+  .works li:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 8px rgba(44, 36, 32, 0.06);
+  }
 
-  .works b { color: var(--color-heading); }
+  .work-name {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .work-sep {
+    color: var(--color-border);
+    margin: 0 4px;
+  }
+
+  .work-desc {
+    font-size: 14px;
+    color: var(--color-muted);
+  }
+
+  /* レッスン・テンプレートの本文を枠に収める */
+  .section-box {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+
+  /* メディア掲載：公開前であることが枠から伝わるように破線にする */
+  .coming-box {
+    border: 1px dashed var(--color-border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 14px;
+  }
 
   footer {
     border-top: 1px solid var(--color-border);
@@ -257,22 +321,22 @@
   <h2>つくったもの</h2>
 
   <ul class="works">
-    <li><b><a href="/">TateGaki</a></b>｜Googleドキュメントで縦書きの原稿用紙を使えるようにするアドオン。</li>
-    <li><b><a href="https://bokesatei.com/" target="_blank" rel="noopener">AIボケ査定</a></b>｜お題に投稿したボケをAIが採点するWebサービス。</li>
-    <li><b><a href="https://rhythm-game-kuranosuke.netlify.app/" target="_blank" rel="noopener">Youのリズムあまくない？</a></b>｜ブラウザで遊べるリズムゲーム。</li>
+    <li><a class="work-name" href="/">TateGaki</a><span class="work-sep">｜</span><span class="work-desc">Googleドキュメントで縦書きの原稿用紙を使えるようにするアドオン。</span></li>
+    <li><a class="work-name" href="https://bokesatei.com/" target="_blank" rel="noopener">AIボケ査定</a><span class="work-sep">｜</span><span class="work-desc">お題に投稿したボケをAIが採点するWebサービス。</span></li>
+    <li><a class="work-name" href="https://rhythm-game-kuranosuke.netlify.app/" target="_blank" rel="noopener">Youのリズムあまくない？</a><span class="work-sep">｜</span><span class="work-desc">ブラウザで遊べるリズムゲーム。</span></li>
   </ul>
 
   <h2>AI個人開発レッスン（ココナラ）</h2>
 
-  <p>AIを使って自分の困りごとを形にする進め方を、<a href="https://coconala.com/users/254228?ref=service_main_column" target="_blank" rel="noopener">ココナラ</a>でお伝えしています。</p>
+  <p class="section-box">AIを使って自分の困りごとを形にする進め方を、<a href="https://coconala.com/users/254228?ref=service_main_column" target="_blank" rel="noopener">ココナラ</a>でお伝えしています。</p>
 
   <h2>Notionテンプレート</h2>
 
-  <p>NotionをAI前提の業務基盤として使うためのテンプレートを、<a href="https://www.notion.com/@kuranosuke" target="_blank" rel="noopener">Notionマーケットプレイス</a>で公開しています。</p>
+  <p class="section-box">NotionをAI前提の業務基盤として使うためのテンプレートを、<a href="https://www.notion.com/@kuranosuke" target="_blank" rel="noopener">Notionマーケットプレイス</a>で公開しています。</p>
 
   <h2>メディア掲載</h2>
 
-  <p>掲載準備中です。公開後にこちらでご紹介します。</p>
+  <p class="coming-box">掲載準備中です。公開後にこちらでご紹介します。</p>
 </main>
 
 <footer>
