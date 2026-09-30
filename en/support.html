@@ -474,6 +474,43 @@
     border-color: var(--color-accent);
   }
 
+  /* 問い合わせ先（選択してコピーできる文字情報） */
+  .contact-details {
+    list-style: none;
+    margin: 16px 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .contact-details > li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border);
+    overflow-wrap: anywhere;
+  }
+
+  .contact-details .label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-muted);
+  }
+
+  .contact-details code {
+    display: inline-block;
+    max-width: 100%;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    color: var(--color-heading);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 2px 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-details ul {
+    margin: 4px 0 0 1.4em;
+  }
+
   .note {
     color: var(--color-muted);
     font-size: 13px;
@@ -669,10 +706,21 @@
   <h2>Contact</h2>
 
   <div class="contact-box">
-    <h3>Email support</h3>
-    <p>If the FAQ above doesn't cover your question, please email us at the address below.</p>
-    <a href="mailto:support@tategaki.site" class="contact-email">support@tategaki.site</a>
-    <p class="note">We may take a few days to respond.</p>
+    <h3>Contact by email</h3>
+    <p>If the FAQ above doesn't cover your question, please contact us using your usual email service.</p>
+    <ul class="contact-details">
+      <li><span class="label">To:</span><code>support@tategaki.site</code></li>
+      <li><span class="label">Subject:</span><code>[TateGaki Support] Brief description</code></li>
+      <li><span class="label">Please include:</span>
+        <ul>
+          <li>The issue or intended use</li>
+          <li>Any error message (attach a screenshot to your email if helpful)</li>
+          <li>The Google Account used with TateGaki, when account verification is necessary</li>
+        </ul>
+      </li>
+    </ul>
+    <p class="note">Never send your password, verification code, or payment card details. We usually reply within a few business days.</p>
+    <p class="note">TateGaki Pro is purchased inside the add-on. This email address is for questions before or after purchase and for reporting problems.</p>
   </div>
 
   <h2>Canceling TateGaki Pro</h2>
@@ -688,7 +736,7 @@
 
   <div class="contact-box">
     <h3>This is often caused by a mismatched email address</h3>
-    <p>If you registered for Pro but the features won't open, the email address used at purchase may differ from the email of the Google account you are currently using. Please contact <a href="mailto:support@tategaki.site">support@tategaki.site</a> and we'll verify and unlock it right away.</p>
+    <p>If you registered for Pro but the features won't open, the email address used at purchase may differ from the email of the Google account you are currently using. Please contact support@tategaki.site (see "Contact by email" above for the subject and details to include) and we'll verify and unlock it right away.</p>
   </div>
 
   <h2>For administrators deploying organization-wide</h2>

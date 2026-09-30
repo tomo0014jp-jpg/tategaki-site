@@ -80,7 +80,7 @@ TateGakiは、2026年にコード未経験者がClaudeとの対話を通じて�
 
 ## Support & Donations / サポート・寄付
 
-- **Email support / メールサポート**: support@tategaki.site
+- **Email support / メールサポート**: support@tategaki.site (send from your usual email service; no contact form / 普段お使いのメールサービスから送信。問い合わせフォームはありません。Subject / 件名: 【TateGakiサポート】お問い合わせ内容 / [TateGaki Support] Brief description. Never send passwords, verification codes, or card numbers / パスワード・認証コード・カード番号は送らないでください)
 - **Support & FAQ (Japanese)**: https://tategaki.site/support.html
 - **Support & FAQ (English)**: https://tategaki.site/en/support.html
 - **Subscription management / 解約**: Cancel TateGaki Pro anytime via the Stripe customer portal — https://billing.stripe.com/p/login/cNiaEQdnt40L29P9RFdAk00 / TateGaki Pro はStripeカスタマーポータルからいつでも解約可能。

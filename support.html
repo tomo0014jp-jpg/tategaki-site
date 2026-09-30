@@ -472,6 +472,43 @@
   .contact-email:hover {
     border-color: var(--color-accent);
   }
+
+  /* 問い合わせ先（選択してコピーできる文字情報） */
+  .contact-details {
+    list-style: none;
+    margin: 16px 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .contact-details > li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border);
+    overflow-wrap: anywhere;
+  }
+
+  .contact-details .label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-muted);
+  }
+
+  .contact-details code {
+    display: inline-block;
+    max-width: 100%;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    color: var(--color-heading);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 2px 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-details ul {
+    margin: 4px 0 0 1.4em;
+  }
   
   .note {
     color: var(--color-muted);
@@ -688,9 +725,20 @@
 
   <div class="contact-box">
     <h3>メールでのお問い合わせ</h3>
-    <p>上記のFAQで解決しない場合は、以下のメールアドレスまでお問い合わせください。</p>
-    <a href="mailto:support@tategaki.site" class="contact-email">support@tategaki.site</a>
-    <p class="note">※ 回答には数日いただく場合があります。</p>
+    <p>上記のFAQで解決しない場合は、普段お使いのメールサービスからお問い合わせください。</p>
+    <ul class="contact-details">
+      <li><span class="label">宛先：</span><code>support@tategaki.site</code></li>
+      <li><span class="label">件名：</span><code>【TateGakiサポート】お問い合わせ内容</code></li>
+      <li><span class="label">本文にご記載ください：</span>
+        <ul>
+          <li>発生している問題、またはご希望の使い方</li>
+          <li>表示されたエラーメッセージ（あれば。画面のスクリーンショットはメールに添付してください）</li>
+          <li>ご利用中のGoogleアカウント（Proの反映や認証の問題で確認が必要な場合のみ）</li>
+        </ul>
+      </li>
+    </ul>
+    <p class="note">※ パスワード、認証コード（ワンタイムコード）、カード番号などは送らないでください。通常、数営業日以内にご返信します。</p>
+    <p class="note">※ Proのご購入はアドオン内から行えます。このメール窓口は、購入前後のご相談・トラブルのご連絡用です。</p>
   </div>
 
   <h2>有料プラン（TateGaki Pro）の解約</h2>
@@ -706,7 +754,7 @@
 
   <div class="contact-box">
     <h3>メールアドレスの不一致が原因の場合があります</h3>
-    <p>Proにご登録したのに機能が開かない方へ：ご購入時のメールアドレスと、今お使いのGoogleアカウントのメールアドレスが異なる可能性があります。<a href="mailto:support@tategaki.site">support@tategaki.site</a> までご連絡ください。確認のうえ、すぐに解放します。</p>
+    <p>Proにご登録したのに機能が開かない方へ：ご購入時のメールアドレスと、今お使いのGoogleアカウントのメールアドレスが異なる可能性があります。support@tategaki.site までご連絡ください（件名・記載事項は上記「メールでのお問い合わせ」をご覧ください）。確認のうえ、すぐに解放します。</p>
   </div>
 
   <h2>組織で一括導入された管理者の方へ</h2>

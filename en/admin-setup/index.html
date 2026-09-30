@@ -79,6 +79,11 @@
   .contact-box h3 { font-family: var(--font-serif); font-size: 16px; margin-bottom: 12px; color: var(--color-heading); margin-top: 0; }
   .contact-email { display: inline-block; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 8px 16px; font-size: 15px; color: var(--color-accent); text-decoration: none; margin-top: 4px; }
   .contact-email:hover { border-color: var(--color-accent); }
+  .contact-details { list-style: none; margin: 16px 0; border-top: 1px solid var(--color-border); }
+  .contact-details > li { padding: 12px 0; border-bottom: 1px solid var(--color-border); overflow-wrap: anywhere; }
+  .contact-details .label { display: block; font-size: 13px; font-weight: 700; color: var(--color-muted); }
+  .contact-details code { display: inline-block; max-width: 100%; font-family: var(--font-sans); font-size: 16px; color: var(--color-heading); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 4px; padding: 2px 10px; overflow-wrap: anywhere; }
+  .contact-details ul { margin: 4px 0 0 1.4em; }
   .note { color: var(--color-muted); font-size: 13px; margin-top: 12px; }
   footer { border-top: 1px solid var(--color-border); padding: 24px 0; text-align: center; color: var(--color-muted); font-size: 12px; }
   .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; margin-bottom: 8px; }
@@ -177,8 +182,19 @@
   <h2>Still not resolved?</h2>
   <div class="contact-box">
     <h3>Contact support</h3>
-    <p>If the steps above don't resolve it, contact us with the exact error message, your organization domain, and the affected users' situation. We'll review and advise.</p>
-    <a href="mailto:support@tategaki.site" class="contact-email">support@tategaki.site</a>
+    <p>If the steps above don't resolve it, please contact us using your usual email service. We'll review and advise.</p>
+    <ul class="contact-details">
+      <li><span class="label">To:</span><code>support@tategaki.site</code></li>
+      <li><span class="label">Subject:</span><code>[TateGaki Support] Admin setup</code></li>
+      <li><span class="label">Please include:</span>
+        <ul>
+          <li>The exact error message</li>
+          <li>Your organization domain</li>
+          <li>The affected users' situation</li>
+        </ul>
+      </li>
+    </ul>
+    <p class="note">Never send your password or verification code. We usually reply within a few business days.</p>
     <p class="note">For general questions, see <a href="/en/support.html">Support &amp; FAQ</a> as well.</p>
   </div>
 </main>

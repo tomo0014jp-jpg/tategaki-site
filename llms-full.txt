@@ -289,9 +289,13 @@ Googleドキュメント（Google Docs）縦書きアドオン TateGaki のサ�
 
 ### お問い合わせ
 
-メールでのお問い合わせ: support@tategaki.site
+上記のFAQで解決しない場合は、普段お使いのメールサービスからお問い合わせください（問い合わせフォームやメールアプリ起動ボタンはありません）。
 
-上記のFAQで解決しない場合は、上記のメールアドレスまでお問い合わせください。回答には数日いただく場合があります。
+- 宛先: support@tategaki.site
+- 件名: 【TateGakiサポート】お問い合わせ内容
+- 本文にご記載ください: 発生している問題またはご希望の使い方／表示されたエラーメッセージ（スクリーンショットはメールに添付）／ご利用中のGoogleアカウント（Proの反映や認証の問題で確認が必要な場合のみ）
+
+※ パスワード、認証コード（ワンタイムコード）、カード番号などは送らないでください。通常、数営業日以内にご返信します。Proのご購入はアドオン内から行えます。このメール窓口は購入前後のご相談・トラブルのご連絡用です。
 
 ### 有料プラン（TateGaki Pro）の解約・トラブル
 
@@ -356,9 +360,13 @@ Support page for TateGaki, the free Google Docs add-on for Japanese vertical wri
 
 ### Contact
 
-Email support: support@tategaki.site
+If the FAQ above doesn't cover your question, please contact us using your usual email service (there is no contact form or "open mail app" button).
 
-If the FAQ above doesn't cover your question, please email us at the address above. We may take a few days to respond.
+- To: support@tategaki.site
+- Subject: [TateGaki Support] Brief description
+- Please include: the issue or intended use, any error message (attach a screenshot if helpful), and the Google Account used with TateGaki when account verification is necessary.
+
+Never send your password, verification code, or payment card details. We usually reply within a few business days. TateGaki Pro is purchased inside the add-on; this email address is for questions before or after purchase and for reporting problems.
 
 ### TateGaki Pro — cancellation & troubleshooting
 
@@ -396,13 +404,25 @@ TateGaki is used mainly by schools and boards of education across Japan. For org
 
 ### お問い合わせ / Contact
 
-- **メールでのご相談（請求書払い・一括導入）/ Email (invoice payment, organization-wide deployment)**: support@tategaki.site
-- 学校・団体名と、おおよそのご利用人数をお知らせください。担当より折り返しご連絡いたします。件名は「【組織利用の相談】学校・団体名」の形式です（学校・団体名の部分を貴組織名に書き換えてください）。
-- Please include your school or organization name and the approximate number of users. We will reply directly.
+請求書払い・一括導入のご相談は、普段お使いのメールサービスから以下の宛先へお送りください。 / For invoice payment or organization-wide deployment, please email us from your usual email service.
+
+- 宛先 / To: support@tategaki.site
+- 件名 / Subject: 【組織利用の相談】学校・団体名
+- 本文にご記載ください / Please include: 学校・団体名／おおよその利用人数／ご相談内容 (school or organization name, approximate number of users, and your inquiry)
+
+※「学校・団体名」の部分を実際のお名前に書き換えてください。通常、数営業日以内にご返信します。 / Replace "学校・団体名" with your organization's name. We usually reply within a few business days.
 
 ### 個人でのご利用について / For individual use
 
-個人でのご利用は、アドオン内から TateGaki Pro（月額500円または年額1,500円・税込）にご登録いただけます。組織ライセンスは学校・団体向けの契約です。
+個人でのご利用は、アドオン内から TateGaki Pro（月額500円または年額1,500円・税込）にご登録いただけます。組織ライセンスは学校・団体向けの契約です。Proのご購入はアドオン内から行い、組織向け窓口を通す必要はありません。
+
+購入方法、ご希望のレイアウト、Proが反映されない等のご相談は、同じ宛先へメールでお送りください。
+
+- 宛先: support@tategaki.site
+- 件名: 【TateGaki個人利用の相談】
+- 本文にご記載ください: ご希望の使い方／ご利用中のGoogleアカウント（Proの反映確認など、必要な場合のみ）／お困りの内容
+
+※ パスワードや認証コード、カード番号は送らないでください。
 
 Individual users can subscribe to TateGaki Pro (¥500/month or ¥1,500/year, tax incl.) from inside the add-on. The organization license is a separate contract intended for schools and organizations.
 
@@ -475,7 +495,7 @@ Marketplace から組織インストールする際、配布対象が「一部�
 
 ### それでも解決しない場合
 
-上記を確認しても解決しない場合は、発生しているエラーメッセージ・組織ドメイン・対象ユーザーの状況を添えて support@tategaki.site までご連絡ください。確認のうえご案内します。一般的なご質問は https://tategaki.site/support.html もご覧ください。
+上記を確認しても解決しない場合は、普段お使いのメールサービスから support@tategaki.site（件名: 【TateGakiサポート】管理者設定のご相談）へ、発生しているエラーメッセージ・組織ドメイン・対象ユーザーの状況を添えてご連絡ください。パスワードや認証コードは送らないでください。確認のうえご案内します。一般的なご質問は https://tategaki.site/support.html もご覧ください。
 
 ---
 
@@ -546,7 +566,7 @@ Note: This symptom cannot be resolved by changing organization settings. It requ
 
 ### Still not resolved?
 
-If the steps above don't resolve it, contact support@tategaki.site with the exact error message, your organization domain, and the affected users' situation. We'll review and advise. For general questions, see https://tategaki.site/en/support.html as well.
+If the steps above don't resolve it, email support@tategaki.site from your usual email service (Subject: [TateGaki Support] Admin setup) with the exact error message, your organization domain, and the affected users' situation. Never send your password or verification code. We'll review and advise. For general questions, see https://tategaki.site/en/support.html as well.
 
 ---
 
