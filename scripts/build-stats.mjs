@@ -37,6 +37,7 @@ import { dirname, resolve } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
 const stats = JSON.parse(readFileSync(resolve(root, 'data/stats.json'), 'utf8'));
+const pro = JSON.parse(readFileSync(resolve(root, 'data/pro-layouts.json'), 'utf8'));
 
 const ms = stats.milestones;
 const last = ms[ms.length - 1];
@@ -139,6 +140,38 @@ function renderAdoptionGuide() {
   return `      <li>2026年4月公開、累計${stats.installsLabelNum}インストールを突破</li>`;
 }
 
+// ---- TateGaki Pro のフォーマット数（data/pro-layouts.json から生成）----
+// 「書籍判型5種」のような数の表記を手で書くと、判型を足したときに必ず取り残される
+// （2026-09-30、40字×30行の追加で support.html の日英・構造化データ・ガイドの5か所が古くなった）。
+const proAll = pro.layouts;
+const proBooks = proAll.filter((l) => l.book);
+const proOthers = proAll.filter((l) => !l.book);
+const EN_NUM = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+const enNum = (n) => EN_NUM[n] ?? String(n);
+
+// support.html の FAQ（本文 <p> と構造化データの text は必ず同じ文。Google は両者の一致を求める）
+function proFaqJa() {
+  return (
+    'こどもSuiteは教育向けに特化しています。TateGakiは教育・出版・一般用途を横断し、' +
+    `Pro版では書籍判型${proBooks.length}種と${proOthers.map((l) => `「${l.short}」`).join('・')}の` +
+    `計${proAll.length}種のフォーマットに対応します。`
+  );
+}
+function proFaqEn() {
+  return (
+    'Kodomo Suite is specialized for education. TateGaki spans education, publishing, and general use, ' +
+    `and its Pro plan supports ${enNum(proAll.length)} preset formats: ${enNum(proBooks.length)} book trim sizes ` +
+    `plus ${proOthers.map((l) => `a ${l.en} manuscript layout`).join(' and ')}.`
+  );
+}
+function proGuideJa() {
+  return (
+    '      <li>基本機能は無料。有料版「TateGaki Pro」（月額500円または年額1,500円・税込）は' +
+    `${proBooks.map((l) => l.short).join('／')}の書籍判型${proBooks.length}種と` +
+    `${proOthers.map((l) => `「${l.short}」`).join('・')}の計${proAll.length}フォーマットに対応</li>`
+  );
+}
+
 // file: 対象ファイル / marker: マーカー名 / render: 生成関数
 const BLOCKS = [
   { file: 'index.html', marker: 'STATS', render: renderIndexJa },
@@ -162,6 +195,19 @@ const BLOCKS = [
   { file: 'llms-full.txt', marker: 'STATS:ADOPTION:ORG', render: renderAdoptionOrgTxt },
   { file: 'llms-full.txt', marker: 'STATS:ADOPTION:ADMIN', render: renderAdoptionAdminTxtJa },
   { file: 'llms-full.txt', marker: 'STATS:ADOPTION:ADMINEN', render: renderAdoptionAdminTxtEn },
+
+  // TateGaki Pro のフォーマット数（data/pro-layouts.json）
+  { file: 'support.html', marker: 'PRO:LAYOUTS', render: () => `    <p>${proFaqJa()}</p>` },
+  { file: 'en/support.html', marker: 'PRO:LAYOUTS', render: () => `    <p>${proFaqEn()}</p>` },
+  { file: 'guide/google-docs-tategaki/index.html', marker: 'PRO:LAYOUTS', render: proGuideJa },
+];
+
+// 構造化データ（JSON-LD）の中には HTML コメントのマーカーを置けない（JSON が壊れる）。
+// 回答文の書き出し（prefix）で FAQ の1件を特定し、"text" の値だけを差し替える。
+// 見つからない・複数ある場合は黙って飛ばさず exit 1（文言が古いまま残るのを防ぐ）。
+const JSONLD = [
+  { file: 'support.html', prefix: 'こどもSuiteは教育向けに特化しています。', render: proFaqJa },
+  { file: 'en/support.html', prefix: 'Kodomo Suite is specialized for education.', render: proFaqEn },
 ];
 
 let changed = 0;
@@ -193,6 +239,20 @@ for (const b of BLOCKS) {
   touched.set(b.file, `${before}${block}${after}`);
 }
 
+let jsonldErrors = 0;
+for (const j of JSONLD) {
+  const src = touched.has(j.file) ? touched.get(j.file) : readFileSync(resolve(root, j.file), 'utf8');
+  const esc = j.prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp(`("text":\\s*")${esc}[^"]*(")`, 'g');
+  const hits = src.match(re) || [];
+  if (hits.length !== 1) {
+    console.error(`  ✗ ${j.file} [JSON-LD]: 「${j.prefix}」で始まる回答が ${hits.length} 件（1件であるべき）`);
+    jsonldErrors++;
+    continue;
+  }
+  touched.set(j.file, src.replace(re, (_, a, b) => `${a}${j.render()}${b}`));
+}
+
 for (const [file, next] of touched) {
   const path = resolve(root, file);
   const current = readFileSync(path, 'utf8');
@@ -210,6 +270,37 @@ console.log(
     `\n  マイルストーン: ${ms.map((m) => `${m.dateLabel}:${m.label}`).join(' → ')}` +
     `\n  導入組織: ${stats.domainCount}ドメイン / 累計: ${stats.installsLabel} / 評価: ★${stats.rating}`
 );
+
+if (jsonldErrors) process.exit(1);
+
+// ---------------------------------------------------------------------------
+// Pro フォーマット一覧とアドオン本体の照合
+//
+// data/pro-layouts.json は、アドオン（tategaki-addon/script.html の PRESETS）の写しである。
+// 隣にアドオンのリポジトリがあれば、key と表示名が一致するかを機械で突き合わせる。
+// 無ければ照合できない旨を表示して続行する（サイト単体でもビルドできるように）。
+// ---------------------------------------------------------------------------
+{
+  const addonScript = resolve(root, '..', 'tategaki-addon', 'script.html');
+  let addonSrc = null;
+  try { addonSrc = readFileSync(addonScript, 'utf8'); } catch { /* 無ければ照合しない */ }
+  if (!addonSrc) {
+    console.warn('  ! ../tategaki-addon/script.html が無いため、Pro フォーマット一覧の照合をスキップしました');
+  } else {
+    const block = addonSrc.slice(addonSrc.indexOf('const PRESETS = {'), addonSrc.indexOf('};', addonSrc.indexOf('const PRESETS = {')));
+    const addon = [...block.matchAll(/^\s*(\w+):\s*\{\s*label:'([^']+)'/gm)].map((m) => `${m[1]}=${m[2]}`).sort();
+    const site = proAll.map((l) => `${l.key}=${l.label}`).sort();
+    const onlyAddon = addon.filter((x) => !site.includes(x));
+    const onlySite = site.filter((x) => !addon.includes(x));
+    if (onlyAddon.length || onlySite.length) {
+      console.error('  ✗ data/pro-layouts.json とアドオンの PRESETS が一致しません');
+      if (onlyAddon.length) console.error(`    アドオンにだけある: ${onlyAddon.join(' / ')}`);
+      if (onlySite.length) console.error(`    サイトにだけある: ${onlySite.join(' / ')}`);
+      process.exit(1);
+    }
+    console.log(`  ✓ Pro フォーマット ${proAll.length}種がアドオンの PRESETS と一致`);
+  }
+}
 
 // ---------------------------------------------------------------------------
 // ページ一覧の整合チェック / Pages consistency check

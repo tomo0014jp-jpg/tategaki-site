@@ -150,7 +150,7 @@ Google Workspace Marketplaceからワンクリックでインストール可能�
 - **Q. 禁則処理はされますか？**
   A. 日本語の禁則処理（行頭禁則・行末禁則）に対応しています。
 - **Q. TateGakiは無料で使えますか？**
-  A. はい、TateGakiの基本機能（原稿用紙モード、ルビ、禁則処理、Docsテーブル書き出し、Google Drive保存など）は無料でご利用いただけ、無料機能は今後も無料で提供します。加えて、本の判型に合わせたカスタムレイアウト等の追加機能を利用できる有料プラン「TateGaki Pro」もご用意しています。料金は月額500円（税込）または年額1,500円（税込）です。Google Workspace Marketplaceからワンクリックでインストールできます。
+  A. はい、TateGakiの基本機能（原稿用紙モード、ルビ、禁則処理、Docsテーブル書き出し、Google Drive保存など）は無料でご利用いただけ、無料機能は今後も無料で提供します。加えて、本の判型などに合わせたレイアウト（用意されたフォーマットから選択）等の追加機能を利用できる有料プラン「TateGaki Pro」もご用意しています。料金は月額500円（税込）または年額1,500円（税込）です。Google Workspace Marketplaceからワンクリックでインストールできます。
 
 その他のご質問は [サポートページ](https://tategaki.site/support.html) をご覧ください。
 
@@ -224,7 +224,7 @@ One click to install from the Google Workspace Marketplace. Core features free. 
 - **Q. Does it apply Japanese line-breaking rules (kinsoku shori)?**
   A. Yes — both line-start and line-end kinsoku rules are applied automatically.
 - **Q. Is TateGaki free?**
-  A. TateGaki's core features (manuscript paper modes, ruby, kinsoku shori, export to Google Docs table, Google Drive save, and more) are free, and the free features will stay free. In addition, an optional paid plan — TateGaki Pro (¥500/month or ¥1,500/year, tax incl.) — offers extra features such as custom layouts matched to book trim sizes. The annual plan works out to about ¥125 per month.
+  A. TateGaki's core features (manuscript paper modes, ruby, kinsoku shori, export to Google Docs table, Google Drive save, and more) are free, and the free features will stay free. In addition, an optional paid plan — TateGaki Pro (¥500/month or ¥1,500/year, tax incl.) — offers extra features such as preset layouts for book trim sizes and manuscript formats. The annual plan works out to about ¥125 per month.
 
 For more questions, see the [support page](https://tategaki.site/en/support.html).
 
@@ -265,7 +265,7 @@ Googleドキュメント（Google Docs）縦書きアドオン TateGaki のサ�
 - **Q. Docsテーブルへの書き出しとは？**
   A. エディタの内容を、Googleドキュメント（Google Docs）の本文に方眼テーブル（1セル1文字）として書き出す機能です。禁則処理済みのレイアウトがそのまま反映されます。書き出し前に、既存のDocs本文がクリアされる旨の確認が表示されます。
 - **Q. TateGakiは無料で使えますか？**
-  A. TateGakiの基本機能（原稿用紙モード、ルビ、禁則処理、Docsテーブル書き出し、Google Drive保存など）は無料でご利用いただけ、無料機能は今後も無料で提供します。加えて、本の判型に合わせたカスタムレイアウト等の追加機能を利用できる有料プラン「TateGaki Pro」もご用意しています。料金は月額500円（税込）または年額1,500円（税込）です。年額は月あたり125円です。
+  A. TateGakiの基本機能（原稿用紙モード、ルビ、禁則処理、Docsテーブル書き出し、Google Drive保存など）は無料でご利用いただけ、無料機能は今後も無料で提供します。加えて、本の判型などに合わせたレイアウト（用意されたフォーマットから選択）等の追加機能を利用できる有料プラン「TateGaki Pro」もご用意しています。料金は月額500円（税込）または年額1,500円（税込）です。年額は月あたり125円です。
 
 ### トラブルシューティング
 
@@ -334,7 +334,7 @@ Support page for TateGaki, the free Google Docs add-on for Japanese vertical wri
 - **Q. What does "Export to Google Docs table" do?**
   A. It writes the editor's content into your Google Docs™ document as a grid table (one cell per character), preserving the kinsoku-shori (line-breaking) layout. Before exporting, a confirmation prompt warns you that the existing content of your Google Doc will be cleared.
 - **Q. Is TateGaki free?**
-  A. TateGaki's core features (manuscript paper modes, ruby, kinsoku shori, export to Google Docs table, Google Drive save, and more) are free, and the free features will stay free. In addition, an optional paid plan — TateGaki Pro (¥500/month or ¥1,500/year, tax incl.) — offers extra features such as custom layouts matched to book trim sizes. The annual plan works out to about ¥125 per month.
+  A. TateGaki's core features (manuscript paper modes, ruby, kinsoku shori, export to Google Docs table, Google Drive save, and more) are free, and the free features will stay free. In addition, an optional paid plan — TateGaki Pro (¥500/month or ¥1,500/year, tax incl.) — offers extra features such as preset layouts for book trim sizes and manuscript formats. The annual plan works out to about ¥125 per month.
 - **Q. Can I write long documents or print in Blank (vertical) mode?**
   A. Because Blank (vertical) mode is built on a textarea, it does not support scroll-follow or page splitting when printing. For long documents or printing, use manuscript paper mode with grid lines turned OFF, which supports page splitting on print.
 

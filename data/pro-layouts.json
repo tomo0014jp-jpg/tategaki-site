@@ -1,0 +1,11 @@
+{
+  "_note": "TateGaki Pro のフォーマット一覧。サイト上の「書籍判型◯種」などの表記は scripts/build-stats.mjs がここから生成する。key と label はアドオン（tategaki-addon/script.html の PRESETS）と一致させること。隣にアドオンのリポジトリがあれば build-stats.mjs が照合し、食い違えば exit 1 で止まる。",
+  "layouts": [
+    { "key": "bunko",   "label": "文庫（40字×16行）",       "short": "文庫",       "book": true },
+    { "key": "shinsho", "label": "新書（40字×15行）",       "short": "新書",       "book": true },
+    { "key": "shiroku", "label": "四六判（42字×17行）",     "short": "四六判",     "book": true },
+    { "key": "a5",      "label": "A5判（50字×18行）",       "short": "A5判",       "book": true },
+    { "key": "large",   "label": "大きめ文字（34字×14行）", "short": "大きめ文字", "book": true },
+    { "key": "g40x30",  "label": "40字×30行",               "short": "40字×30行",  "book": false, "en": "40-character × 30-line" }
+  ]
+}

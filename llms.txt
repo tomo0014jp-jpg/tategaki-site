@@ -96,7 +96,7 @@ TateGakiは、2026年にコード未経験者がClaudeとの対話を通じて�
 ## Optional / 補足
 
 - **Current pricing / 現在の料金**: Core features free / 基本機能は無料
-- **Paid plan / 有料プラン**: TateGaki Pro — ¥500/month or ¥1,500/year (about ¥125/month, tax incl.), provides optional layout features (e.g. custom layouts matched to book trim sizes). Now available. Card statements show "TATEGAKI". / 「TateGaki Pro」月額500円または年額1,500円（月あたり125円・税込）提供中。本の判型に合わせたカスタムレイアウト等の追加機能を利用可能。カード明細には「TATEGAKI」と表示。
+- **Paid plan / 有料プラン**: TateGaki Pro — ¥500/month or ¥1,500/year (about ¥125/month, tax incl.), provides optional layout features (e.g. preset layouts for book trim sizes and manuscript formats). Now available. Card statements show "TATEGAKI". / 「TateGaki Pro」月額500円または年額1,500円（月あたり125円・税込）提供中。本の判型などに合わせたレイアウト（用意されたフォーマットから選択）等の追加機能を利用可能。カード明細には「TATEGAKI」と表示。
 - **Organization license / 組織ライセンス**: For schools and organizations — up to 100 seats ¥9,800/year, 101–1,000 seats ¥29,800/year (tax incl.), invoice payment supported. Details: https://tategaki.site/organization.html / 学校・組織向けに〜100席 年9,800円、101〜1,000席 年29,800円（税込）。請求書払い対応。詳細は https://tategaki.site/organization.html
 - **Source code / ソースコード**: Closed source / クローズドソース
 - **Recommended citation name / 推奨表記**: TateGaki

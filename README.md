@@ -2,6 +2,24 @@
 
 TateGaki（Googleドキュメント向け縦書きアドオン）の公式サイト。GitHub Pages でホストされる静的HTMLサイトです（ビルド不要）。
 
+## Pro のフォーマット一覧（判型の数）
+
+「書籍判型5種」「計6フォーマット」のような **Pro のフォーマット数の表記は
+[`data/pro-layouts.json`](data/pro-layouts.json) から生成**しています。判型を追加・削除したら、
+このファイルを編集して `node scripts/build-stats.mjs` を実行してください。
+
+| 反映先 | 仕組み |
+| --- | --- |
+| `support.html` / `en/support.html` の FAQ 本文 | マーカー `PRO:LAYOUTS` |
+| 同じ FAQ の構造化データ（JSON-LD の `"text"`） | 回答文の書き出しで1件を特定して差し替え（本文と必ず同じ文になる） |
+| `guide/google-docs-tategaki/index.html` の Pro の箇条書き | マーカー `PRO:LAYOUTS` |
+
+- `key` と `label` はアドオン（`tategaki-addon/script.html` の `PRESETS`）と一致させる。
+  隣にアドオンのリポジトリがあれば、ビルドが照合して**食い違えば exit 1 で止まる**
+- 構造化データの回答文が見つからない（1件でない）ときも exit 1
+- 「カスタムレイアウト」という表現は、任意の字数・行数を入力できると誤解されるため使わない
+  （`terms.html` は規約本文のため、改定手続きのときに合わせて見直す）
+
 ## 実績数値の更新方法（重要）
 
 サイトや `llms.txt` に載せる **実績数値（お知らせ／累計インストール数／導入組織のドメイン数／
