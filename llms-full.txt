@@ -27,10 +27,10 @@
 - Platform / プラットフォーム: Google Docs / Google Workspace Add-on
 - Source code / ソースコード: Closed source / クローズドソース
 <!-- STATS:START -->
-- Performance / 実績 (2026年8月時点 / As of August 2026): 6月17日 3,400インストール → 6月22日 1万インストール突破 → 7月17日 3万インストール突破 → 8月13日 3万5千インストール突破 → 8月28日 3万6千インストール突破／導入組織 31ドメイン（36,000+ installs on Google Workspace Marketplace） / 評価 ★4 / rating 4
+- Performance / 実績 (2026年9月時点 / As of September 2026): 6月17日 3,400インストール → 6月22日 1万インストール突破 → 7月17日 3万インストール突破 → 8月13日 3万5千インストール突破 → 8月28日 3万6千インストール突破／導入組織 31ドメイン → 9月30日 4万インストール超／導入組織 48ドメイン（over 40,000 installs on Google Workspace Marketplace） / 評価 ★4 / rating 4
 <!-- STATS:END -->
 <!-- STATS:ADOPTION:START -->
-- Adoption / 導入組織: Used across 31 organization domains (boards of education, schools, etc.) / 31の組織ドメイン（教育委員会・学校等）で導入
+- Adoption / 導入組織: Used across 48 organization domains (boards of education, schools, etc.) / 48の組織ドメイン（教育委員会・学校等）で導入
 <!-- STATS:ADOPTION:END -->
 
 ### Key Features / 主な機能
@@ -387,7 +387,7 @@ URL: https://tategaki.site/organization.html
 ### 学校・組織でのご利用（サイトライセンス・請求書払い）
 
 <!-- STATS:ADOPTION:ORG:START -->
-TateGakiは全国の学校・教育委員会を中心に、累計3万6千インストール超・31組織ドメインでご利用いただいています。組織でのご利用には、クレジットカード不要の請求書払いに対応しています。
+TateGakiは全国の学校・教育委員会を中心に、累計4万インストール超・48組織ドメインでご利用いただいています。組織でのご利用には、クレジットカード不要の請求書払いに対応しています。
 <!-- STATS:ADOPTION:ORG:END -->
 
 TateGaki is used mainly by schools and boards of education across Japan. For organizations, invoice-based payment is supported — no credit card required, so schools and public bodies that cannot pay by card can still adopt it.
@@ -434,10 +434,10 @@ URL: https://tategaki.site/admin-setup/
 
 ### 管理者向けセットアップガイド（組織一括導入）
 
-最終更新日：2026年8月15日
+最終更新日：2026年10月3日
 
 <!-- STATS:ADOPTION:ADMIN:START -->
-TateGaki は累計36,000インストールを超え、31組織ドメインでの導入実績があります（評価 ★4）。
+TateGaki は累計40,000インストールを超え、48組織ドメインでの導入実績があります（評価 ★4）。
 <!-- STATS:ADOPTION:ADMIN:END -->
 
 組織（Google Workspace）で TateGaki を一括導入したあと、利用者側で次のようなエラーが表示されることがあります。本ページは、こうしたエラーに対処する組織管理者向けのガイドです。
@@ -505,10 +505,10 @@ URL: https://tategaki.site/en/admin-setup/
 
 ### Admin Setup Guide (Organization-wide Deployment)
 
-Last updated: August 15, 2026
+Last updated: October 3, 2026
 
 <!-- STATS:ADOPTION:ADMINEN:START -->
-TateGaki has surpassed 36,000 cumulative installs, with adoption across 31 organization domains (★4 rating).
+TateGaki has surpassed 40,000 cumulative installs, with adoption across 48 organization domains (★4 rating).
 <!-- STATS:ADOPTION:ADMINEN:END -->
 
 After deploying TateGaki organization-wide (Google Workspace), your users may see errors like the ones below. This page is a guide for organization administrators on how to resolve them.
