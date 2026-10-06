@@ -38,6 +38,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
 const stats = JSON.parse(readFileSync(resolve(root, 'data/stats.json'), 'utf8'));
 const pro = JSON.parse(readFileSync(resolve(root, 'data/pro-layouts.json'), 'utf8'));
+// メディア掲載のお知らせ。実績数値（milestones）とは別物なので stats.json には混ぜない
+// （milestones は llms.txt の実績行にもそのまま流れるため）。
+const media = JSON.parse(readFileSync(resolve(root, 'data/media.json'), 'utf8'));
 
 const ms = stats.milestones;
 const last = ms[ms.length - 1];
@@ -60,8 +63,17 @@ function renderNewsBox(label) {
     // 枠からはみ出して読めなくなる。
     return `        <li><span class="nw"><time datetime="${m.date}">${label.date(m)}</time></span>${label.sep}${text}</li>`;
   });
+  // メディア掲載は Marketplace の実績一覧の上に、別のリストとして置く（日本語のみ）。
+  const mediaRows = (label.media || []).map(
+    (m) =>
+      `        <li><span class="nw"><time datetime="${m.date}">${m.dateLabel}</time></span>${label.sep}<a href="${m.url}" target="_blank" rel="noopener">${m.label}</a></li>`
+  );
+  const mediaList = mediaRows.length
+    ? ['      <ul class="news-list news-media">', ...mediaRows, '      </ul>']
+    : [];
   return [
     `    <div class="news-scroll" role="region" aria-label="${label.aria}" tabindex="0">`,
+    ...mediaList,
     '      <p class="news-label">Google Workspace Marketplace</p>',
     '      <ul class="news-list">',
     ...rows,
@@ -76,6 +88,7 @@ function renderIndexJa() {
     sep: ' ',
     date: (m) => m.dateLabel,
     text: (m) => m.label,
+    media: [...media.items].sort((a, b) => b.date.localeCompare(a.date)),
   });
 }
 

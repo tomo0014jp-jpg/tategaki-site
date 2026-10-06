@@ -45,6 +45,7 @@ TateGaki（Googleドキュメント向け縦書きアドオン）の公式サイ
 | やりたいこと | 編集する場所 |
 | --- | --- |
 | お知らせを1件追加する | `milestones` 配列の**末尾**にオブジェクトを1つ追記（表示は自動で降順） |
+| メディア掲載のお知らせを追加する | [`data/media.json`](data/media.json) の `items` に追記（日本語トップの「お知らせ」先頭にリンク付きで出る。`about.html` の「メディア掲載」は手書き） |
 | 導入組織のドメイン数を変える | `domainCount` |
 | 累計インストール数を変える | `installsLabel` / `installsLabelNum` / `installsLabelEn` の3つ |
 | 評価を変える／隠す | `rating` / `showRating` |

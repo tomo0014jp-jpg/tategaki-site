@@ -398,6 +398,8 @@
   .news-list li { font-size: 14px; line-height: 1.9; color: var(--color-text); }
   .news-list time { color: var(--color-muted); font-weight: 700; }
   .news-list strong { color: var(--color-accent); font-weight: 700; }
+  .news-list a { color: var(--color-accent); }
+  .news-media { margin-bottom: 6px; }
 
   @media (max-width: 600px) {
     .news { margin-top: -24px; padding-bottom: 12px; }
@@ -981,9 +983,13 @@
       ここから下は自動生成です。直接編集しないでください。
       新しいお知らせを1行追加するときは data/stats.json の milestones 配列の
       末尾にオブジェクトを1つ追記し、`node scripts/build-stats.mjs` を実行します。
+      メディア掲載のお知らせは data/media.json の items に追記します。
     -->
     <!-- STATS:START -->
     <div class="news-scroll" role="region" aria-label="お知らせ一覧" tabindex="0">
+      <ul class="news-list news-media">
+        <li><span class="nw"><time datetime="2026-10-06">10月6日</time></span> <a href="https://career.medi-site.co.jp/media/tategaki/" target="_blank" rel="noopener">ビギナーズリンクに、TateGakiの開発者インタビューが掲載されました。</a></li>
+      </ul>
       <p class="news-label">Google Workspace Marketplace</p>
       <ul class="news-list">
         <li><span class="nw"><time datetime="2026-09-30">9月30日</time></span> <strong>4万インストール超／導入組織 48ドメイン</strong></li>

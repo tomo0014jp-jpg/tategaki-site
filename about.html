@@ -243,15 +243,16 @@
     margin-bottom: 16px;
   }
 
-  /* メディア掲載：公開前であることが枠から伝わるように破線にする */
-  .coming-box {
-    border: 1px dashed var(--color-border);
-    border-radius: 8px;
-    padding: 20px 24px;
-    margin-bottom: 16px;
-    text-align: center;
+  /* メディア掲載：枠は .section-box を使い、中の日付と説明だけ整える */
+  .media-date {
+    font-size: 13px;
     color: var(--color-muted);
+    margin-bottom: 4px;
+  }
+
+  .media-desc {
     font-size: 14px;
+    margin-bottom: 0;
   }
 
   footer {
@@ -338,7 +339,11 @@
 
   <h2>メディア掲載</h2>
 
-  <p class="coming-box">掲載準備中です。公開後にこちらでご紹介します。</p>
+  <div class="section-box">
+    <a class="work-name" href="https://career.medi-site.co.jp/media/tategaki/" target="_blank" rel="noopener">ビギナーズリンク｜TateGaki 開発者インタビュー</a>
+    <p class="media-date"><time datetime="2026-10-06">2026年10月6日</time>掲載</p>
+    <p class="media-desc">TateGakiの開発のきっかけや、AIとの向き合い方についてお話ししました。</p>
+  </div>
 </main>
 
 <footer>
