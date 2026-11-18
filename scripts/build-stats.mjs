@@ -115,42 +115,42 @@ function renderTxt(bold) {
 // ---- 導入実績の一文（累計インストール数＋組織ドメイン数＋評価） ----
 function renderAdoptionTxt(bold) {
   const bullet = bold ? '**Adoption / 導入組織**' : 'Adoption / 導入組織';
-  return `- ${bullet}: Used across ${stats.domainCount} organization domains (boards of education, schools, etc.) / ${stats.domainCount}の組織ドメイン（教育委員会・学校等）で導入`;
+  return `- ${bullet}: Used across ${stats.domainCount} organization domains (boards of education, schools, etc.) / ${stats.domainCount}の組織ドメイン（教育委員会・学校等）で導入（${stats.asOfLabel} / ${stats.asOfLabelEn}）`;
 }
 
 // ---- llms-full.txt のページ本文に埋め込む実績表記（プレーンテキスト版） ----
 // HTML ページ本文を Markdown 化して収録しているため、数値を手書きすると
 // stats.json の一元管理から外れてしまう。ここでも同じ数値を生成する。
 function renderAdoptionOrgTxt() {
-  return `TateGakiは全国の学校・教育委員会を中心に、累計${stats.installsLabel}超・${stats.domainCount}組織ドメインでご利用いただいています。組織でのご利用には、クレジットカード不要の請求書払いに対応しています。`;
+  return `TateGakiは全国の学校・教育委員会を中心に、累計${stats.installsLabel}を突破し、${stats.domainCount}組織ドメインで導入されています（${stats.asOfLabel}）。組織でのご利用には、クレジットカード不要の請求書払いに対応しています。`;
 }
 
 function renderAdoptionAdminTxtJa() {
   const rating = ratingJa ? `（${ratingJa}）` : '';
-  return `TateGaki は累計${stats.installsLabelNum}インストールを超え、${stats.domainCount}組織ドメインでの導入実績があります${rating}。`;
+  return `TateGaki は${stats.asOfLabel}で累計${stats.installsLabelNum}インストールを超え、${stats.domainCount}組織ドメインでの導入実績があります${rating}。`;
 }
 
 function renderAdoptionAdminTxtEn() {
   const rating = ratingEn ? ` (${ratingEn})` : '';
-  return `TateGaki has surpassed ${stats.installsLabelNum} cumulative installs, with adoption across ${stats.domainCount} organization domains${rating}.`;
+  return `${stats.asOfLabelEn}, TateGaki has surpassed ${stats.installsLabelNum} cumulative installs, with adoption across ${stats.domainCount} organization domains${rating}.`;
 }
 
 function renderAdoptionAdminJa() {
   const rating = ratingJa ? `（${ratingJa}）` : '';
-  return `  <p class="trust">TateGaki は累計${stats.installsLabelNum}インストールを超え、${stats.domainCount}組織ドメインでの導入実績があります${rating}。</p>`;
+  return `  <p class="trust">TateGaki は${stats.asOfLabel}で累計${stats.installsLabelNum}インストールを超え、${stats.domainCount}組織ドメインでの導入実績があります${rating}。</p>`;
 }
 
 function renderAdoptionAdminEn() {
   const rating = ratingEn ? ` (${ratingEn})` : '';
-  return `  <p class="trust">TateGaki has surpassed ${stats.installsLabelNum} cumulative installs, with adoption across ${stats.domainCount} organization domains${rating}.</p>`;
+  return `  <p class="trust">${stats.asOfLabelEn}, TateGaki has surpassed ${stats.installsLabelNum} cumulative installs, with adoption across ${stats.domainCount} organization domains${rating}.</p>`;
 }
 
 function renderAdoptionOrg() {
-  return `  <p class="subtitle lead">TateGakiは全国の学校・教育委員会を中心に、累計${stats.installsLabel}超・${stats.domainCount}組織ドメインでご利用いただいています。組織でのご利用には、クレジットカード不要の請求書払いに対応しています。</p>`;
+  return `  <p class="subtitle lead">TateGakiは全国の学校・教育委員会を中心に、累計${stats.installsLabel}を突破し、${stats.domainCount}組織ドメインで導入されています（${stats.asOfLabel}）。組織でのご利用には、クレジットカード不要の請求書払いに対応しています。</p>`;
 }
 
 function renderAdoptionGuide() {
-  return `      <li>2026年4月公開、累計${stats.installsLabelNum}インストールを突破</li>`;
+  return `      <li>2026年4月公開、累計${stats.installsLabelNum}インストールを突破（${stats.asOfLabel}）</li>`;
 }
 
 // ---- TateGaki Pro のフォーマット数（data/pro-layouts.json から生成）----
